@@ -30,7 +30,7 @@ const LatestProducts = () => {
   return (
     <div className='w-full mt-20 mb-20'>
       <div className='w-[90%] mx-auto flex flex-col items-center justify-center'>
-        <h1 className='text-center text-3xl text-gray-700 font-bold uppercase my-5'>latest arrivals</h1>
+        <h1 className='text-center text-3xl text-gray-700 font-bold uppercase my-5 font-roboto'>latest arrivals</h1>
         <div className='flex mt-3 flex-wrap gap-7 w-full items-center justify-center'>
           {[rugPic1, rugPic2, rugPic3, rugPic4].map((pic, index) => (
             <div
@@ -40,7 +40,7 @@ const LatestProducts = () => {
             >
               <img src={pic} className='absolute w-full h-full object-cover duration-300 group-hover:opacity-30' alt={`Rug ${index + 1}`} />
               <div className='absolute flex justify-center items-center flex-col inset-0 text-white opacity-0 group-hover:opacity-100'>
-                <h1 className='text-center my-1 font-semibold uppercase text-lg'>Rug {index + 1} Example Pic</h1>
+                <h1 className='text-center my-1 font-semibold uppercase text-lg font-poppins'>Rug {index + 1} Example Pic</h1>
                 <p className='text-center text-sm opacity-0 group-hover:opacity-100 duration-300'>Lorem ipsum dolor sit amet consectetur</p>
               </div>
             </div>

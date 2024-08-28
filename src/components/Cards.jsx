@@ -34,7 +34,7 @@ const Cards = () => {
 
   return (
     <div className='w-full mt-28 mb-10'>
-      <h1 className='text-3xl font-bold text-center mb-10 text-gray-700'>GLIMPSE OF OUR PRODUCTS</h1>
+      <h1 className='text-3xl font-bold text-center mb-10 text-gray-700 font-roboto'>GLIMPSE OF OUR PRODUCTS</h1>
       <Slider {...settings} className='w-[55%] mx-auto'>
         {products.map((product, index) => (
           <div key={index} className='relative w-full h-[650px]'>
@@ -44,7 +44,7 @@ const Cards = () => {
                 <div className='w-1/2'/>
                 <div className='w-full h-full flex items-center'>
                   <div>
-                    <h1 className='font-bold my-5 text-5xl text-black/90'>{product.title}</h1>
+                    <h1 className='font-bold my-5 text-5xl text-black/90 font-poppins'>{product.title}</h1>
                     <p>{product.description}</p>
                     <FaArrowRight className='mt-5 rounded-full w-[50px] h-[50px] p-3 text-black/90 border border-black cursor-pointer hover:bg-yellow-400/20'/>
                   </div>

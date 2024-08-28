@@ -7,7 +7,7 @@ const Footer = () => {
       <div className='w-[90%] mx-auto flex flex-col md:flex-row justify-between px-6'>
         {/* About Us Section */}
         <div className='mb-8 md:mb-0 w-[50%]'>
-          <h2 className='text-xl font-bold text-gray-700 mb-4'>About Us</h2>
+          <h2 className='text-xl font-bold text-gray-700 mb-4 font-roboto'>About Us</h2>
           <p className='text-gray-600 w-[70%]'>
             We are a company committed to providing the best quality products to our customers. 
             Our journey began with a vision to deliver exceptional value and service. 
@@ -17,7 +17,7 @@ const Footer = () => {
         
         {/* Useful Links */}
         <div className='mb-8 md:mb-0'>
-          <h2 className='text-xl font-bold text-gray-700 mb-4'>Useful Links</h2>
+          <h2 className='text-xl font-bold text-gray-700 mb-4 font-roboto'>Useful Links</h2>
           <ul className='space-y-1'>
             <li><a href='/' className='text-gray-600 hover:text-gray-800'>Contact Us</a></li>
             <li><a href='/' className='text-gray-600 hover:text-gray-800'>Return Policies</a></li>
@@ -30,7 +30,7 @@ const Footer = () => {
         
         {/* Contact Us Section */}
         <div className='mb-8 md:mb-0'>
-          <h2 className='text-xl font-bold text-gray-700 mb-4'>Contact Us</h2>
+          <h2 className='text-xl font-bold text-gray-700 mb-4 font-roboto'>Contact Us</h2>
           <p className='text-gray-600 mb-1'>
             Email: info@example.com
           </p>
@@ -44,7 +44,7 @@ const Footer = () => {
         
         {/* Social Media Links */}
         <div className=''>
-          <h2 className='text-xl font-bold text-gray-700 mb-4'>Follow Us</h2>
+          <h2 className='text-xl font-bold text-gray-700 mb-4 font-roboto'>Follow Us</h2>
           <div className='flex space-x-4'>
             <a href='/' className='text-gray-600 hover:text-gray-800'><FaFacebookF /></a>
             <a href='/' className='text-gray-600 hover:text-gray-800'><FaTwitter /></a>
@@ -56,7 +56,7 @@ const Footer = () => {
       
       {/* Footer Bottom */}
       <div className='border-t border-gray-300 mt-8 pt-4'>
-        <p className='text-center text-gray-600 text-sm'>
+        <p className='text-center text-gray-600 text-sm font-poppins'>
           © 2024 Crystal Mats. All rights reserved.
         </p>
       </div>

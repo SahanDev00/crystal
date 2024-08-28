@@ -40,9 +40,9 @@ const Hero = () => {
           <div key={index} className="flex items-center justify-center">
             <div className="flex w-[90%] h-[95vh] mx-auto items-center">
               <div className="w-1/2 p-10 text-white justify-center mt-10">
-                <h1 className="text-4xl font-bold mb-4">{slide.heading}</h1>
+                <h1 className="text-4xl font-poppins font-bold mb-4">{slide.heading}</h1>
                 <p className="text-lg mb-6">{slide.text}</p>
-                <button className="bg-cyan-500/80 text-white py-2 px-5 rounded hover:bg-cyan-500/90 transition duration-300">
+                <button className="bg-cyan-500/80 font-poppins text-white py-2 px-5 rounded hover:bg-cyan-500/90 transition duration-300">
                   Explore
                 </button>
               </div>
