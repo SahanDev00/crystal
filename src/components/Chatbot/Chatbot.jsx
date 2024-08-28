@@ -37,12 +37,12 @@ const Chatbot = () => {
   return (
     <div className="flex items-center justify-center h-screen relative">
         <div className="absolute m-4 w-[70%] h-[75%] bg-white border border-gray-300 rounded-lg shadow-lg">
-            <h1 className='font-bold text-3xl p-4'>COMPANY BOT</h1>
+            <h1 className='font-bold text-3xl p-4'>CHAT BOT</h1>
             <div className="px-4 h-[600px] overflow-y-scroll">
             {messages.map((message, index) => (
                 <div
                 key={index}
-                className={`mb-2 ${message.sender === 'bot' ? 'text-blue-600' : 'text-gray-800'}`}
+                className={`mb-2 ${message.sender === 'bot' ? 'text-cyan-600' : 'text-gray-800'}`}
                 >
                 {message.text}
                 <div ref={endOfMessagesRef} />
@@ -59,7 +59,7 @@ const Chatbot = () => {
                 />
                 <button
                     type="submit"
-                    className="bg-blue-500 text-white px-5 py-2 rounded-r-lg hover:bg-blue-600"
+                    className="bg-cyan-500 text-white px-5 py-2 rounded-r-lg hover:bg-cyan-600"
                 >
                     Send
                 </button>

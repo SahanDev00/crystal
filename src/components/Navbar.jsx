@@ -33,35 +33,50 @@ const Navbar = () => {
   }, [isChatbotVisible]);
 
   return (
-    <div className='w-full fixed top-0 bg-gradient-to-b z-50 from-black/90 to-black/50'>
+    <div className={`w-full fixed top-0 duration-300 z-50 ${isActive('/checkout') ? 'bg-cyan-950' : ''} ${isActive('/') ? 'bg-cyan-950/90' : ''} ${isActive('/cart') || isActive('/account') || isActive('/product') || isActive('/contact-us') || isActive('/order-details') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? 'bg-white border-b' : ''} ${isActive('/about-us') ? 'bg-cyan-950' : ''}`}>
       <div className='w-[80%] h-[80px] flex items-center justify-between mx-auto'>
-        <h1 className='text-4xl text-yellow-500 hover:text-yellow-400 duration-300 font-bold cursor-pointer'>CG</h1>
+        <h1 className='text-4xl text-cyan-500 hover:text-cyan-600 duration-300 font-bold cursor-pointer'>CG</h1>
         <ul className='flex gap-10'>
-          <Link to='/' exact className={`font-semibold text-white/90 text-xl hover:text-yellow-500 duration-300 cursor-pointer ${isActive('/') ? 'text-yellow-500' : ''}`}>Home</Link>
-          <Link to='/store' className={`font-semibold text-white/90 text-xl hover:text-yellow-500 duration-300 cursor-pointer ${isActive('/store') ? 'text-yellow-500' : ''}`}>Store</Link>
-          <Link to='/about-us' className={`font-semibold text-white/90 text-xl hover:text-yellow-500 duration-300 cursor-pointer ${isActive('/about-us') ? 'text-yellow-500' : ''} `}>About Us</Link>
-          <Link to='/contact-us' className={`font-semibold text-white/90 text-xl hover:text-yellow-500 duration-300 cursor-pointer ${isActive('/contact-us') ? 'text-yellow-500' : ''} `}>Contact Us</Link>
+          <Link to='/' exact className={`font-semibold  text-xl hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') || isActive('/about-us') ? 'text-white' : ''} ${isActive('/product') || isActive('/cart') || isActive('/account') || isActive('/contact-us') || isActive('/store')|| isActive('/my-orders') || isActive('/order-details') || isActive('/edit-profile') || isActive('/login') ? 'text-black/50' : ''} ${isActive('/') ? 'text-cyan-500' : ''}`}>Home</Link>
+          <Link to='/store' className={`font-semibold text-xl hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') ? 'text-white' : ''} ${isActive('/cart') || isActive('/account') || isActive('/contact-us') || isActive('/store') || isActive('/my-orders') || isActive('/order-details') || isActive('/edit-profile') || isActive('/login') ? 'text-black/50' : ''}  ${isActive('/store') || isActive('/product') ? 'text-cyan-500' : ''} ${isActive('/') || isActive('/about-us') ? 'text-white' : ''}`}>Store</Link>
+          <Link to='/about-us' className={`font-semibold text-xl hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/account') || isActive('/contact-us') || isActive('/my-orders') || isActive('/store') || isActive('/edit-profile') || isActive('/order-details') || isActive('/login') ? 'text-black/50' : ''} ${isActive('/about-us') ? 'text-cyan-500' : ''}  ${isActive('/') ? 'text-white' : ''}`}>About Us</Link>
+          <Link to='/contact-us' className={`font-semibold text-xl hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') || isActive('/about-us') ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/account') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/order-details') || isActive('/login') ? 'text-black/50' : ''}  ${isActive('/contact-us') ? 'text-cyan-500' : ''}  ${isActive('/') ? 'text-white' : ''}`}>Contact Us</Link>
         </ul>
         <div className='flex gap-5 items-center justify-center'>
           <div className='flex items-center justify-center group'>
-            <FaSearch className='hover:text-yellow-500 cursor-pointer duration-300 text-white/90' size={20} />
-            <div className='ml-3 w-[0px] duration-300 group-hover:w-[200px] invisible group-hover:visible h-[30px] bg-white'>
-              <input type="text" className='h-full pl-2 w-full' />
+            <FaSearch className={`group-hover:text-cyan-500 cursor-pointer duration-300 ${isActive('/checkout') || isActive('/about-us') ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/contact-us') || isActive('/account') || isActive('/order-details') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') || isActive('/store') ? "text-black/50" : 'text-white/90'}`} size={20} />
+            <div className={`ml-3 w-[0px] duration-300 group-hover:w-[200px] rounded invisible group-hover:visible h-[30px] bg-white ${isActive('/about-us') || isActive('/product') || isActive('/checkout') || isActive('/cart') || isActive('/order-details') || isActive('/account') || isActive('/contact-us') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? "border" : ''}`}>
+              <form className='flex justify-center items-center h-full w-full'>
+                <input type="text" className='h-full pl-2 w-full rounded' placeholder='Search an item...' />
+                <button type='submit'></button>
+              </form>
             </div>
           </div>
-          <FaUser className='hover:text-yellow-500 cursor-pointer duration-300 mr-2 text-white/90' size={20} />
-          <FaCartShopping className='hover:text-yellow-500 cursor-pointer duration-300 text-white/90' size={20} />
+          <div className='relative group'>
+            <FaUser className={`hover:text-cyan-500 cursor-pointer duration-300 mr-2 ${isActive('/checkout') || isActive('/') || isActive('/about-us')  ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/contact-us') || isActive('/store') ? "text-black/50" : ''} ${isActive('/account') || isActive('/order-details') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? 'text-cyan-500' : ''}`} size={20} />
+            <div className='w-[150px] z-20 py-5 translate-y-4 group-hover:translate-y-0 duration-500 opacity-0 group-hover:opacity-100 bg-white absolute -left-16 border invisible group-hover:visible'>
+                    <ul className='w-full h-full space-y-3 flex flex-col justify-center ml-5'>
+                        <Link to='/account' className='text-black/50 font-semibold cursor-pointer hover:text-black/70'>My Account</Link>
+                        <Link to='/edit-profile' className='text-black/50 font-semibold cursor-pointer hover:text-black/70'>Edit Profile</Link>
+                        <Link to='/my-orders' className='text-black/50 font-semibold cursor-pointer hover:text-black/70'>My Orders</Link>
+                        <Link to='/login' className='text-black/50 font-semibold cursor-pointer hover:text-black/70'>Log Out</Link>
+                    </ul>
+              </div>
+          </div>
+          <Link to='/cart'>
+            <FaCartShopping className={`hover:text-cyan-500 cursor-pointer duration-300 ${isActive('/cart') || isActive('/checkout') ? 'text-cyan-500' : '' } ${isActive('/product') || isActive('/contact-us') || isActive('/order-details') || isActive('/account') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? "text-black/50" : 'text-white/90'} ${isActive('/about-us') ? 'text-white' : ''} `} size={20} />
+          </Link>
         </div>
       </div>
 
       <button 
         onClick={toggleChatbot} 
-        className='fixed bottom-4 left-4 bg-black p-3 rounded-full'>
+        className='fixed bottom-4 left-4 bg-cyan-950 p-3 rounded-full'>
         <RiRobot2Fill size={30} className='text-white'/>
       </button>
 
       {isChatbotVisible && (
-        <div className=''>
+        <div className='bg-cyan-950'>
           <div className='relative'>
             <button 
               onClick={toggleChatbot} 

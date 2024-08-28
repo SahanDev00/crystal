@@ -3,7 +3,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/f
 
 const Footer = () => {
   return (
-    <div className='w-full bg-yellow-400/30 py-10'>
+    <div className='w-full bg-cyan-400/30 py-10'>
       <div className='w-[90%] mx-auto flex flex-col md:flex-row justify-between px-6'>
         {/* About Us Section */}
         <div className='mb-8 md:mb-0 w-[50%]'>
@@ -18,7 +18,7 @@ const Footer = () => {
         {/* Useful Links */}
         <div className='mb-8 md:mb-0'>
           <h2 className='text-xl font-bold text-gray-700 mb-4'>Useful Links</h2>
-          <ul>
+          <ul className='space-y-1'>
             <li><a href='/' className='text-gray-600 hover:text-gray-800'>Contact Us</a></li>
             <li><a href='/' className='text-gray-600 hover:text-gray-800'>Return Policies</a></li>
             <li><a href='/' className='text-gray-600 hover:text-gray-800'>Shipping Info</a></li>
@@ -31,10 +31,10 @@ const Footer = () => {
         {/* Contact Us Section */}
         <div className='mb-8 md:mb-0'>
           <h2 className='text-xl font-bold text-gray-700 mb-4'>Contact Us</h2>
-          <p className='text-gray-600'>
+          <p className='text-gray-600 mb-1'>
             Email: info@example.com
           </p>
-          <p className='text-gray-600'>
+          <p className='text-gray-600 mb-1'>
             Phone: +123 456 7890
           </p>
           <p className='text-gray-600'>

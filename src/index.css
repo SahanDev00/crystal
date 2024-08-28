@@ -10,7 +10,6 @@
     color: gray !important; /* Change this to your desired active dot color */
   }
 
-
   @keyframes floatUp {
     to {
       opacity: 1;

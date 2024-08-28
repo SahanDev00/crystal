@@ -42,7 +42,7 @@ const Hero = () => {
               <div className="w-1/2 p-10 text-white justify-center mt-10">
                 <h1 className="text-4xl font-bold mb-4">{slide.heading}</h1>
                 <p className="text-lg mb-6">{slide.text}</p>
-                <button className="bg-green-500 text-white py-2 px-5 rounded hover:bg-green-700 transition duration-300">
+                <button className="bg-cyan-500/80 text-white py-2 px-5 rounded hover:bg-cyan-500/90 transition duration-300">
                   Explore
                 </button>
               </div>
