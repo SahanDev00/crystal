@@ -55,7 +55,7 @@ const Navbar = () => {
           <div className='relative group'>
             <FaUser className={`hover:text-cyan-500 cursor-pointer duration-300 mr-2 ${isActive('/checkout') || isActive('/') || isActive('/about-us')  ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/contact-us') || isActive('/store') ? "text-black/50" : ''} ${isActive('/account') || isActive('/order-details') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? 'text-cyan-500' : ''}`} size={20} />
             <div className='w-[150px] z-20 py-5 translate-y-4 group-hover:translate-y-0 duration-500 opacity-0 group-hover:opacity-100 bg-white absolute -left-16 border invisible group-hover:visible'>
-                    <ul className='w-full h-full space-y-3 flex flex-col justify-center ml-5'>
+                    <ul className='w-full h-full space-y-3 flex flex-col justify-center pl-5'>
                         <Link to='/account' className='text-black/50 font-semibold cursor-pointer hover:text-black/70'>My Account</Link>
                         <Link to='/edit-profile' className='text-black/50 font-semibold cursor-pointer hover:text-black/70'>Edit Profile</Link>
                         <Link to='/my-orders' className='text-black/50 font-semibold cursor-pointer hover:text-black/70'>My Orders</Link>

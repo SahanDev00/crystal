@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../components/Hero'
+import Hero2 from '../components/Hero2'
 import Collection from '../components/Collection'
 import Cards from '../components/Cards'
 import WhyMats from '../components/WhyMats'
@@ -10,7 +10,7 @@ import CustomProducts from '../components/CustomProducts'
 const Home = () => {
   return (
     <div className='w-full'>
-        <Hero/>
+        <Hero2/>
         <Collection/>
         <Cards/>
         <WhyMats/>

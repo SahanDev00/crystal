@@ -16,7 +16,7 @@ import Checkout from './components/Cart/Checkout';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-cyan-50/20">
       <Router>
         <Navbar/>
         <Routes>

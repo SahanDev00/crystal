@@ -1,10 +1,25 @@
 import React from 'react'
 import pic from '../../images/rug1.jpeg'
+import pic2 from '../../images/rug2.jpeg'
+import pic3 from '../../images/rug3.jpeg'
+import pic4 from '../../images/rug4.jpeg'
+import pic5 from '../../images/product1.jpeg'
+import pic6 from '../../images/product2.jpeg'
+import pic7 from '../../images/product3.jpeg'
+import pic8 from '../../images/product4.jpeg'
+import pic9 from '../../images/product5.jpeg'
+import pic10 from '../../images/product7.jpeg'
+import pic11 from '../../images/product8.jpeg'
+import pic12 from '../../images/product9.jpeg'
+import pic13 from '../../images/product10.jpeg'
+import pic14 from '../../images/product11.jpeg'
+import pic15 from '../../images/product12.jpeg'
+import pic16 from '../../images/product6.jpeg'
 import { Link } from 'react-router-dom'
 
 const AllProducts = () => {
 
-  const products = [
+  const Category1 = [
     {
       name: 'Product Example 1',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
@@ -13,17 +28,83 @@ const AllProducts = () => {
     {
       name: 'Product Example 2',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
-      img: pic
+      img: pic2
     },
     {
       name: 'Product Example 3',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
-      img: pic
+      img: pic3
     },
     {
       name: 'Product Example 4',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
-      img: pic
+      img: pic4
+    },
+    {
+      name: 'Product Example 5',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      img: pic5
+    },
+    {
+      name: 'Product Example 6',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      img: pic6
+    },
+  ]
+
+  const Category2 = [
+    {
+      name: 'Product Example 1',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      img: pic7
+    },
+    {
+      name: 'Product Example 2',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      img: pic8
+    },
+    {
+      name: 'Product Example 3',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      img: pic9
+    },
+    {
+      name: 'Product Example 4',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      img: pic10
+    },
+    {
+      name: 'Product Example 5',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      img: pic11
+    },
+    {
+      name: 'Product Example 6',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      img: pic12
+    },
+  ]
+
+  const Category3 = [
+    {
+      name: 'Product Example 1',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      img: pic13
+    },
+    {
+      name: 'Product Example 2',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      img: pic14
+    },
+    {
+      name: 'Product Example 3',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      img: pic15
+    },
+    {
+      name: 'Product Example 4',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      img: pic16
     },
     {
       name: 'Product Example 5',
@@ -33,51 +114,109 @@ const AllProducts = () => {
     {
       name: 'Product Example 6',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
-      img: pic
+      img: pic5
+    },
+  ]
+
+  const Category4 = [
+    {
+      name: 'Product Example 1',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      img: pic2
     },
     {
-      name: 'Product Example 7',
+      name: 'Product Example 2',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
-      img: pic
+      img: pic3
     },
     {
-      name: 'Product Example 8',
+      name: 'Product Example 3',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
-      img: pic
+      img: pic7
     },
     {
-      name: 'Product Example 9',
+      name: 'Product Example 4',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
-      img: pic
+      img: pic5
     },
     {
-      name: 'Product Example 10',
+      name: 'Product Example 5',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
-      img: pic
+      img: pic9
     },
     {
-      name: 'Product Example 11',
+      name: 'Product Example 6',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
-      img: pic
-    },
-    {
-      name: 'Product Example 12',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
-      img: pic
+      img: pic11
     },
   ]
 
   return (
     <div className='w-full'>
       <h1 className='font-bold text-center my-10 text-3xl text-black/80 font-roboto'>Explore Our Products</h1>
-      <div className='w-[80%] gap-5 mx-auto flex flex-wrap justify-center items-center'>
-        {products.map(product => (
-          <Link to='/product' className='w-[350px] h-[300px] cursor-pointer hover:shadow-lg duration-150 shadow'>
-            <img src={product.img} alt="" className='w-full h-[200px] object-cover' />
-            <h1 className='text-center text-cyan-600 font-semibold mt-2 font-poppins'>{product.name}</h1>
-            <p className='text-center text-black/70'>{product.description}</p>
-          </Link>
-        ))}
+      <div id='category1' className='w-[80%] mx-auto'>
+        <h2 className='text-2xl font-semibold uppercase mb-3 text-cyan-900'>Category 1</h2>
+        <div className='w-full h-full mx-auto grid grid-cols-3 gap-5'>
+          {Category1.map(product => (
+            <div className='w-full h-[500px] cursor-pointer hover:shadow-lg duration-150 shadow'>
+              <Link to='/product' className=''>
+                <img src={product.img} alt="" className='w-full h-[400px] object-cover' />
+                <div className='w-full h-[100px] flex flex-col items-center justify-center'>
+                  <h1 className='text-center text-cyan-600 font-semibold mt-2 font-poppins'>{product.name}</h1>
+                  <p className='text-center text-black/70 w-[90%]'>{product.description}</p>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div id='category2' className='w-[80%] mx-auto mt-20'>
+        <h2 className='text-2xl font-semibold uppercase mb-3 text-cyan-900'>Category 2</h2>
+        <div className='w-full h-full mx-auto grid grid-cols-3 gap-5'>
+          {Category2.map(product => (
+            <div className='w-full h-[500px] cursor-pointer hover:shadow-lg duration-150 shadow'>
+              <Link to='/product' className=''>
+                <img src={product.img} alt="" className='w-full h-[400px] object-cover' />
+                <div className='w-full h-[100px] flex flex-col items-center justify-center'>
+                  <h1 className='text-center text-cyan-600 font-semibold mt-2 font-poppins'>{product.name}</h1>
+                  <p className='text-center text-black/70 w-[90%]'>{product.description}</p>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div id='category3' className='w-[80%] mx-auto mt-20'>
+        <h2 className='text-2xl font-semibold uppercase mb-3 text-cyan-900'>Category 3</h2>
+        <div className='w-full h-full mx-auto grid grid-cols-3 gap-5'>
+          {Category3.map(product => (
+            <div className='w-full h-[500px] cursor-pointer hover:shadow-lg duration-150 shadow'>
+              <Link to='/product' className=''>
+                <img src={product.img} alt="" className='w-full h-[400px] object-cover' />
+                <div className='w-full h-[100px] flex flex-col items-center justify-center'>
+                  <h1 className='text-center text-cyan-600 font-semibold mt-2 font-poppins'>{product.name}</h1>
+                  <p className='text-center text-black/70 w-[90%]'>{product.description}</p>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div id='category4' className='w-[80%] mx-auto mt-20'>
+        <h2 className='text-2xl font-semibold uppercase mb-3 text-cyan-900'>Category 4</h2>
+        <div className='w-full h-full mx-auto grid grid-cols-3 gap-5'>
+          {Category4.map(product => (
+            <div className='w-full h-[500px] cursor-pointer hover:shadow-lg duration-150 shadow'>
+              <Link to='/product' className=''>
+                <img src={product.img} alt="" className='w-full h-[400px] object-cover' />
+                <div className='w-full h-[100px] flex flex-col items-center justify-center'>
+                  <h1 className='text-center text-cyan-600 font-semibold mt-2 font-poppins'>{product.name}</h1>
+                  <p className='text-center text-black/70 w-[90%]'>{product.description}</p>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
