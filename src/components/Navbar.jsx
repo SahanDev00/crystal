@@ -64,7 +64,7 @@ const Navbar = () => {
               </div>
           </div>
           <Link to='/cart'>
-            <FaCartShopping className={`hover:text-cyan-500 cursor-pointer duration-300 ${isActive('/cart') || isActive('/checkout') ? 'text-cyan-500' : '' } ${isActive('/product') || isActive('/contact-us') || isActive('/order-details') || isActive('/account') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? "text-black/50" : 'text-white/90'} ${isActive('/about-us') ? 'text-white' : ''} `} size={20} />
+            <FaCartShopping className={`hover:text-cyan-500 cursor-pointer duration-300 ${isActive('/product') || isActive('/contact-us') || isActive('/order-details') || isActive('/account') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? "text-black/50" : ''} ${isActive('/about-us') || isActive('/') ? 'text-white' : ''} ${isActive('/cart') || isActive('/checkout') ? 'text-cyan-500 ' : '' } `} size={20} />
           </Link>
         </div>
       </div>
