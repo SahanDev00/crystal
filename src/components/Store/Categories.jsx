@@ -4,7 +4,7 @@ import { Link as ScrollLink } from 'react-scroll'
 
 const Categories = () => {
   return (
-    <div className='w-full border bg-cyan-800'>
+    <div id='categories' className='w-full border bg-cyan-800'>
       <div className='w-[80%] py-2 mx-auto mt-20 flex flex-wrap justify-center gap-10 items-center'>
         <div className='relative group'>
           <ScrollLink to="category1" smooth={true} duration={500} offset={-100}>

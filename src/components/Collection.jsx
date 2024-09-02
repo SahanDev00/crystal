@@ -36,7 +36,7 @@ const Collection = () => {
             <div
               key={index}
               ref={(el) => rugsRef.current[index] = el}
-              className='h-[450px] border w-full relative hover:shadow-md duration-300 hover:bg-black group  cursor-pointer opacity-0 transform translate-y-10'
+              className='h-[450px] border w-full relative hover:shadow-md duration-300 hover:bg-black group cursor-pointer opacity-0 transform translate-y-10'
             >
               <img src={pic} className='absolute w-full h-full object-cover duration-300 group-hover:opacity-30' alt={`Rug ${index + 1}`} />
               <div className='absolute flex justify-center items-center flex-col inset-0 text-white opacity-0 group-hover:opacity-100'>
