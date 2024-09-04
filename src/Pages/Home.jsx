@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Hero2 from '../components/Hero2'
 import Collection from '../components/Collection'
 import Cards from '../components/Cards'
@@ -8,6 +8,11 @@ import LatestProducts from '../components/LatestProducts'
 import CustomProducts from '../components/CustomProducts'
 
 const Home = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className='w-full'>
         <Hero2/>

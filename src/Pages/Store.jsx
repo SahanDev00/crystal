@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Categories from '../components/Store/Categories'
 import Collection from '../components/Collection'
 import AllProducts from '../components/Store/AllProducts'
@@ -7,6 +7,11 @@ import { FaArrowUp } from 'react-icons/fa'
 import { Link } from 'react-scroll'
 
 const Store = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
         <Categories/>
