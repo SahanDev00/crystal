@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import pic from '../images/heroPic.jpeg'
 
 const ContactUs = () => {
 
@@ -7,10 +8,10 @@ const ContactUs = () => {
   }, []);
 
   return (
-    <div className='w-full mt-40'>
-      <div className=' h-full w-full relative mb-10 grid justify-center grid-cols-1 md:grid-cols-2 mt-10 sm:mt-10 md:mt-16'>
+    <div className='w-full mt-20'>
+      <div className=' h-full w-full relative  grid justify-center grid-cols-1 md:grid-cols-2 mt-10 sm:mt-10 md:mt-16'>
         {/* Form */}
-        <div className='border-r-2'>
+        <div className='border-r-2 mt-10'>
           <div className='mx-auto w-[80%]'>
             <h1 className='text-4xl font-bold mb-3 text-black/80 underline '>Send Us a Message</h1>
             <form className='space-y-5 mt-10'>
@@ -32,20 +33,21 @@ const ContactUs = () => {
         </div>
 
         {/* Details */}
-        <div className='mt-16 md:mt-0'>
-          <div className='mx-auto w-[80%]'>
-            <h1 className='text-4xl font-bold mb-5 text-black/80 underline'>Our Company</h1>
+        <div className='mt-16 md:mt-0 relative bg-black'>
+          <img src={pic} alt="" className='w-full h-[550px] object-cover bg-black opacity-60'/>
+          <div className='mx-auto w-[80%] absolute top-0 left-5 mt-10'>
+            <h1 className='text-4xl font-bold mb-5 text-cyan-100 underline'>Our Company</h1>
             <div className='w-full'>
               <div>
-                <h1 className='text-cyan-600 text-xl font-semibold'>Address</h1>
-                <p className='text-black/80 mt-2'>Lorem, ipsum dolor.<br/>Lorem, ipsum.<br/>lorem</p>
+                <h1 className='text-cyan-200 text-2xl font-semibold'>Address</h1>
+                <p className='text-white mt-2 text-lg font-semibold'>Lorem, ipsum dolor.<br/>Lorem, ipsum.<br/>lorem</p>
               </div>
-              <div className='text-black/80 mt-8 md:mt-4'>
-                <h1 className='text-cyan-600 text-xl font-semibold mb-2'>Customer Hotlines</h1>
-                <p>HotLine: 0712-345-678</p>
-                <p>Showroom: 071-234-5678</p> 
-                <p>Workshop: 071-234-5678 / 071-234-5678</p>
-                <p>Email: email@gmail.com</p>
+              <div className='text-white mt-8 md:mt-4'>
+                <h1 className='text-cyan-200 text-2xl font-semibold mb-2'>Customer Hotlines</h1>
+                <p className='text-lg font-semibold'>HotLine: 0712-345-678</p>
+                <p className='text-lg font-semibold'>Showroom: 071-234-5678</p> 
+                <p className='text-lg font-semibold'>Workshop: 071-234-5678 / 071-234-5678</p>
+                <p className='text-lg font-semibold'>Email: email@gmail.com</p>
               </div>
             </div>
           </div>
