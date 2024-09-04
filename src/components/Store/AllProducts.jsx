@@ -24,31 +24,37 @@ const AllProducts = () => {
     {
       name: 'Product Example 1',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic
     },
     {
       name: 'Product Example 2',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 300,
       img: pic2
     },
     {
       name: 'Product Example 3',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 500,
       img: pic3
     },
     {
       name: 'Product Example 4',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 1200,
       img: pic4
     },
     {
       name: 'Product Example 5',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 2200,
       img: pic5
     },
     {
       name: 'Product Example 6',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic6
     },
   ]
@@ -57,31 +63,37 @@ const AllProducts = () => {
     {
       name: 'Product Example 1',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 300,
       img: pic7
     },
     {
       name: 'Product Example 2',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 500,
       img: pic8
     },
     {
       name: 'Product Example 3',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 800,
       img: pic9
     },
     {
       name: 'Product Example 4',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 1200,
       img: pic10
     },
     {
       name: 'Product Example 5',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 1300,
       img: pic11
     },
     {
       name: 'Product Example 6',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic12
     },
   ]
@@ -90,31 +102,37 @@ const AllProducts = () => {
     {
       name: 'Product Example 1',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic13
     },
     {
       name: 'Product Example 2',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic14
     },
     {
       name: 'Product Example 3',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic15
     },
     {
       name: 'Product Example 4',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic16
     },
     {
       name: 'Product Example 5',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic
     },
     {
       name: 'Product Example 6',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic5
     },
   ]
@@ -123,31 +141,37 @@ const AllProducts = () => {
     {
       name: 'Product Example 1',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic2
     },
     {
       name: 'Product Example 2',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic3
     },
     {
       name: 'Product Example 3',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic7
     },
     {
       name: 'Product Example 4',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic5
     },
     {
       name: 'Product Example 5',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic9
     },
     {
       name: 'Product Example 6',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel.',
+      price: 200,
       img: pic11
     },
   ]
@@ -163,6 +187,7 @@ const AllProducts = () => {
               <button className='absolute right-3 top-3 border rounded-full p-3 text-cyan-300 bg-black/70 hidden group-hover:block hover:text-cyan-400'><FaCartPlus size={20}/></button>
               <Link to='/product' className=''>
                 <img src={product.img} alt="" className='w-full h-[400px] object-cover' />
+                <p className='absolute text-cyan-300 w-full bg-black/80 bottom-24 text-center py-2 font-semibold text-lg opacity-0 group-hover:opacity-100 duration-200'>Rs.{product.price}</p>
                 <div className='w-full h-[100px] flex flex-col items-center justify-center'>
                   <h1 className='text-center text-cyan-600 font-semibold mt-2 font-poppins'>{product.name}</h1>
                   <p className='text-center text-black/70 w-[90%]'>{product.description}</p>
@@ -180,6 +205,7 @@ const AllProducts = () => {
               <button className='absolute right-3 top-3 border rounded-full p-3 text-cyan-300 bg-black/70 hidden group-hover:block hover:text-cyan-400'><FaCartPlus size={20}/></button>
               <Link to='/product' className=''>
                 <img src={product.img} alt="" className='w-full h-[400px] object-cover' />
+                <p className='absolute text-cyan-300 w-full bg-black/80 bottom-24 text-center py-2 font-semibold text-lg opacity-0 group-hover:opacity-100 duration-200'>Rs.{product.price}</p>
                 <div className='w-full h-[100px] flex flex-col items-center justify-center'>
                   <h1 className='text-center text-cyan-600 font-semibold mt-2 font-poppins'>{product.name}</h1>
                   <p className='text-center text-black/70 w-[90%]'>{product.description}</p>
@@ -197,6 +223,7 @@ const AllProducts = () => {
               <button className='absolute right-3 top-3 border rounded-full p-3 text-cyan-300 bg-black/70 hidden group-hover:block hover:text-cyan-400'><FaCartPlus size={20}/></button>
               <Link to='/product' className=''>
                 <img src={product.img} alt="" className='w-full h-[400px] object-cover' />
+                <p className='absolute text-cyan-300 w-full bg-black/80 bottom-24 text-center py-2 font-semibold text-lg opacity-0 group-hover:opacity-100 duration-200'>Rs.{product.price}</p>
                 <div className='w-full h-[100px] flex flex-col items-center justify-center'>
                   <h1 className='text-center text-cyan-600 font-semibold mt-2 font-poppins'>{product.name}</h1>
                   <p className='text-center text-black/70 w-[90%]'>{product.description}</p>
@@ -214,6 +241,7 @@ const AllProducts = () => {
               <button className='absolute right-3 top-3 border rounded-full p-3 text-cyan-300 bg-black/70 hidden group-hover:block hover:text-cyan-400'><FaCartPlus size={20}/></button>
               <Link to='/product' className=''>
                 <img src={product.img} alt="" className='w-full h-[400px] object-cover' />
+                <p className='absolute text-cyan-300 w-full bg-black/80 bottom-24 text-center py-2 font-semibold text-lg opacity-0 group-hover:opacity-100 duration-200'>Rs.{product.price}</p>
                 <div className='w-full h-[100px] flex flex-col items-center justify-center'>
                   <h1 className='text-center text-cyan-600 font-semibold mt-2 font-poppins'>{product.name}</h1>
                   <p className='text-center text-black/70 w-[90%]'>{product.description}</p>
