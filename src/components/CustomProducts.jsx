@@ -10,18 +10,18 @@ const CustomProducts = () => {
                 <div className='w-full h-[600px]'>
                     <img src={pic1} className='h-full w-full object-cover' alt="" />
                 </div>
-                <div className='flex flex-col justify-center items-center'>
-                    <h1 className='text-center text-gray-500 text-2xl font-semibold uppercase font-roboto'>Lorem Ipsum Customs</h1>
-                    <p className='text-center w-[60%] mt-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaque repellendus odit quae ratione debitis perspiciatis dolore consequatur a at!</p>
-                    <p className='text-center w-[60%] mt-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaque repellendus odit quae ratione debitis perspiciatis dolore consequatur a at!</p>
+                <div className='flex flex-col justify-center items-center bg-cyan-50'>
+                    <h1 className='text-center text-gray-600 text-2xl font-semibold uppercase font-roboto'>Lorem Ipsum Customs</h1>
+                    <p className='text-center w-[60%] mt-5 text-black/70'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaque repellendus odit quae ratione debitis perspiciatis dolore consequatur a at!</p>
+                    <p className='text-center w-[60%] mt-5 text-black/70'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaque repellendus odit quae ratione debitis perspiciatis dolore consequatur a at!</p>
                     <button className='px-4 font-semibold py-2 mt-5 border hover:bg-cyan-400/20 border-cyan-400 shadow text-gray-800 rounded font-poppins'>BUY CUSTOM MATS</button>
                 </div>
             </div>
             <div className='grid grid-cols-2 w-full'>
-                <div className='flex flex-col justify-center items-center'>
-                    <h1 className='text-center text-gray-500 text-2xl font-semibold uppercase font-roboto'>Lorem Ipsum Customs</h1>
-                    <p className='text-center w-[60%] mt-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaque repellendus odit quae ratione debitis perspiciatis dolore consequatur a at!</p>
-                    <p className='text-center w-[60%] mt-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaque repellendus odit quae ratione debitis perspiciatis dolore consequatur a at!</p>
+                <div className='flex flex-col justify-center items-center bg-cyan-50'>
+                    <h1 className='text-center text-gray-600 text-2xl font-semibold uppercase font-roboto'>Lorem Ipsum Customs</h1>
+                    <p className='text-center w-[60%] mt-5 text-black/70'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaque repellendus odit quae ratione debitis perspiciatis dolore consequatur a at!</p>
+                    <p className='text-center w-[60%] mt-5 text-black/70'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid itaque repellendus odit quae ratione debitis perspiciatis dolore consequatur a at!</p>
                     <button className='px-4 font-semibold py-2 mt-5 border hover:bg-cyan-400/20 border-cyan-400 shadow text-gray-800 rounded font-poppins'>BUY CUSTOM MATS</button>
                 </div>
                 <div className='w-full h-[600px]'>
