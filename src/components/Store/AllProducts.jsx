@@ -16,6 +16,7 @@ import pic14 from '../../images/product11.jpeg'
 import pic15 from '../../images/product12.jpeg'
 import pic16 from '../../images/product6.jpeg'
 import { Link } from 'react-router-dom'
+import { FaCartPlus } from 'react-icons/fa'
 
 const AllProducts = () => {
 
@@ -158,7 +159,8 @@ const AllProducts = () => {
         <h2 className='text-2xl font-semibold uppercase mb-3 text-cyan-900'>Category 1</h2>
         <div className='w-full h-full mx-auto grid grid-cols-3 gap-5'>
           {Category1.map(product => (
-            <div className='w-full h-[500px] cursor-pointer hover:shadow-lg duration-150 shadow'>
+            <div className='w-full h-[500px] relative cursor-pointer hover:shadow-lg duration-150 shadow group'>
+              <button className='absolute right-3 top-3 border rounded-full p-3 text-cyan-300 bg-black/70 hidden group-hover:block hover:text-cyan-400'><FaCartPlus size={20}/></button>
               <Link to='/product' className=''>
                 <img src={product.img} alt="" className='w-full h-[400px] object-cover' />
                 <div className='w-full h-[100px] flex flex-col items-center justify-center'>
@@ -174,7 +176,8 @@ const AllProducts = () => {
         <h2 className='text-2xl font-semibold uppercase mb-3 text-cyan-900'>Category 2</h2>
         <div className='w-full h-full mx-auto grid grid-cols-3 gap-5'>
           {Category2.map(product => (
-            <div className='w-full h-[500px] cursor-pointer hover:shadow-lg duration-150 shadow'>
+            <div className='w-full h-[500px] relative cursor-pointer hover:shadow-lg duration-150 shadow group'>
+              <button className='absolute right-3 top-3 border rounded-full p-3 text-cyan-300 bg-black/70 hidden group-hover:block hover:text-cyan-400'><FaCartPlus size={20}/></button>
               <Link to='/product' className=''>
                 <img src={product.img} alt="" className='w-full h-[400px] object-cover' />
                 <div className='w-full h-[100px] flex flex-col items-center justify-center'>
@@ -190,7 +193,8 @@ const AllProducts = () => {
         <h2 className='text-2xl font-semibold uppercase mb-3 text-cyan-900'>Category 3</h2>
         <div className='w-full h-full mx-auto grid grid-cols-3 gap-5'>
           {Category3.map(product => (
-            <div className='w-full h-[500px] cursor-pointer hover:shadow-lg duration-150 shadow'>
+            <div className='w-full h-[500px] relative cursor-pointer hover:shadow-lg duration-150 shadow group'>
+              <button className='absolute right-3 top-3 border rounded-full p-3 text-cyan-300 bg-black/70 hidden group-hover:block hover:text-cyan-400'><FaCartPlus size={20}/></button>
               <Link to='/product' className=''>
                 <img src={product.img} alt="" className='w-full h-[400px] object-cover' />
                 <div className='w-full h-[100px] flex flex-col items-center justify-center'>
@@ -206,7 +210,8 @@ const AllProducts = () => {
         <h2 className='text-2xl font-semibold uppercase mb-3 text-cyan-900'>Category 4</h2>
         <div className='w-full h-full mx-auto grid grid-cols-3 gap-5'>
           {Category4.map(product => (
-            <div className='w-full h-[500px] cursor-pointer hover:shadow-lg duration-150 shadow'>
+            <div className='w-full h-[500px] relative cursor-pointer hover:shadow-lg duration-150 shadow group'>
+              <button className='absolute right-3 top-3 border rounded-full p-3 text-cyan-300 bg-black/70 hidden group-hover:block hover:text-cyan-400'><FaCartPlus size={20}/></button>
               <Link to='/product' className=''>
                 <img src={product.img} alt="" className='w-full h-[400px] object-cover' />
                 <div className='w-full h-[100px] flex flex-col items-center justify-center'>
