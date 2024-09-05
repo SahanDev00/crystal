@@ -6,6 +6,7 @@ import WhyMats from '../components/WhyMats'
 import Features from '../components/Features'
 import LatestProducts from '../components/LatestProducts'
 import CustomProducts from '../components/CustomProducts'
+import GetStarted from '../components/GetStarted'
 
 const Home = () => {
 
@@ -21,6 +22,7 @@ const Home = () => {
         <WhyMats/>
         <LatestProducts/>
         <CustomProducts/>
+        <GetStarted/>
         <Features/>
     </div>
   )
