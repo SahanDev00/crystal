@@ -38,8 +38,8 @@ const Cards = () => {
       <Slider {...settings} className='w-[55%] mx-auto'>
         {products.map((product, index) => (
           <div key={index} className='relative w-full h-[650px]'>
-            <img src={product.img} alt={product.title} className='w-[500px] shadow-lg absolute top-0 left-2 z-10' />
-            <div className='w-[770px] h-[600px] bg-cyan-400/20 absolute right-2 bottom-0'>
+            <img src={product.img} alt={product.title} className='w-[500px] shadow-lg absolute top-0 left-2 z-10 rounded-lg' />
+            <div className='w-[770px] h-[600px] bg-cyan-400/20 absolute right-2 bottom-0 rounded-lg'>
               <div className='w-full h-full flex'>
                 <div className='w-1/2'/>
                 <div className='w-full h-full flex items-center'>
