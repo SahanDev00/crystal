@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Country from './Countries';
+import { Helmet } from 'react-helmet';
 
 const Checkout = () => {
   // State to manage form inputs
@@ -32,6 +33,9 @@ const Checkout = () => {
 
   return (
     <div className='w-full mx-auto mt-28'>
+      <Helmet>
+        <title>Crystal Mats | Checkout</title>
+      </Helmet>
       <div className='w-full mx-auto mb-7 md:mb-20'>
         <h1 className='mt-10 md:mt-20 md:mb-5 text-2xl md:text-4xl text-black/80 font-bold text-center font-poppins'>Place Order</h1>
         <div className='grid gap-4 grid-cols-1 md:grid-cols-2 mx-auto w-[80%]'>

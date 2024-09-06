@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import loginPic from '../../images/login.png';
 import signUpPic from '../../images/signup.png';
 import Countries from './Countries';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true); // State to track whether it's login or sign-up view
@@ -12,6 +13,9 @@ const Login = () => {
 
   return (
     <div className='w-full mt-24 h-full relative flex items-center py-10'>
+        <Helmet>
+          <title>Crystal Mats | Login</title>
+        </Helmet>
       <div className='w-[70%] h-full flex mx-auto items-center md:bg-white rounded-3xl'>
         {isLogin ? (
           // Login

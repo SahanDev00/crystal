@@ -3,6 +3,7 @@ import Categories from '../components/Store/Categories'
 import Product from '../components/Store/Product'
 import Questions from '../components/Store/Questions'
 import Collection from '../components/Collection'
+import { Helmet } from 'react-helmet'
 
 const ProductsPage = () => {
 
@@ -12,7 +13,9 @@ const ProductsPage = () => {
 
   return (
     <div>
-        <Categories/>
+        <Helmet>
+          <title>Crystal Mats | Products</title>
+        </Helmet>
         <Product/>
         <Questions/>
         <Collection/>

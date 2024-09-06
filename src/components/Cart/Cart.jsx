@@ -6,6 +6,7 @@ import pic from '../../images/rug.png'
 import pic1 from '../../images/rug1.jpeg'
 import pic2 from '../../images/rug3.jpeg'
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([
@@ -67,6 +68,9 @@ const Cart = () => {
 
   return (
     <div className="w-[95%] mx-auto mt-24 lg:min-h-[600px] xl:min-h-[730px] relative py-10">
+        <Helmet>
+          <title>Crystal Mats | Cart</title>
+        </Helmet>
       <h1 className="text-2xl md:text-3xl font-bold mb-4 text-black/70 text-center font-poppins">Shopping Cart</h1>
       {cartItems.length === 0 ? (
         <p className='text-black/70 ml-10 md:ml-40 text-sm md:text-xl font-poppins'>Your cart is empty.</p>

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import pic from '../images/heroPic.jpeg'
+import { Helmet } from 'react-helmet';
 
 const ContactUs = () => {
 
@@ -9,6 +10,9 @@ const ContactUs = () => {
 
   return (
     <div className='w-full mt-20'>
+        <Helmet>
+          <title>Crystal Mats | Contact Us</title>
+        </Helmet>
       <div className=' h-full w-full relative  grid justify-center grid-cols-1 md:grid-cols-2 mt-10 sm:mt-10 md:mt-16'>
         {/* Form */}
         <div className='border-r-2 mt-10'>

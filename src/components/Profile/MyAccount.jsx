@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { FaParachuteBox, FaRegEdit } from 'react-icons/fa'
 import { IoIosLogOut } from 'react-icons/io'
 import { Link } from 'react-router-dom'
@@ -6,6 +7,9 @@ import { Link } from 'react-router-dom'
 const MyAccount = () => {
   return (
     <div className='w-full mt-32'>
+        <Helmet>
+          <title>Crystal Mats | My Account</title>
+        </Helmet>
         <div className='w-[90%] mx-auto'>
             <h1 className='text-3xl md:text-4xl text-black/70 font-bold text-center my-10 uppercase'>Personal Details</h1>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5 my-5'>

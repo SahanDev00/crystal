@@ -1,9 +1,13 @@
 import React from 'react'
 import Countries from './Countries'
+import { Helmet } from 'react-helmet'
 
 const EditProfile = () => {
   return (
     <div className='mt-32 w-full'>
+        <Helmet>
+          <title>Crystal Mats | Edit Profile</title>
+        </Helmet>
         <div className=' xl:h-[600px] container xl:mt-20 mx-auto'>
             <div>
                 <h1 className='text-3xl text-black/70 mt-5 font-bold text-center font-poppins'>Edit Your Details</h1>

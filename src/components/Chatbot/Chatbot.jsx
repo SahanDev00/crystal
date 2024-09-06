@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { getResponseFromService } from './queries';
+import { Helmet } from 'react-helmet';
 
 // Simulating an NLP service response
 <getResponseFromService/>
@@ -36,6 +37,9 @@ const Chatbot = () => {
 
   return (
     <div className="flex items-center justify-center h-screen relative">
+        <Helmet>
+          <title>Crystal Mats | ChatBot</title>
+        </Helmet>
         <div className="absolute m-4 w-[70%] h-[75%] bg-white border border-gray-300 rounded-lg shadow-lg">
             <h1 className='font-bold text-3xl p-4'>CHAT BOT</h1>
             <div className="px-4 h-[600px] overflow-y-scroll">

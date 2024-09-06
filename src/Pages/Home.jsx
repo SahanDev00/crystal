@@ -7,6 +7,8 @@ import Features from '../components/Features'
 import LatestProducts from '../components/LatestProducts'
 import CustomProducts from '../components/CustomProducts'
 import GetStarted from '../components/GetStarted'
+import Gallery from '../components/Gallery'
+import { Helmet } from 'react-helmet'
 
 const Home = () => {
 
@@ -14,10 +16,16 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
 
+
+
   return (
     <div className='w-full'>
+        <Helmet>
+          <title>Crystal Mats | Home</title>
+        </Helmet>
         <Hero2/>
         <Collection/>
+        <Gallery/>
         <Cards/>
         <WhyMats/>
         <LatestProducts/>

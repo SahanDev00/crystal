@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 const Orders = () => {
@@ -32,6 +33,9 @@ const Orders = () => {
 
   return (
     <div className='w-[90%] md:min-h-[700px] lg:min-h-[650px] xl:min-h-[700px] 2xl:min-h-[800px] relative mx-auto px-4 py-8 mb-5 mt-20'>
+        <Helmet>
+          <title>Crystal Mats | My Orders</title>
+        </Helmet>
       <h1 className='text-2xl font-bold mb-5 text-black/70 font-poppins'>Track My Orders</h1>
       <div className='overflow-x-auto'>
         <table className='min-w-full bg-cyan-400/20 text-black/60 border border-gray-200'>

@@ -3,7 +3,7 @@ import pic from '../../images/rug1.jpeg'
 
 const Product = () => {
   return (
-    <div className='w-full my-10'>
+    <div className='w-full mt-28 mb-10'>
         <h1 className='text-3xl text-center font-bold my-5 text-gray-600 font-roboto'>Clicked Product</h1>
         <div className='w-[70%] grid grid-cols-2 mx-auto'>
             <div className='w-full mt-5'>

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import AboutUs from '../components/AboutUs/AboutUs'
+import { Helmet } from 'react-helmet';
 
 const AboutUsPage = () => {
 
@@ -9,6 +10,9 @@ const AboutUsPage = () => {
 
   return (
     <div>
+        <Helmet>
+          <title>Crystal Mats | About Us</title>
+        </Helmet>
       <AboutUs/>
     </div>
   )

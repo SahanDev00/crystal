@@ -5,6 +5,7 @@ import AllProducts from '../components/Store/AllProducts'
 import Questions from '../components/AboutUs/Questions'
 import { FaArrowUp } from 'react-icons/fa'
 import { Link } from 'react-scroll'
+import { Helmet } from 'react-helmet'
 
 const Store = () => {
 
@@ -14,6 +15,9 @@ const Store = () => {
 
   return (
     <div>
+        <Helmet>
+          <title>Crystal Mats | Store</title>
+        </Helmet>
         <Categories/>
         <AllProducts/>
         <Questions/>
