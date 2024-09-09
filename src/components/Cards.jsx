@@ -34,7 +34,7 @@ const Cards = () => {
 
   return (
     <div className='w-full mt-28 mb-10'>
-      <h1 className='text-3xl font-bold text-center mb-10 text-gray-700 font-roboto'>GLIMPSE OF OUR PRODUCTS</h1>
+      <h1 className='text-3xl font-bold text-center mb-10 text-gray-700 font-roboto'>GLIMPSE OF OUR <span className='text-cyan-600'>PRODUCTS</span></h1>
       <Slider {...settings} className='w-[55%] mx-auto'>
         {products.map((product, index) => (
           <div key={index} className='relative w-full h-[650px]'>

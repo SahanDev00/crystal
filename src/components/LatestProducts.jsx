@@ -30,7 +30,7 @@ const LatestProducts = () => {
   return (
     <div className='w-full mt-20 mb-28'>
       <div className='w-[100%] mx-auto flex flex-col items-center justify-center'>
-        <h1 className='text-center text-3xl text-gray-700 font-bold uppercase my-5 font-roboto'>latest arrivals</h1>
+        <h1 className='text-center text-3xl text-gray-700 font-bold uppercase my-5 font-roboto'>latest <span className='text-cyan-600'>arrivals</span></h1>
         <div className='mt-3 grid grid-cols-4 w-full items-center justify-center'>
           {[rugPic1, rugPic2, rugPic3, rugPic4].map((pic, index) => (
             <div

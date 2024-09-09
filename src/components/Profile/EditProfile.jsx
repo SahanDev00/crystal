@@ -4,11 +4,11 @@ import { Helmet } from 'react-helmet'
 
 const EditProfile = () => {
   return (
-    <div className='mt-32 w-full'>
+    <div className='mt-32 w-full flex justify-center items-center mb-10'>
         <Helmet>
           <title>Crystal Mats | Edit Profile</title>
         </Helmet>
-        <div className=' xl:h-[600px] container xl:mt-20 mx-auto'>
+        <div className='container'>
             <div>
                 <h1 className='text-3xl text-black/70 mt-5 font-bold text-center font-poppins'>Edit Your Details</h1>
                     <form className='mt-3'>
@@ -63,18 +63,18 @@ const EditProfile = () => {
                     </form>
                 </div>
         </div>
-        <div className='container h-[450px] xl:h-[500px] mx-auto '>
-            <h1 className='text-3xl text-black/80 font-bold text-center mb-4 font-poppins'>Change Your Password</h1>
+        <div className='container'>
+            <h1 className='text-3xl text-black/70 font-bold text-center mb-4 font-poppins'>Change Your Password</h1>
             <div className='w-full flex justify-center items-center'>
                 <div className='w-full text-center mt-5'>
                     <form>
                         <label className='block font-semibold mt-3 text-sm text-black/80 font-poppins'>Current Password</label>
-                        <input className='w-[50%] rounded-lg pl-4 py-1 border-cyan-500 border-2 mb-2 mt-1' type="password" placeholder='••••••••' required />
+                        <input className='w-[80%] rounded-lg pl-4 py-1 border-cyan-500 border-2 mb-2 mt-1' type="password" placeholder='••••••••' required />
                         <label className='block font-semibold mt-3 text-sm text-black/80 font-poppins'>New Password</label>
-                        <input className='w-[50%] rounded-lg pl-4 py-1 border-cyan-500 border-2 mb-2 mt-1' type="password" placeholder='••••••••' required />
+                        <input className='w-[80%] rounded-lg pl-4 py-1 border-cyan-500 border-2 mb-2 mt-1' type="password" placeholder='••••••••' required />
                         <label className='font-semibold text-sm mt-3 text-black/80 block font-poppins'>Confirm New Password</label>
-                        <input className='w-[50%] rounded-lg pl-4 py-1 border-cyan-500 border-2 mb-5 mt-1' type="password" placeholder='••••••••' required />
-                        <button type='submit' className='block w-[50%] mx-auto mt-2 rounded-lg bg-cyan-500 py-2 text-white font-semibold hover:bg-cyan-600'>Change Password</button>
+                        <input className='w-[80%] rounded-lg pl-4 py-1 border-cyan-500 border-2 mb-5 mt-1' type="password" placeholder='••••••••' required />
+                        <button type='submit' className='block w-[80%] mx-auto mt-2 rounded-lg bg-cyan-500 py-2 text-white font-semibold hover:bg-cyan-600'>Change Password</button>
                     </form>
                 </div>
             </div>

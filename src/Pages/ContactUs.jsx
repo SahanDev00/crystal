@@ -15,7 +15,7 @@ const ContactUs = () => {
         </Helmet>
       <div className=' h-full w-full relative  grid justify-center grid-cols-1 md:grid-cols-2 mt-10 sm:mt-10 md:mt-16'>
         {/* Form */}
-        <div className='border-r-2 mt-10'>
+        <div className='mt-10'>
           <div className='mx-auto w-[80%]'>
             <h1 className='text-4xl font-bold mb-3 text-black/80 underline '>Send Us a Message</h1>
             <form className='space-y-5 mt-10'>

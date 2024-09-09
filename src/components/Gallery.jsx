@@ -27,7 +27,7 @@ const images = [
 const Gallery = () => {
   return (
     <div className="w-[80%] mx-auto">
-      <h1 className="text-center text-3xl font-bold font-roboto text-gray-700 mb-10 uppercase">Gallery</h1>
+      <h1 className="text-center text-3xl font-bold font-roboto text-gray-700 mb-10 uppercase">our <span className="text-cyan-600">portfolio</span></h1>
       <div className="grid grid-cols-3 md:grid-cols-4 gap-4 grid-auto-rows-[200px]">
         {images.map((image, index) => (
           <div
