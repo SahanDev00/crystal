@@ -4,10 +4,12 @@ import { FaCartShopping } from 'react-icons/fa6';
 import { RiRobot2Fill } from "react-icons/ri";
 import Chatbot from './Chatbot/Chatbot';
 import { Link, useLocation } from 'react-router-dom';
+import SmallChatbot from './Chatbot/SmallChatBot';
 
 const Navbar = () => {
   const location = useLocation();
   const [isChatbotVisible, setChatbotVisible] = useState(false);
+  const [isSmallChatbotVisible, setSmallChatbotVisible] = useState(true); // State for small chatbot visibility
 
   const isActive = (path) => {
     return location.pathname === path;
@@ -31,6 +33,11 @@ const Navbar = () => {
       document.body.style.overflow = 'auto';
     };
   }, [isChatbotVisible]);
+
+  const handleClose = () => {
+    setSmallChatbotVisible(false);
+  };
+
 
   return (
     <div className={`w-full fixed top-0 duration-300 z-50 ${isActive('/checkout') ? 'bg-cyan-950' : ''} ${isActive('/') ? 'bg-cyan-950/90' : ''} ${isActive('/cart') || isActive('/account') || isActive('/product') || isActive('/contact-us') || isActive('/order-details') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? 'bg-white border-b' : ''} ${isActive('/about-us') ? 'bg-cyan-950' : ''}`}>
@@ -83,9 +90,14 @@ const Navbar = () => {
               className='absolute z-50 top-10 right-10 text-white'>
               <FaTimes size={20} />
             </button>
-            <Chatbot />
+            <Chatbot/>
           </div>
         </div>
+      )}
+      {isSmallChatbotVisible && (
+              <SmallChatbot
+                onClose={handleClose} // Pass handleClose to SmallChatbot
+              />
       )}
     </div>
   );
