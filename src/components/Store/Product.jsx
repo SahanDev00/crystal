@@ -41,7 +41,7 @@ const Product = () => {
         <div className='w-full mt-5'>
         <img 
         src={`http://extreme.exesmart.com/Uploads/${product.cacheID}.jpg`} 
-        className='w-[90%] mx-auto h-[500px] object-cover' 
+        className='w-[90%] mx-auto h-[500px] object-contain' 
         alt={product.itemName} 
         />
         <div className='flex justify-between mt-2'>
