@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 
 const EditProfile = () => {
   return (
-    <div className='mt-32 w-full flex justify-center items-center mb-10'>
+    <div className='mt-32 w-full md:flex justify-center items-center mb-10'>
         <Helmet>
           <title>Crystal Mats | Edit Profile</title>
         </Helmet>

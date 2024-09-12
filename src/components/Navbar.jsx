@@ -51,7 +51,7 @@ const Navbar = () => {
         </ul>
         <div className='flex gap-5 items-center justify-center'>
           <div className='flex items-center justify-center group'>
-            <FaSearch className={`group-hover:text-cyan-500 cursor-pointer duration-300 ${isActive('/checkout') || isActive('/about-us') ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/contact-us') || isActive('/account') || isActive('/order-details') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') || isActive('/store') ? "text-black/50" : 'text-white/90'}`} size={20} />
+            <FaSearch className={`group-hover:text-cyan-500 cursor-pointer duration-300 ${isActive('/') ? 'text-white/90' : ''} ${isActive('/checkout') || isActive('/about-us') ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/contact-us') || isActive('/account') || isActive('/order-details') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') || isActive('/store') ? "text-black/50" : ''}`} size={20} />
             <div className={`ml-3 w-[0px] duration-300 group-hover:w-[200px] rounded invisible group-hover:visible h-[30px] bg-white ${isActive('/about-us') || isActive('/product') || isActive('/checkout') || isActive('/cart') || isActive('/order-details') || isActive('/account') || isActive('/contact-us') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? "border" : ''}`}>
               <form className='flex justify-center items-center h-full w-full'>
                 <input type="text" className='h-full pl-2 w-full rounded' placeholder='Search an item...' />

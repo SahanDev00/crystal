@@ -20,11 +20,11 @@ function App() {
       <Router>
         <Navbar/>
         <Routes>
-          <Route index element={<Home/>} />
+          <Route index path='/' element={<Home/>} />
           <Route path='/store' element={<Store/>} />
           <Route path='/about-us' element={<AboutUsPage/>} />
           <Route path='/contact-us' element={<ContactUs/>} />
-          <Route path='/product' element={<ProductsPage/>} />
+          <Route path='/product/:itemID' element={<ProductsPage/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/account' element={<MyAccount/>} />
           <Route path='/my-orders' element={<Orders/>} />

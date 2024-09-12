@@ -1,43 +1,41 @@
-import React from 'react'
-import pic from '../../images/rug4.jpeg'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet';
 
 const OrderDetails = () => {
 
-    const orders = [
-        {
-            product: 'Cow Mat',
-            pic: pic,
-            quantity: '4',
-            price: '$150.00',
-            discount: '0',
-            total: '$150.00'
+  const [orderItems, setOrderItems] = useState([]);
+  const orderId = 'ORD00001'; // You can pass this dynamically if needed
+
+  useEffect(() => {
+    const fetchOrderItems = async () => {
+      const api = `http://admin.extreme.exesmart.com/Api/OrderItem?Page=0&OrderID=${orderId}`;
+      
+      try {
+        const apiKey = process.env.REACT_APP_API_KEY;
+        const response = await fetch(api, {
+          method: 'GET',
+          headers: {
+            'APIKey': apiKey,
           },
-          {
-            product: 'Rug',
-            pic: pic,
-            quantity: '1',
-            price: '$150.00',
-            discount: '0',
-            total: '$150.00'
-          },
-          {
-            product: 'Cow Mat 2',
-            pic: pic,
-            quantity: '4',
-            price: '$150.00',
-            discount: '$50.00',
-            total: '$100.00'
-          },
-        {
-          product: 'Rug 2',
-          pic: pic,
-          quantity: '1',
-          price: '$150.00',
-          discount: '0',
-          total: '$150.00'
-        },
-      ];
+        });
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+          setOrderItems(result.data);
+        } else {
+          console.error('Error fetching order items:', result.errorMessage);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
+    fetchOrderItems();
+  }, [orderId]);
+
+  if (orderItems.length === 0) {
+    return <div className='text-white'>No order details available</div>;
+  }
 
   return (
     <div className='w-[90%] min-h-[750px] mb-5 mx-auto relative mt-24'>
@@ -57,13 +55,16 @@ const OrderDetails = () => {
             </tr>
           </thead>
           <tbody>
-            {orders.map(order => (
-              <tr key={order.id}>
-                <td className='px-4 py-2 border-b text-left border-gray-200'><img className='w-[60px] inline-block mr-5' src={order.pic} alt="" />{order.product}</td>
-                <td className='px-4 py-2 border-b text-left border-gray-200 font-poppins'>{order.quantity}</td>
-                <td className='px-4 py-2 border-b text-left border-gray-200 font-poppins'>{order.price}</td>
-                <td className='px-4 py-2 border-b text-left border-gray-200 font-poppins'>{order.discount}</td>
-                <td className='px-4 py-2 border-b text-left border-gray-200 font-poppins'>{order.total}</td>
+          {orderItems.map(item => (
+              <tr key={item.orderItemID}>
+                <td className='px-4 py-2 border-b border-gray-200'>
+                  <img className='w-[60px] inline-block mr-5' src={`http://extreme.exesmart.com/Uploads/${item.itemID}.jpg`} alt={item.itemName} />
+                  {item.itemName}
+                </td>
+                <td className='px-4 py-2 border-b border-gray-200 text-center font-poppins'>{item.itemQty}</td>
+                <td className='px-4 py-2 border-b border-gray-200 text-center font-poppins'>{item.itemPriceDisplay}</td>
+                <td className='px-4 py-2 border-b border-gray-200 text-center font-poppins'>{item.itemDiscountDisplay}</td>
+                <td className='px-4 py-2 border-b border-gray-200 text-center font-poppins'>{item.lineTotalDisplay}</td>
               </tr>
             ))}
           </tbody>
