@@ -11,7 +11,7 @@ const AllProducts = () => {
 
   const fetchCategories = async () => {
     const apiKey = process.env.REACT_APP_API_KEY;
-    const response = await axios.get('http://admin.extreme.exesmart.com/Api/CategoryMain', {
+    const response = await axios.get('https://extremeadmin.worldpos.biz/Api/CategoryMain', {
       headers: {
         'APIKey': apiKey,
       },
@@ -21,7 +21,7 @@ const AllProducts = () => {
   
   const fetchProductsByCategory = async (categoryID) => {
     const apiKey = process.env.REACT_APP_API_KEY;
-    const response = await axios.get(`http://admin.extreme.exesmart.com/Api/Item?CategoryMainID=${categoryID}`, {
+    const response = await axios.get(`https://extremeadmin.worldpos.biz/Api/Item?CategoryMainID=${categoryID}`, {
       headers: {
         'APIKey': apiKey,
       },
@@ -64,7 +64,7 @@ const AllProducts = () => {
                   <FaCartPlus size={20} />
                 </button>
                 <Link to={`/product/${product.itemID}`} className=''>
-                  <img src={`http://extreme.exesmart.com/Uploads/${product.cacheID}.jpg` || 'default_image.jpg'} alt={product.itemName} className='w-full h-[400px] object-contain' />
+                  <img src={`https://extremeadmin.worldpos.biz/Uploads/${product.cacheID}.jpg` || 'default_image.jpg'} alt={product.itemName} className='w-full h-[400px] object-contain' />
                   <p className='absolute text-cyan-300 w-full bg-black/80 bottom-24 text-center py-2 font-semibold text-lg opacity-0 group-hover:opacity-100 duration-200'>
                     Rs.{product.retailPrice}
                   </p>

@@ -8,7 +8,7 @@ const OrderDetails = () => {
 
   useEffect(() => {
     const fetchOrderItems = async () => {
-      const api = `http://admin.extreme.exesmart.com/Api/OrderItem?Page=0&OrderID=${orderId}`;
+      const api = `https://extremeadmin.worldpos.biz/Api/OrderItem?Page=0&OrderID=${orderId}`;
       
       try {
         const apiKey = process.env.REACT_APP_API_KEY;

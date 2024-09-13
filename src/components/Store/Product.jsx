@@ -11,7 +11,7 @@ const Product = () => {
 
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(`http://admin.extreme.exesmart.com/Api/Item/${itemID}`, {
+        const response = await fetch(`https://extremeadmin.worldpos.biz/Api/Item/${itemID}`, {
           headers: {
             'APIKey': apiKey,
           },
