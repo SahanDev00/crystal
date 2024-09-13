@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import loader from '../../images/loader.gif'
+import loader from '../../images/loader.gif';
 
 const Product = () => {
   const { itemID } = useParams(); // Capture itemID from the URL
   const [product, setProduct] = useState(null);
+  const [images, setImages] = useState([]);
+  const [mainImage, setMainImage] = useState(''); // State for main image
 
   useEffect(() => {
     const apiKey = process.env.REACT_APP_API_KEY;
@@ -27,7 +29,30 @@ const Product = () => {
       }
     };
 
+    const fetchImageData = async () => {
+      try {
+        const response = await fetch(`https://extremeadmin.worldpos.biz/Api/ImageData/${itemID}`, {
+          headers: {
+            'APIKey': apiKey,
+          },
+        });
+        const data = await response.json();
+        if (data.success) {
+          setImages(data.data); // Set the fetched image data
+          // Set the first image as the default main image
+          if (data.data.length > 0) {
+            setMainImage(`https://extremeadmin.worldpos.biz/Uploads/${data.data[0].imageID}.jpg`);
+          }
+        } else {
+          console.error('Error fetching image data:', data.errorMessage);
+        }
+      } catch (error) {
+        console.error('Fetch error:', error);
+      }
+    };
+
     fetchProductDetails();
+    fetchImageData();
   }, [itemID]);
 
   if (!product) {
@@ -39,22 +64,22 @@ const Product = () => {
       <h1 className='text-3xl text-center font-bold my-5 text-gray-600 font-roboto'>{product.itemName}</h1>
       <div className='w-[70%] grid grid-cols-2 mx-auto'>
         <div className='w-full mt-5'>
-        <img 
-        src={`https://extremeadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`} 
-        className='w-[90%] mx-auto h-[500px] object-contain' 
-        alt={product.itemName} 
-        />
-        <div className='flex justify-between mt-2'>
-        {[...Array(4)].map((_, idx) => (
-            <img 
-            key={idx} 
-            src={`https://extremeadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`}  // Same image URL used 4 times
-            className='w-[160px] h-[160px]' 
-            alt={`Gallery ${idx}`} 
-            />
-        ))}
-        </div>
-
+          <img 
+            src={mainImage || `https://extremeadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`} 
+            className='w-[90%] mx-auto h-[500px] object-contain' 
+            alt={product.itemName} 
+          />
+          <div className='flex justify-between mt-2'>
+            {images.map((img, idx) => (
+              <img 
+                key={img.imageID} 
+                src={`https://extremeadmin.worldpos.biz/Uploads/${img.imageID}.jpg`}  // Use imageID for thumbnail URL
+                className='w-[160px] h-[160px] cursor-pointer' 
+                alt={`Gallery ${idx}`} 
+                onClick={() => setMainImage(`https://extremeadmin.worldpos.biz/Uploads/${img.imageID}.jpg`)} // Update main image on click
+              />
+            ))}
+          </div>
         </div>
         <div className='w-full flex flex-col justify-center items-center'>
           <h1 className='text-3xl font-bold text-black/70 my-5 font-poppins'>{product.itemName}</h1>
