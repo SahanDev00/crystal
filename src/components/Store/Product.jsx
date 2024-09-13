@@ -40,7 +40,7 @@ const Product = () => {
       <div className='w-[70%] grid grid-cols-2 mx-auto'>
         <div className='w-full mt-5'>
         <img 
-        src={`http://extreme.exesmart.com/Uploads/${product.cacheID}.jpg`} 
+        src={`https://extremeadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`} 
         className='w-[90%] mx-auto h-[500px] object-contain' 
         alt={product.itemName} 
         />
@@ -48,7 +48,7 @@ const Product = () => {
         {[...Array(4)].map((_, idx) => (
             <img 
             key={idx} 
-            src={`http://extreme.exesmart.com/Uploads/${product.cacheID}.jpg`}  // Same image URL used 4 times
+            src={`https://extremeadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`}  // Same image URL used 4 times
             className='w-[160px] h-[160px]' 
             alt={`Gallery ${idx}`} 
             />
