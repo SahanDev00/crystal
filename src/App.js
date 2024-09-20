@@ -13,10 +13,12 @@ import EditProfile from './components/Profile/EditProfile';
 import OrderDetails from './components/Profile/OrderDetails';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Cart/Checkout';
+import NoProducts from './components/NoProducts';
+import EditPassword from './components/Profile/EditPassword';
 
 function App() {
   return (
-    <div className="App bg-cyan-50/20">
+    <div className="App relative z-10 bg-white">
       <Router>
         <Navbar/>
         <Routes>
@@ -29,9 +31,11 @@ function App() {
           <Route path='/account' element={<MyAccount/>} />
           <Route path='/my-orders' element={<Orders/>} />
           <Route path='/edit-profile' element={<EditProfile/>} />
-          <Route path='/order-details' element={<OrderDetails/>} />
+          <Route path='/order-details/:orderID' element={<OrderDetails/>} />
           <Route path='/cart' element={<Cart/>} />
           <Route path='/checkout' element={<Checkout/>} />
+          <Route path='/edit-password' element={<EditPassword/>} />
+          <Route path='/no-products' element={<NoProducts/>} />
         </Routes>
         <Footer/>
       </Router>

@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import loginPic from '../../images/login.png';
 import signUpPic from '../../images/signup.png';
 import Countries from './Countries';
 import { Helmet } from 'react-helmet';
+import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true); // State to track whether it's login or sign-up view
+  const [rememberMe, setRememberMe] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -20,6 +27,30 @@ const Login = () => {
     country: '',
     mobile: '',
     confirmPassword: '',
+    facebookID: '',
+    googleID: '',
+    customerCategoryID: '0000',
+    customerGroupID: '',
+    priceType: 'RT',
+    middleName: '',
+    companyName: '',
+    telephoneOther: '',
+    shipAway: false,
+    shipAddressLine1: '',
+    shipAddressLine2: '',
+    shipCity: '',
+    shipState: '',
+    shipPostalCode: '',
+    shipCountry: '',
+    remarks: '',
+    returnURL: '/Customer/Index',
+    customerCategoryName: '',
+    customerGroupName: '',
+    oldPassword: '',
+    checkTermsandCondition: false,
+    useAuthentication: true,
+    shipAwayBool: false,
+    activeStatusBool: true,
   });
 
   const handleSwitch = () => {
@@ -39,7 +70,8 @@ const Login = () => {
     const api = process.env.REACT_APP_API_URL;
     const apiURL = `${api}/api/customer`; // Adjust the URL as necessary
 
-    let dataToSubmit = {
+    if (validateForm()) {
+      let dataToSubmit = {
         customerID: "", // Assuming this will be generated on the backend if left empty
         facebookID: formData.facebookID || "", // Default or from form data
         googleID: formData.googleID || "", // Default or from form data
@@ -81,32 +113,66 @@ const Login = () => {
         checkTermsandCondition: formData.checkTermsandCondition || false, // Handle terms and conditions
         useAuthentication: true, // Assuming authentication is used
         shipAwayBool: formData.shipAway || false, // Boolean for shipping away
-        activeStatusBool: formData.activeStatusBool || true // Boolean for active status
-    };
-    
-    try {
-      const apiKey = process.env.REACT_APP_API_KEY;
-      const response = await fetch(apiURL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'APIKey': apiKey,
-        },
-        body: JSON.stringify(dataToSubmit),
-      });
-    
-      const result = await response.json();
-    
-      if (response.ok) {
-        console.log('Success:', result);
-      } else {
-        console.error('Error:', result);
-        console.error('Validation Errors:', result.errors); // Log validation errors
+        activeStatusBool: formData.activeStatusBool || true, // Boolean for active status
+      };
+      
+      try {
+        const apiKey = process.env.REACT_APP_API_KEY;
+        const response = await fetch(apiURL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'APIKey': apiKey,
+          },
+          body: JSON.stringify(dataToSubmit),
+        });
+      
+        const result = await response.json();
+      
+        if (response.ok) {
+          if (result.success) {
+            if (isLogin) {
+              // Set cookies if Remember Me is checked
+              if (rememberMe) {
+                Cookies.set('customerId', result.customerID, { expires: 30 });
+                Cookies.set('firstName', result.firstName, { expires: 30 });
+                Cookies.set('lastName', result.lastName, { expires: 30 });
+                Cookies.set('email', result.email, { expires: 30 });
+                
+              } else {
+                // Store data in session
+                sessionStorage.setItem('customerId', result.customerID);
+                sessionStorage.setItem('firstName', result.firstName);
+                sessionStorage.setItem('lastName', result.lastName);
+                sessionStorage.setItem('email', result.email);
+              }
+            }
+                // Handle successful login, like saving the customer data or redirecting the user
+                sessionStorage.setItem('customerId', result.customerID);
+                toast.success('Successfully logged in!', {
+                  position: "top-right",
+                  autoClose: 2000, // Automatically close after 3 seconds
+                });
+                setTimeout(() => {
+                  navigate('/');
+                }, 2000);
+          }
+          setErrorMessage(result.errorMessage);
+        } else {
+          setErrorMessage(result.errorMessage);
+          toast.error('Validation error!', {
+            position: "top-right",
+          });
+          console.error('Error:', result);
+          console.error('Validation Errors:', result.errors); // Log validation errors
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        toast.error('Sign in error!', {
+          position: "top-right",
+        });
       }
-    } catch (error) {
-      console.error('Error:', error);
     }
-    
   };
 
   const handleLoginSubmit = async (e) => {
@@ -120,7 +186,7 @@ const Login = () => {
   
       // Step 1: Check if the email exists
       const emailCheckResponse = await fetch(apiURL, {
-        method: 'GET', // Change to GET method
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
           'APIKey': apiKey,
@@ -137,22 +203,142 @@ const Login = () => {
         const storedPassword = customerData.loginPassword;
   
         // Assuming the password is hashed; you should hash the entered password and compare with stored hash.
-        // Here is an example check, but in practice, you should use appropriate hashing and comparison techniques.
         if (storedPassword === enteredPassword) {
           console.log('Login successful', customerData);
+          if (rememberMe) {
+            // Set cookies if Remember Me is checked
+            Cookies.set('customerId', customerData.customerID, { expires: 30 });
+            Cookies.set('firstName', customerData.firstName, { expires: 30 });
+            Cookies.set('lastName', customerData.lastName, { expires: 30 });
+            Cookies.set('email', customerData.email, { expires: 30 });
+          } else {
+            // Store data in session
+            sessionStorage.setItem('customerId', customerData.customerID);
+            sessionStorage.setItem('firstName', customerData.firstName);
+            sessionStorage.setItem('lastName', customerData.lastName);
+            sessionStorage.setItem('email', customerData.email);
+          }
           // Handle successful login, like saving the customer data or redirecting the user
+          toast.success('Successfully logged in!', {
+            position: "top-right",
+            autoClose: 2000, // Automatically close after 3 seconds
+          });
+          setTimeout(() => {
+            navigate('/');
+          }, 2000);
         } else {
-          console.error('Password does not match');
+          setErrorMessage('Password does not match');
           // Show error message to the user
+          toast.error('Wrong Password!', {
+            position: "top-right",
+          });
         }
       } else {
-        console.error('Email not found');
+        setErrorMessage('Email not found');
         // Show an error message that the email doesn't exist
+        toast.error('Email not found!', {
+          position: "top-right",
+        });
       }
     } catch (error) {
       console.error('Error:', error);
+      toast.error('An error occurred. Please try again.', {
+        position: "top-right",
+      });
     }
   };
+
+  const [errors, setErrors] = useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+    firstName: '',
+    lastName: '',
+    addressLine1: '',
+    city: '',
+    state: '',
+    postalCode: '',
+    mobile: '',
+    // Add other fields as necessary
+  });
+
+  useEffect(() => {
+    // Retrieve customer details from cookies or session storage
+    const customerId = Cookies.get('customerId') || sessionStorage.getItem('customerId');
+
+    if (customerId) {
+      // Handle auto-login or redirect based on customer data
+      navigate('/');
+    }
+  }, [navigate]); 
+
+    // Validate fields before submitting
+const validateForm = () => {
+  let newErrors = {};
+  
+  // Email validation
+  if (!formData.email) {
+    newErrors.email = 'Email is required';
+  } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    newErrors.email = 'Email address is invalid';
+  }
+
+  // Password validation
+  if (!formData.password) {
+    newErrors.password = 'Password is required';
+  } else if (formData.password.length < 6) {
+    newErrors.password = 'Password must be at least 6 characters';
+  }
+
+  // Confirm password validation
+  if (formData.confirmPassword !== formData.password) {
+    newErrors.confirmPassword = 'Passwords do not match';
+  }
+
+  // First name validation
+  if (!formData.firstName) {
+    newErrors.firstName = 'First name is required';
+  }
+
+  // Last name validation
+  if (!formData.lastName) {
+    newErrors.lastName = 'Last name is required';
+  }
+
+  // Address Line 1 validation
+  if (!formData.addressLine1) {
+    newErrors.addressLine1 = 'Address Line 1 is required';
+  }
+
+  // City validation
+  if (!formData.city) {
+    newErrors.city = 'City is required';
+  }
+
+  // State validation
+  if (!formData.state) {
+    newErrors.state = 'State is required';
+  }
+
+  // Postal code validation
+  if (!formData.postalCode) {
+    newErrors.postalCode = 'Postal code is required';
+  } else if (!/^\d+$/.test(formData.postalCode)) {
+    newErrors.postalCode = 'Postal code must be a number';
+  }
+
+  // Mobile number validation
+  if (!formData.mobile) {
+    newErrors.mobile = 'Mobile number is required';
+  } else if (!/^\+\d{10,15}$/.test(formData.mobile)) {
+    newErrors.mobile = 'Mobile number must start with "+" and be between 10 to 15 digits long.';
+  }
+
+  setErrors(newErrors);
+
+  // If no errors, return true
+  return Object.keys(newErrors).length === 0;
+};
 
   return (
     <div className={`w-full mt-24 h-full relative flex items-center py-10 ${isLogin ? 'h-[70vh] sm:h-[95vh] md:h-[85vh] lg:h-[95vh]' : ''}`}>
@@ -175,12 +361,21 @@ const Login = () => {
                 type="email" placeholder='example@gmail.com' required />
 
                 <label className='font-semibold md:ml-16'>Password</label>
-                <input className='block w-[95%] md:w-[80%] mx-auto rounded-lg pl-4 py-2 border-cyan-500 border-2 mb-5 mt-1'
+                <input className='block w-[95%] md:w-[80%] mx-auto rounded-lg pl-4 py-2 border-cyan-500 border-2 mb-3 mt-1'
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
                 type="password" placeholder='••••••••' required />
-                <button onClick={handleLoginSubmit} className='block w-[95%] md:w-[80%] mx-auto rounded-lg bg-cyan-500 py-2 text-white font-semibold hover:bg-cyan-400'>Login</button>
+                {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
+                        <label className='md:ml-16'>
+                          <input
+                            type="checkbox"
+                            checked={rememberMe}
+                            onChange={() => setRememberMe(!rememberMe)}
+                            />
+                            Remember Me
+                        </label>
+                <button onClick={handleLoginSubmit} className='block mt-2 w-[95%] md:w-[80%] mx-auto rounded-lg bg-cyan-500 py-2 text-white font-semibold hover:bg-cyan-400'>Login</button>
               </form>
               <p className='text-center mt-3 font-semibold text-gray-600'>Haven't registered yet? <span className='text-cyan-500 font-bold cursor-pointer hover:text-cyan-600' onClick={handleSwitch}>Sign Up</span></p>
             </div>
@@ -219,6 +414,7 @@ const Login = () => {
                           <option value="Rev.">Rev.</option>
                         </select>
                     </div>
+                    {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName}</p>}
                   </div>
                   <div className='w-full'>
                     <label className='font-semibold text-sm text-black'>Last Name</label>
@@ -227,6 +423,7 @@ const Login = () => {
                     value={formData.lastName}
                     onChange={handleChange}
                     type="text" placeholder='Nester' required />
+                    {errors.lastName && <p className="text-red-500 text-sm">{errors.lastName}</p>}
                   </div>
                 </div>
                 <div className='xl:flex gap-4 w-[98%] md:w-[80%] mx-auto'>
@@ -237,6 +434,7 @@ const Login = () => {
                     value={formData.addressLine1}
                     onChange={handleChange}
                     type="text" placeholder='' required />
+                    {errors.addressLine1 && <p className="text-red-500 text-sm">{errors.addressLine1}</p>}
                   </div>
                   <div className='w-full'>
                     <label className='font-semibold text-sm text-black'>Address Line 2</label>
@@ -255,6 +453,7 @@ const Login = () => {
                     value={formData.city}
                     onChange={handleChange}
                     type="text" placeholder='' required />
+                     {errors.city && <p className="text-red-500 text-sm">{errors.city}</p>}
                   </div>
                   <div className='w-full'>
                     <label className='font-semibold text-sm text-black'>State</label>
@@ -263,6 +462,7 @@ const Login = () => {
                     value={formData.state}
                     onChange={handleChange}
                     type="text" placeholder='' required />
+                    {errors.state && <p className="text-red-500 text-sm">{errors.state}</p>}
                   </div>
                 </div>
                 <div className='flex gap-4 w-[98%] md:w-[80%] mx-auto'>
@@ -273,6 +473,7 @@ const Login = () => {
                     value={formData.postalCode}
                     onChange={handleChange}
                     type="number" placeholder='' required />
+                    {errors.postalCode && <p className="text-red-500 text-sm">{errors.postalCode}</p>}
                   </div>
                   <div className='w-full'>
                     <Countries name="country"
@@ -286,24 +487,29 @@ const Login = () => {
                                     value={formData.mobile}
                                     onChange={handleChange}
                                     type="text" placeholder='94712345678' required />
+                                    {errors.mobile && <p className="text-red-500 text-sm text-center">{errors.mobile}</p>}
                 <label className='font-semibold text-sm md:ml-16 text-black'>Email</label>
                 <input className='block w-[98%] md:w-[80%] mx-auto rounded-lg pl-4 py-1 border-cyan-500 border-2 mb-2 mt-1' 
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 type="email" placeholder='example@gmail.com' required />
+                {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
+                {errors.email && <p className="text-red-500 text-sm text-center">{errors.email}</p>}
                 <label className='font-semibold text-sm md:ml-16 text-black'>Password</label>
                 <input className='block w-[98%] md:w-[80%] mx-auto rounded-lg pl-4 py-1 border-cyan-500 border-2 mb-2 mt-1' 
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
                 type="password" placeholder='••••••••' required />
+                {errors.password && <p className="text-red-500 text-sm text-center">{errors.password}</p>}
                 <label className='font-semibold text-sm md:ml-16 text-black'>Confirm Password</label>
                 <input className='block w-[98%] md:w-[80%] mx-auto rounded-lg pl-4 py-1 border-cyan-500 border-2 mb-5 mt-1' 
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 type="password" placeholder='••••••••' required />
+                {errors.confirmPassword && <p className="text-red-500 text-sm">{errors.confirmPassword}</p>}
                 <button disabled={formData.password !== formData.confirmPassword} onClick={handleSubmit} className={`block w-[98%] md:w-[80%] mx-auto rounded-lg bg-cyan-500 py-1 text-white font-semibold hover:bg-cyan-400 ${formData.password === formData.confirmPassword ? 'bg-cyan-500' : 'bg-gray-400 cursor-not-allowed hover:bg-gray-400'}`}>Sign Up</button>
               </form>
               <p className='text-center mt-3 font-semibold text-gray-600'>Already a user? <span className='text-cyan-500 font-bold cursor-pointer hover:text-cyan-600' onClick={handleSwitch}>Login</span></p>
@@ -311,6 +517,7 @@ const Login = () => {
           </div>
         )}
       </div>
+      <ToastContainer/>
     </div>
   );
 }

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
+  const customerId = Cookies.get('customerId') || sessionStorage.getItem('customerId');
 
   useEffect(() => {
     // Fetch order data from API
     const fetchOrders = async () => {
-      const api = 'https://extremeadmin.worldpos.biz/Api/Order?CustomerID=CUS_00001';
+      const api = `https://extremeadmin.worldpos.biz/Api/Order?CustomerID=${customerId}`;
       
       try {
         const apiKey = process.env.REACT_APP_API_KEY;
@@ -30,10 +32,10 @@ const Orders = () => {
     };
 
     fetchOrders();
-  }, []);
+  }, [customerId]);
 
   if (orders.length === 0) {
-    return <div className='text-white h-[85vh] w-[80%] mx-auto relative'>
+    return <div className='h-[85vh] w-[80%] mx-auto relative mt-24'>
       <h1 className='font-semibold mt-5'>You Don't Have Orders Yet!!!</h1>
     </div>
   }
@@ -71,7 +73,7 @@ const Orders = () => {
                 {order.paidStatusText}
                 </td>
                 <td className='px-4 font-poppins py-2 border-b border-gray-200'>
-                    <Link to='/order-details'>
+                    <Link to={`/order-details/${order.orderID}`}>
                         <button className='bg-cyan-500 font-poppins text-white px-4 py-2 rounded hover:bg-cyan-400'>
                             View
                         </button>

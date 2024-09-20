@@ -9,6 +9,7 @@ module.exports = {
       mono: ["Share Tech Mono", "monospace"],
       roboto: ["Roboto", "sans-serif"],
       karla: ["Karla", "sans-serif"],
+      overpass: ["Overpass", "sans-serif"]
     },
     extend: {},
   },

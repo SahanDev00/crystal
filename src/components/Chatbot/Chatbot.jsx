@@ -3,11 +3,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { getResponseFromService } from './queries';
 import { Helmet } from 'react-helmet';
+import { FaTimes } from 'react-icons/fa';
 
 // Simulating an NLP service response
 <getResponseFromService/>
 
-const Chatbot = () => {
+const Chatbot = ({ onClose }) => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const endOfMessagesRef = useRef(null); // Ref for scrolling
@@ -40,9 +41,9 @@ const Chatbot = () => {
         <Helmet>
           <title>Crystal Mats | ChatBot</title>
         </Helmet>
-        <div className="absolute m-4 w-[70%] h-[75%] bg-white border border-gray-300 rounded-lg shadow-lg">
+        <div className="absolute m-4 w-[60%] h-[65%] bg-white border border-gray-300 rounded-lg shadow-lg">
             <h1 className='font-bold text-3xl p-4'>CHAT BOT</h1>
-            <div className="px-4 h-[600px] overflow-y-scroll">
+            <div className="px-4 h-[500px] overflow-y-scroll">
             {messages.map((message, index) => (
                 <div
                 key={index}
@@ -53,6 +54,11 @@ const Chatbot = () => {
                 </div>
             ))}
             </div>
+            <button 
+              onClick={onClose} 
+              className='absolute z-50 top-2 right-2 text-cyan-700'>
+              <FaTimes size={20} />
+            </button>
             <form onSubmit={handleSubmit} className="absolute w-full bottom-0 flex">
                 <input
                     type="text"

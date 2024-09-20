@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import loader from '../../images/loader.gif';
+import { useCart } from '../Cart/CartContext';
 
 const Product = () => {
   const { itemID } = useParams(); // Capture itemID from the URL
@@ -55,13 +56,24 @@ const Product = () => {
     fetchImageData();
   }, [itemID]);
 
+  const { addToCart } = useCart();
+
+  // Assuming addToCart adds the product to the cart correctly
+  const handleAddToCart = (product) => {
+   console.log(product); // Now this should log the full product object
+   addToCart({
+     ...product,
+     quantity: 1,  // Ensure quantity is set properly
+   });
+ };
+
   if (!product) {
     return <div className='h-screen w-screen flex items-center justify-center'><img src={loader} className='w-[100px]' alt="" /></div>;
   }
 
   return (
     <div className='w-full mt-28 mb-10'>
-      <h1 className='text-3xl text-center font-bold my-5 text-gray-600 font-roboto'>{product.itemName}</h1>
+      <h1 className='text-3xl text-center font-bold my-5 text-gray-600 font-overpass'>{product.itemName}</h1>
       <div className='w-[70%] grid grid-cols-2 mx-auto'>
         <div className='w-full mt-5'>
           <img 
@@ -82,10 +94,10 @@ const Product = () => {
           </div>
         </div>
         <div className='w-full flex flex-col justify-center items-center'>
-          <h1 className='text-3xl font-bold text-black/70 my-5 font-poppins'>{product.itemName}</h1>
-          <p className='text-lg text-center w-[80%] text-black/60'>{product.itemDescription}</p>
-          <p className='text-lg font-semibold my-5 font-poppins'>Rs.{product.retailPrice}</p>
-          <button className='px-4 py-2 rounded-full font-poppins bg-cyan-600/70 font-semibold text-white hover:bg-cyan-600/80'>
+          <h1 className='text-3xl font-bold text-black/70 my-5 font-karla'>{product.itemName}</h1>
+          <p className='text-lg text-center w-[80%] text-black/60 font-karla'>{product.itemDescription}</p>
+          <p className='text-lg font-semibold my-5 font-karla'>Rs.{product.retailPrice}</p>
+          <button onClick={() => handleAddToCart(product)} className='px-4 py-2 rounded-full font-karla bg-cyan-600/70 font-semibold text-white hover:bg-cyan-600/80'>
             Add to Cart
           </button>
         </div>

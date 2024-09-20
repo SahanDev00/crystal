@@ -67,7 +67,7 @@ const Categories = () => {
           duration={500} 
           offset={-100}
         >
-          <h1 className='font-semibold uppercase cursor-pointer text-white font-poppins'>
+          <h1 className='font-semibold uppercase cursor-pointer text-white font-overpass'>
             {category.categoryMainName}
           </h1>
         </ScrollLink>
@@ -78,7 +78,7 @@ const Categories = () => {
                 <Link 
                   key={item.itemID} 
                   to={`/product/${item.itemID}`} 
-                  className='text-cyan-700 cursor-pointer text-sm font-roboto hover:text-cyan-600/80 w-[80%] mx-auto'
+                  className='text-cyan-700 cursor-pointer text-sm font-karla hover:text-cyan-600/80 w-[80%] mx-auto'
                 >
                   {item.itemName}
                 </Link>

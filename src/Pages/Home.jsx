@@ -8,6 +8,7 @@ import LatestProducts from '../components/LatestProducts'
 import CustomProducts from '../components/CustomProducts'
 import GetStarted from '../components/GetStarted'
 import Gallery from '../components/Gallery'
+import pic from '../images/heroPic.jpeg'; 
 import { Helmet } from 'react-helmet'
 
 const Home = () => {
@@ -23,15 +24,18 @@ const Home = () => {
         <Helmet>
           <title>Crystal Mats | Home</title>
         </Helmet>
-        <Hero2/>
-        <Collection/>
-        <Gallery/>
-        <Cards/>
-        <WhyMats/>
-        <LatestProducts/>
-        <CustomProducts/>
-        <GetStarted/>
-        <Features/>
+        <img src={pic} alt="" className='w-full fixed opacity-30 h-full' />
+        <div className='z-50'>
+          <Hero2/>
+          <Collection/>
+          <Gallery/>
+          <Cards/>
+          <WhyMats/>
+          <LatestProducts/>
+          <CustomProducts/>
+          <GetStarted/>
+          <Features/>
+        </div>
     </div>
   )
 }

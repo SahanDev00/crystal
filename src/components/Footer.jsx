@@ -3,7 +3,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/f
 
 const Footer = () => {
   return (
-    <div className='w-full bg-cyan-400/30 py-10'>
+    <div className='w-full bg-cyan-200 relative py-10 font-overpass'>
       <div className='w-[90%] mx-auto flex flex-col md:flex-row justify-between px-6'>
         {/* About Us Section */}
         <div className='mb-8 md:mb-0 w-[50%]'>
@@ -56,7 +56,7 @@ const Footer = () => {
       
       {/* Footer Bottom */}
       <div className='border-t border-gray-300 mt-8 pt-4'>
-        <p className='text-center text-gray-600 text-sm font-poppins'>
+        <p className='text-center text-gray-600 text-sm font-karla'>
           © 2024 Crystal Mats. All rights reserved.
         </p>
       </div>
