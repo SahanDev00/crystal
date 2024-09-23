@@ -131,31 +131,32 @@ const Login = () => {
       
         if (response.ok) {
           if (result.success) {
+            const customerID = result.data.customerID; // Access customerID from the data object
             if (isLogin) {
               // Set cookies if Remember Me is checked
               if (rememberMe) {
-                Cookies.set('customerId', result.customerID, { expires: 30 });
-                Cookies.set('firstName', result.firstName, { expires: 30 });
-                Cookies.set('lastName', result.lastName, { expires: 30 });
-                Cookies.set('email', result.email, { expires: 30 });
-                
+                Cookies.set('customerId', customerID, { expires: 30 });
+                Cookies.set('firstName', result.data.firstName, { expires: 30 });
+                Cookies.set('lastName', result.data.lastName, { expires: 30 });
+                Cookies.set('email', result.data.loginEmail, { expires: 30 });
               } else {
                 // Store data in session
-                sessionStorage.setItem('customerId', result.customerID);
-                sessionStorage.setItem('firstName', result.firstName);
-                sessionStorage.setItem('lastName', result.lastName);
-                sessionStorage.setItem('email', result.email);
+                sessionStorage.setItem('customerId', customerID);
+                sessionStorage.setItem('firstName', result.data.firstName);
+                sessionStorage.setItem('lastName', result.data.lastName);
+                sessionStorage.setItem('email', result.data.loginEmail);
               }
             }
-                // Handle successful login, like saving the customer data or redirecting the user
-                sessionStorage.setItem('customerId', result.customerID);
-                toast.success('Successfully logged in!', {
-                  position: "top-right",
-                  autoClose: 2000, // Automatically close after 3 seconds
-                });
-                setTimeout(() => {
-                  navigate('/');
-                }, 2000);
+            // Handle successful login, like saving the customer data or redirecting the user
+            sessionStorage.setItem('customerId', customerID);
+            console.log(customerID); // Log customerID properly
+            toast.success('Successfully logged in!', {
+              position: "top-right",
+              autoClose: 2000,
+            });
+            setTimeout(() => {
+              navigate('/');
+            }, 2000);
           }
           setErrorMessage(result.errorMessage);
         } else {
@@ -166,6 +167,7 @@ const Login = () => {
           console.error('Error:', result);
           console.error('Validation Errors:', result.errors); // Log validation errors
         }
+        
       } catch (error) {
         console.error('Error:', error);
         toast.error('Sign in error!', {
