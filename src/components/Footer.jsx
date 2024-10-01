@@ -57,7 +57,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className='border-t border-gray-300 mt-8 pt-4'>
         <p className='text-center text-gray-600 text-sm font-karla'>
-          © 2024 Crystal Mats. All rights reserved.
+          © 2024 K-Mats. All rights reserved.
         </p>
       </div>
     </div>

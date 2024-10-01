@@ -14,7 +14,7 @@ const Collection = () => {
     const fetchCategories = async () => {
       try {
         const apiKey = process.env.REACT_APP_API_KEY;
-        const response = await fetch('https://extremeadmin.worldpos.biz/Api/CategoryMain', {
+        const response = await fetch('https://kmatadmin.worldpos.biz/Api/CategoryMain', {
           method: 'GET',
           headers: {
             'APIKey': apiKey,

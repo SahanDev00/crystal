@@ -11,7 +11,7 @@ const Categories = () => {
 
     const fetchCategories = async () => {
       try {
-        const response = await fetch('https://extremeadmin.worldpos.biz/Api/CategoryMain', {
+        const response = await fetch('https://kmatadmin.worldpos.biz/Api/CategoryMain', {
           headers: {
             'APIKey': apiKey,
           },
@@ -34,7 +34,7 @@ const Categories = () => {
       try {
         await Promise.all(
           categories.map(async (category) => {
-            const response = await fetch(`https://extremeadmin.worldpos.biz/Api/Item?CategoryMainID=${category.categoryMainID}`, {
+            const response = await fetch(`https://kmatadmin.worldpos.biz/Api/Item?CategoryMainID=${category.categoryMainID}`, {
               headers: {
                 'APIKey': apiKey,
               },

@@ -3,7 +3,7 @@ import Countries from './Countries';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const EditProfile = () => {
@@ -92,7 +92,7 @@ const EditProfile = () => {
 
     try {
       console.log('Submitting data:', customerData);
-      const response = await axios.put('https://extremeadmin.worldpos.biz/api/Customer', customerData, {
+      const response = await axios.put('https://kmatadmin.worldpos.biz/api/Customer', customerData, {
         headers: {
           'Content-Type': 'application/json',
           'APIKey': process.env.REACT_APP_API_KEY,
@@ -122,7 +122,7 @@ const EditProfile = () => {
     if (customerId) {
       const fetchCustomerData = async () => {
         try {
-          const response = await fetch(`https://extremeadmin.worldpos.biz/api/Customer/${customerId}`, {
+          const response = await fetch(`https://kmatadmin.worldpos.biz/api/Customer/${customerId}`, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -169,7 +169,7 @@ const EditProfile = () => {
   return (
     <div className='mt-32 w-full md:flex justify-center items-center mb-10 font-overpass'>
       <Helmet>
-        <title>Crystal Mats | Edit Profile</title>
+        <title>K-Mats | Edit Profile</title>
       </Helmet>
       <div className='container'>
         <div>
@@ -245,7 +245,7 @@ const EditProfile = () => {
           </form>
         </div>
       </div>
-      <ToastContainer/>
+      {/* <ToastContainer/> */}
     </div>
   );
 };

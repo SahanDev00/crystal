@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import loader from '../../images/loader.gif'
 import { useCart } from '../Cart/CartContext';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AllProducts = () => {
   const [categories, setCategories] = useState([]);
@@ -14,16 +16,20 @@ const AllProducts = () => {
 
  // Assuming addToCart adds the product to the cart correctly
  const handleAddToCart = (product) => {
-  console.log(product); // Now this should log the full product object
   addToCart({
     ...product,
     quantity: 1,  // Ensure quantity is set properly
+  });
+  toast.success(product.itemName + ' Added To The Cart!', {
+    toastId: 1,
+    position: "top-right",
+    autoClose: 2000,
   });
 };
 
   const fetchCategories = async () => {
     const apiKey = process.env.REACT_APP_API_KEY;
-    const response = await axios.get('https://extremeadmin.worldpos.biz/Api/CategoryMain', {
+    const response = await axios.get('https://kmatadmin.worldpos.biz/Api/CategoryMain', {
       headers: {
         'APIKey': apiKey,
       },
@@ -33,7 +39,7 @@ const AllProducts = () => {
   
   const fetchProductsByCategory = async (categoryID) => {
     const apiKey = process.env.REACT_APP_API_KEY;
-    const response = await axios.get(`https://extremeadmin.worldpos.biz/Api/Item?CategoryMainID=${categoryID}`, {
+    const response = await axios.get(`https://kmatadmin.worldpos.biz/Api/Item?CategoryMainID=${categoryID}`, {
       headers: {
         'APIKey': apiKey,
       },
@@ -76,7 +82,7 @@ const AllProducts = () => {
                   <FaCartPlus size={20} />
                 </button>
                 <Link to={`/product/${product.itemID}`} className=''>
-                  <img src={`https://extremeadmin.worldpos.biz/Uploads/${product.cacheID}.jpg` || 'default_image.jpg'} alt={product.itemName} className='w-full h-[400px] object-contain' />
+                  <img src={`https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg` || 'default_image.jpg'} alt={product.itemName} className='w-full h-[400px] object-contain' />
                   <p className='absolute text-cyan-300 w-full bg-black/80 bottom-24 text-center font-karla py-2 font-semibold text-lg opacity-0 group-hover:opacity-100 duration-200'>
                     Rs.{product.retailPrice}
                   </p>
@@ -91,6 +97,7 @@ const AllProducts = () => {
           </div>
         </div>
       ))}
+      {/* <ToastContainer/> */}
     </div>
   );
 };

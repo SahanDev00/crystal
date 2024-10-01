@@ -10,7 +10,7 @@ const Orders = () => {
   useEffect(() => {
     // Fetch order data from API
     const fetchOrders = async () => {
-      const api = `https://extremeadmin.worldpos.biz/Api/Order?CustomerID=${customerId}`;
+      const api = `https://kmatadmin.worldpos.biz/Api/Order?CustomerID=${customerId}`;
       
       try {
         const apiKey = process.env.REACT_APP_API_KEY;
@@ -43,7 +43,7 @@ const Orders = () => {
   return (
     <div className='w-[90%] md:min-h-[700px] lg:min-h-[650px] xl:min-h-[700px] 2xl:min-h-[800px] relative mx-auto px-4 py-8 mb-5 mt-20'>
         <Helmet>
-          <title>Crystal Mats | My Orders</title>
+          <title>K-Mats | My Orders</title>
         </Helmet>
       <h1 className='text-2xl font-bold mb-5 text-black/70 font-poppins'>Track My Orders</h1>
       <div className='overflow-x-auto'>

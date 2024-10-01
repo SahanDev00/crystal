@@ -4,7 +4,7 @@ import { FaParachuteBox, FaRegEdit } from 'react-icons/fa'
 import { IoIosLogOut } from 'react-icons/io'
 import { Link, useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const MyAccount = () => {
@@ -82,7 +82,7 @@ const MyAccount = () => {
   return (
     <div className='w-full mt-32 font-overpass'>
         <Helmet>
-          <title>Crystal Mats | My Account</title>
+          <title>K-Mats | My Account</title>
         </Helmet>
         <div className='w-[90%] mx-auto'>
             <h1 className='text-3xl md:text-4xl text-black/70 font-bold text-center my-10 uppercase'>Personal Details</h1>
@@ -126,7 +126,7 @@ const MyAccount = () => {
                 <h1>Log Out</h1>
             </div>
         </div>
-        <ToastContainer/>
+        {/* <ToastContainer /> */}
     </div>
   )
 }

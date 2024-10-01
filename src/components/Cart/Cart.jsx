@@ -75,7 +75,7 @@ const Cart = () => {
             {cartItems.map((item) => (
               <li key={item.itemID} className="flex justify-between mb-4 p-4 border-b">
                 <div className="flex items-center w-full">
-                  <img src={`https://extremeadmin.worldpos.biz/Uploads/${item.cacheID}.jpg`} alt={item.itemName} className="w-16 h-16 object-cover mr-4" />
+                  <img src={`https://kmatadmin.worldpos.biz/Uploads/${item.cacheID}.jpg`} alt={item.itemName} className="w-16 h-16 object-cover mr-4" />
                   <div className='flex items-center justify-between w-full'>
                     <div>
                       <h2 className="sm:text-xl text-cyan-700 font-semibold font-overpass">{item.itemName}</h2>

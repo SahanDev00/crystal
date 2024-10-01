@@ -5,8 +5,9 @@ import Countries from './Countries';
 import { Helmet } from 'react-helmet';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true); // State to track whether it's login or sign-up view
@@ -345,14 +346,14 @@ const validateForm = () => {
   return (
     <div className={`w-full mt-24 h-full relative flex items-center py-10 ${isLogin ? 'h-[70vh] sm:h-[95vh] md:h-[85vh] lg:h-[95vh]' : ''}`}>
         <Helmet>
-          <title>Crystal Mats | Login</title>
+          <title>K-Mats | Login</title>
         </Helmet>
       <div className='w-[70%] h-full flex mx-auto items-center md:bg-white rounded-3xl'>
         {isLogin ? (
           // Login
           <div className='w-full h-[450px] md:h-[650px] items-center md:grid grid-cols-2'>
             <div className='md:border-r-2'>
-              <h1 className='text-2xl md:text-4xl font-bold text-cyan-600 cursor-pointer text-center'>CRYSTAL</h1>
+              <h1 className='text-2xl md:text-4xl font-bold text-cyan-600 cursor-pointer text-center'>K-Mats</h1>
               <h1 className='text-3xl md:text-5xl font-semibold text-cyan-950 md:text-black mt-2 ml-5 text-center'>WELCOME BACK !!!</h1>
               <p className='text-gray-500 md:text-gray-800 font-semibold text-center mt-2'>Please enter your details...</p>
               <form className='mt-3 md:mt-5'>
@@ -380,6 +381,9 @@ const validateForm = () => {
                 <button onClick={handleLoginSubmit} className='block mt-2 w-[95%] md:w-[80%] mx-auto rounded-lg bg-cyan-500 py-2 text-white font-semibold hover:bg-cyan-400'>Login</button>
               </form>
               <p className='text-center mt-3 font-semibold text-gray-600'>Haven't registered yet? <span className='text-cyan-500 font-bold cursor-pointer hover:text-cyan-600' onClick={handleSwitch}>Sign Up</span></p>
+              <Link to='/forgot-password'>
+                <p className='text-center text-cyan-500 font-semibold cursor-pointer hover:text-cyan-600'>Forgot password?</p>
+              </Link>
             </div>
             <div className='w-full h-full md:block hidden'>
               <img src={loginPic} alt="Login" className='w-[90%] mx-auto h-full rounded-r-3xl object-cover' />
@@ -392,7 +396,7 @@ const validateForm = () => {
               <img src={signUpPic} alt="Sign Up" className='w-full h-full object-cover rounded-l-3xl' />
             </div>
             <div className='w-full'>
-              <h1 className='text-xl font-bold text-cyan-600 cursor-pointer text-center'>CRYSTAL</h1>
+              <h1 className='text-xl font-bold text-cyan-600 cursor-pointer text-center'>K-Mats</h1>
               <h1 className='text-2xl font-semibold ml-5 text-center text-black'>SIGN UP !</h1>
               <p className='text-gray-300 md:text-gray-800 font-semibold text-center'>Please enter your details...</p>
               <form className='mt-3 w-full'>
@@ -519,7 +523,7 @@ const validateForm = () => {
           </div>
         )}
       </div>
-      <ToastContainer/>
+      {/* <ToastContainer /> */}
     </div>
   );
 }

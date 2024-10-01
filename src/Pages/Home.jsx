@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <div className='w-full'>
         <Helmet>
-          <title>Crystal Mats | Home</title>
+          <title>K-Mats | Home</title>
         </Helmet>
         <img src={pic} alt="" className='w-full fixed opacity-30 h-full' />
         <div className='z-50'>

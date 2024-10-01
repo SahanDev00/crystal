@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import loader from '../../images/loader.gif';
 import { useCart } from '../Cart/CartContext';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Product = () => {
   const { itemID } = useParams(); // Capture itemID from the URL
@@ -14,7 +16,7 @@ const Product = () => {
 
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(`https://extremeadmin.worldpos.biz/Api/Item/${itemID}`, {
+        const response = await fetch(`https://kmatadmin.worldpos.biz/Api/Item/${itemID}`, {
           headers: {
             'APIKey': apiKey,
           },
@@ -32,7 +34,7 @@ const Product = () => {
 
     const fetchImageData = async () => {
       try {
-        const response = await fetch(`https://extremeadmin.worldpos.biz/Api/ImageData/${itemID}`, {
+        const response = await fetch(`https://kmatadmin.worldpos.biz/Api/ImageData/${itemID}`, {
           headers: {
             'APIKey': apiKey,
           },
@@ -42,7 +44,7 @@ const Product = () => {
           setImages(data.data); // Set the fetched image data
           // Set the first image as the default main image
           if (data.data.length > 0) {
-            setMainImage(`https://extremeadmin.worldpos.biz/Uploads/${data.data[0].imageID}.jpg`);
+            setMainImage(`https://kmatadmin.worldpos.biz/Uploads/${data.data[0].imageID}.jpg`);
           }
         } else {
           console.error('Error fetching image data:', data.errorMessage);
@@ -60,11 +62,14 @@ const Product = () => {
 
   // Assuming addToCart adds the product to the cart correctly
   const handleAddToCart = (product) => {
-   console.log(product); // Now this should log the full product object
    addToCart({
      ...product,
      quantity: 1,  // Ensure quantity is set properly
    });
+   toast.success(product.itemName + ' Added To The Cart!', {
+    position: "top-right",
+    autoClose: 2000,
+  });
  };
 
   if (!product) {
@@ -77,18 +82,18 @@ const Product = () => {
       <div className='w-[70%] grid grid-cols-2 mx-auto'>
         <div className='w-full mt-5'>
           <img 
-            src={mainImage || `https://extremeadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`} 
+            src={mainImage || `https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`} 
             className='w-[90%] mx-auto h-[500px] object-contain' 
             alt={product.itemName} 
           />
-          <div className='flex justify-between mt-2'>
+          <div className='flex items-center justify-center mt-4 gap-2 flex-wrap'>
             {images.map((img, idx) => (
               <img 
                 key={img.imageID} 
-                src={`https://extremeadmin.worldpos.biz/Uploads/${img.imageID}.jpg`}  // Use imageID for thumbnail URL
-                className='w-[160px] h-[160px] cursor-pointer' 
+                src={`https://kmatadmin.worldpos.biz/Uploads/${img.imageID}.jpg`}  // Use imageID for thumbnail URL
+                className='w-[160px] h-[160px] cursor-pointer object-contain' 
                 alt={`Gallery ${idx}`} 
-                onClick={() => setMainImage(`https://extremeadmin.worldpos.biz/Uploads/${img.imageID}.jpg`)} // Update main image on click
+                onClick={() => setMainImage(`https://kmatadmin.worldpos.biz/Uploads/${img.imageID}.jpg`)} // Update main image on click
               />
             ))}
           </div>
@@ -102,6 +107,7 @@ const Product = () => {
           </button>
         </div>
       </div>
+      {/* <ToastContainer /> */}
     </div>
   );
 };

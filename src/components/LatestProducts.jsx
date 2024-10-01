@@ -10,7 +10,7 @@ const LatestProducts = () => {
     const fetchLatestItems = async () => {
       try {
         const apiKey = process.env.REACT_APP_API_KEY;
-        const response = await fetch('https://extremeadmin.worldpos.biz/Api/Item?IsNew=y', {
+        const response = await fetch('https://kmatadmin.worldpos.biz/Api/Item?IsNew=y', {
           method: 'GET',
           headers: {
             'APIKey': apiKey,
@@ -54,7 +54,7 @@ const LatestProducts = () => {
         <h1 className='text-center text-3xl text-gray-700 font-bold uppercase my-5 font-overpass'>
           Latest <span className='text-cyan-600'>Arrivals</span>
         </h1>
-        <div className='mt-3 flex flex-wrap gap-4 w-full items-center justify-center'>
+        <div className='mt-3 flex flex-wrap gap-5 w-full items-center justify-center'>
           {items.map((item, index) => (
             <div
               key={item.itemID}
@@ -66,8 +66,8 @@ const LatestProducts = () => {
             to={`/product/${item.cacheID}`} // Link to the corresponding category
           >
               <img
-                src={`https://extremeadmin.worldpos.biz/Uploads/${item.cacheID}.jpg` || '/placeholder-image.jpg'} // Default image if no fileUpload is provided
-                className='absolute bg-white w-full h-full object-contain duration-300 group-hover:opacity-30'
+                src={`https://kmatadmin.worldpos.biz/Uploads/${item.cacheID}.jpg` || '/placeholder-image.jpg'} // Default image if no fileUpload is provided
+                className='absolute bg-white w-full h-full object-cover duration-300 group-hover:opacity-30'
                 alt={item.itemName}
               />
               <div className='absolute flex justify-center items-center flex-col inset-0 text-white opacity-0 group-hover:opacity-100'>

@@ -13,7 +13,7 @@ const ProductsPage = () => {
   return (
     <div>
         <Helmet>
-          <title>Crystal Mats | Products</title>
+          <title>K-Mats | Products</title>
         </Helmet>
         <Product/>
         <Questions/>

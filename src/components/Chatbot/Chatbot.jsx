@@ -39,7 +39,7 @@ const Chatbot = ({ onClose }) => {
   return (
     <div className="flex items-center justify-center h-screen relative">
         <Helmet>
-          <title>Crystal Mats | ChatBot</title>
+          <title>K-Mats | ChatBot</title>
         </Helmet>
         <div className="absolute m-4 w-[60%] h-[65%] bg-white border border-gray-300 rounded-lg shadow-lg">
             <h1 className='font-bold text-3xl p-4'>CHAT BOT</h1>

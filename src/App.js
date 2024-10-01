@@ -15,6 +15,9 @@ import Cart from './components/Cart/Cart';
 import Checkout from './components/Cart/Checkout';
 import NoProducts from './components/NoProducts';
 import EditPassword from './components/Profile/EditPassword';
+import ForgotPassword from './components/Profile/ForgotPassword';
+import ResetPassword from './components/Profile/ResetPassword';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -36,9 +39,12 @@ function App() {
           <Route path='/checkout' element={<Checkout/>} />
           <Route path='/edit-password' element={<EditPassword/>} />
           <Route path='/no-products' element={<NoProducts/>} />
+          <Route path='/forgot-password' element={<ForgotPassword/>} />
+          <Route path="/reset-password/:tokenID" element={<ResetPassword />} />
         </Routes>
         <Footer/>
       </Router>
+      <ToastContainer/>
     </div>
   );
 }

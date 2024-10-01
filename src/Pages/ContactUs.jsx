@@ -32,7 +32,7 @@ const ContactUs = () => {
   return (
     <div className='w-full mt-20 font-overpass'>
         <Helmet>
-          <title>Crystal Mats | Contact Us</title>
+          <title>K-Mats | Contact Us</title>
         </Helmet>
       <div className=' h-full w-full relative  grid justify-center grid-cols-1 md:grid-cols-2 mt-10 sm:mt-10 md:mt-16'>
         {/* Form */}

@@ -3,9 +3,14 @@ import { useCart } from './CartContext'; // Adjust the path as needed
 import Country from './Countries';
 import { Helmet } from 'react-helmet';
 import Cookies from 'js-cookie';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
+import emailjs from 'emailjs-com';
 
 const Checkout = () => {
   const { cartItems, calculateTotal, clearCart  } = useCart(); // Get your cart data dynamically from CartContext
+  const navigate = useNavigate();
 
   // State for form data
   const [formData, setFormData] = useState({
@@ -59,10 +64,9 @@ const Checkout = () => {
         UserID: ""  // Set this to the logged-in user's ID
       }
     };
-    console.log('Order Data:', orderData);
     try {
       const apiKey = process.env.REACT_APP_API_KEY;
-      const response = await fetch('https://extremeadmin.worldpos.biz/Api/Order', {
+      const response = await fetch('https://kmatadmin.worldpos.biz/Api/Order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -72,12 +76,32 @@ const Checkout = () => {
       });
 
       if (response.ok) {
-        const result = await response.json();
-        console.log('Order placed successfully:', result);
-        clearCart();
+        const responseData = await response.json(); // Parse the JSON response
+        const orderID = responseData.data.orderID; // Get the order ID from the response
+
+      // Send email using EmailJS
+        const emailData = {
+          to_name: `${firstName} ${lastName}`, // recipient's name
+          from_name: 'Extreme Computers', // your name or your business name
+          order_id: orderID // order ID from the response
+        };
+
+        emailjs.send('service_2nmvxuu', 'template_7ccdwzy', emailData, "iJLT9e20sQ1qsdX29")
+
+        toast.success('Order placed successfully!', {
+          position: "top-right",
+          autoClose: 2000,
+        });
+        setTimeout(() => {
+          clearCart();
+          navigate('/')
+        }, 2000);
         // Handle successful order placement, e.g., redirect or show a message
       } else {
-        console.error('Failed to place order:', response.statusText);
+        toast.error('Failed to place order!', {
+          position: "top-right",
+          autoClose: 2000,
+        });
         // Handle failed order placement, e.g., show an error message
       }
     } catch (error) {
@@ -89,7 +113,7 @@ const Checkout = () => {
   return (
     <div className='w-full mx-auto mt-28'>
       <Helmet>
-        <title>Crystal Mats | Checkout</title>
+        <title>K-Mats | Checkout</title>
       </Helmet>
       <div className='w-full mx-auto mb-7 md:mb-20'>
         <h1 className='mt-10 md:mt-20 md:mb-5 text-2xl md:text-4xl text-black/80 font-bold text-center font-overpass'>Place Order</h1>
@@ -182,6 +206,7 @@ const Checkout = () => {
           </div>
         </div>
       </div>
+      {/* <ToastContainer /> */}
     </div>
   );
 };

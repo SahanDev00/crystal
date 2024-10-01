@@ -9,7 +9,7 @@ import Cookies from 'js-cookie';
 import { useCart } from './Cart/CartContext';
 import axios from 'axios';  // Import axios for API calls
 import logo from '../images/logo2.png'
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
@@ -94,7 +94,7 @@ const Navbar = () => {
 
     try {
       const apiKey = process.env.REACT_APP_API_KEY;
-      const response = await axios.get(`https://extremeadmin.worldpos.biz/Api/Item?KeyW=${searchQuery}`,{
+      const response = await axios.get(`https://kmatadmin.worldpos.biz/Api/Item?KeyW=${searchQuery}`,{
         headers: {
           'APIKey': apiKey,
         },
@@ -201,7 +201,7 @@ const Navbar = () => {
           <ul>
             {searchResults.map((product) => (
               <Link to={`/product/${product.itemID}`} className='flex p-1'>
-                <img className='w-14 border-b' src={`https://extremeadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`} alt="" />
+                <img className='w-14 border-b' src={`https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`} alt="" />
                 <li key={product.id} className="p-3 border-b w-full hover:bg-gray-100">
                   {product.itemName} 
                 </li>
@@ -210,7 +210,7 @@ const Navbar = () => {
           </ul>
         </div>
       )}
-      <ToastContainer/>
+      {/* <ToastContainer /> */}
     </div>
   );
 }

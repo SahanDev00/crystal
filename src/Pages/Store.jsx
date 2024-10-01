@@ -16,7 +16,7 @@ const Store = () => {
   return (
     <div>
         <Helmet>
-          <title>Crystal Mats | Store</title>
+          <title>K-Mats | Store</title>
         </Helmet>
         <Categories/>
         <AllProducts/>

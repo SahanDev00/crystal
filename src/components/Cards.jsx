@@ -4,6 +4,8 @@ import { FaArrowRight } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from 'react-router-dom';
+
 
 const Cards = () => {
   const [slides, setSlides] = useState([]);
@@ -23,7 +25,7 @@ const Cards = () => {
   const fetchSlides = async () => {
     try {
       const apiKey = process.env.REACT_APP_API_KEY;
-      const response = await axios.get('https://extremeadmin.worldpos.biz/Api/SlideBanner',{
+      const response = await axios.get('https://kmatadmin.worldpos.biz/Api/SlideBanner',{
         headers: {
           'APIKey': apiKey,
         },
@@ -48,8 +50,7 @@ const Cards = () => {
       <Slider {...settings} className='w-[55%] mx-auto'>
         {slides.map((slide) => (
           <div key={slide.slideBannerID} className='relative w-full h-[650px]'>
-            {/* Replace with your desired image URL or logic */}
-            <img src={`https://extremeadmin.worldpos.biz/uploads/${slide.slideBannerID}.jpg`} alt={slide.title} className='w-[500px] h-[80%] object-cover shadow-lg absolute top-0 left-2 z-10 rounded-lg' />
+            <img src={`https://kmatadmin.worldpos.biz/uploads/${slide.slideBannerID}.jpg`} alt={slide.title} className='w-[500px] h-[80%] object-cover shadow-lg absolute top-0 left-2 z-10 rounded-lg' />
             <div className='w-[770px] h-[600px] bg-cyan-400/20 absolute right-2 bottom-0 rounded-lg'>
               <div className='w-full h-full flex'>
                 <div className='w-1/2'/>
@@ -57,7 +58,9 @@ const Cards = () => {
                   <div>
                     <h1 className='font-bold my-5 text-5xl text-black/90 font-overpass'>{slide.title}</h1>
                     <p className='font-karla'>{slide.description}</p>
-                    <FaArrowRight className='mt-5 rounded-full w-[50px] h-[50px] p-3 text-black/90 border border-black cursor-pointer hover:bg-yellow-400/20'/>
+                    <Link to={slide.buttonLink}>
+                      <FaArrowRight className='mt-5 rounded-full w-[50px] h-[50px] p-3 text-black/90 border border-black cursor-pointer hover:bg-yellow-400/20'/>
+                    </Link>
                   </div>
                 </div>
               </div>
