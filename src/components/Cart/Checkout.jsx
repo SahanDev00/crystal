@@ -53,7 +53,7 @@ const Checkout = () => {
       itemCount: items,
       itemTotal: parseFloat(total),
       itemTotalDisplay: parseFloat(total),
-      orderStatus: "PD",  // Default status
+      orderStatus: "P",  // Default status
       remarks: "",  // Optional remarks
       action: {
         OrderActionID: "",
@@ -75,9 +75,46 @@ const Checkout = () => {
         body: JSON.stringify(orderData),
       });
 
+      
+
       if (response.ok) {
         const responseData = await response.json(); // Parse the JSON response
         const orderID = responseData.data.orderID; // Get the order ID from the response
+
+        for (const item of cartItems) {
+          const orderItemData = {
+            orderID: orderID,
+            itemID: item.itemID, // Use the item ID from your cart item
+            remarks: "", // Any optional remarks
+            itemPrice: parseFloat(item.retailPrice),
+            itemDiscount: 0,  // Set this if applicable
+            itemQty: parseInt(item.quantity, 10),
+            paymentStatus: "NP",  // Customize as needed
+            transaction: "", // Customize as needed
+            returnURL: "", // Customize the return URL
+            itemCode: item.itemCode, // Add the item code if available
+            itemName: item.name, // Item name from your cart item
+            lineTotal: parseFloat(item.retailPrice) * parseInt(item.quantity, 10),
+            itemPriceDisplay: item.retailPrice,
+            itemDiscountDisplay: "-",
+            remarksDisplay: "",
+            lineTotalDisplay: (parseFloat(item.retailPrice) * parseInt(item.quantity, 10)).toFixed(2)
+          };
+                    // Send each item to the OrderItem API
+                    const orderItemResponse = await fetch('https://kmatadmin.worldpos.biz/Api/OrderItem', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                        'APIKey': apiKey
+                      },
+                      body: JSON.stringify(orderItemData)
+                    });
+            
+            
+                    if (!orderItemResponse.ok) {
+                      alert(`Failed to place order item: ${item.name}`);
+                    }
+        }
 
       // Send email using EmailJS
         const emailData = {

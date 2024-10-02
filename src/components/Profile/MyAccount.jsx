@@ -80,7 +80,7 @@ const MyAccount = () => {
       };
 
   return (
-    <div className='w-full mt-32 font-overpass'>
+    <div className='w-full min-h-screen mt-32 font-overpass'>
         <Helmet>
           <title>K-Mats | My Account</title>
         </Helmet>
