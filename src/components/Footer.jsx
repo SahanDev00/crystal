@@ -6,9 +6,9 @@ const Footer = () => {
     <div className='w-full bg-cyan-200 relative py-10 font-overpass'>
       <div className='w-[90%] mx-auto flex flex-col md:flex-row justify-between px-6'>
         {/* About Us Section */}
-        <div className='mb-8 md:mb-0 w-[50%]'>
+        <div className='mb-8 md:mb-0 w-full md:w-[50%]'>
           <h2 className='text-xl font-bold text-gray-700 mb-4 font-roboto'>About Us</h2>
-          <p className='text-gray-600 w-[70%]'>
+          <p className='text-gray-600 md:w-[70%]'>
             We are a company committed to providing the best quality products to our customers. 
             Our journey began with a vision to deliver exceptional value and service. 
             We believe in customer satisfaction and aim to exceed expectations with every purchase.

@@ -49,7 +49,7 @@ const LatestProducts = () => {
   }, [items]); // Ensure this effect runs after items are loaded
 
   return (
-    <div className='w-full pt-20 pb-28 bg-cyan-50 relative'>
+    <div className='w-full pt-1 md:pt-20 pb-28 bg-cyan-50 relative'>
       <div className='w-[100%] mx-auto flex flex-col items-center justify-center'>
         <h1 className='text-center text-3xl text-gray-700 font-bold uppercase my-5 font-overpass'>
           Latest <span className='text-cyan-600'>Arrivals</span>
@@ -59,7 +59,7 @@ const LatestProducts = () => {
             <div
               key={item.itemID}
               ref={(el) => rugsRef.current[index] = el}
-              className='h-[450px] border w-[90%] sm:w-[40%] md:w-[45%] lg:w-[40%] xl:w-[30%] relative hover:shadow-md duration-300 hover:bg-cyan-950 group cursor-pointer opacity-0 transform translate-y-10'
+              className='h-[400px] sm:h-[350px] md:h-[450px] border w-[90%] sm:w-[40%] md:w-[45%] lg:w-[40%] xl:w-[30%] relative hover:shadow-md duration-300 hover:bg-cyan-950 group cursor-pointer opacity-0 transform translate-y-10'
             >
             <Link
             key={index}
@@ -70,7 +70,7 @@ const LatestProducts = () => {
                 className='absolute bg-white w-full h-full object-cover duration-300 group-hover:opacity-30'
                 alt={item.itemName}
               />
-              <div className='absolute flex justify-center items-center flex-col inset-0 text-white opacity-0 group-hover:opacity-100'>
+              <div className='absolute flex justify-center items-center flex-col inset-0 text-white bg-black/50 lg:opacity-0 lg:group-hover:opacity-100'>
                 <h1 className='text-center my-1 font-semibold uppercase text-lg font-karla w-[97%] mx-auto'>
                   {item.itemName}
                 </h1>

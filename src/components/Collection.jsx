@@ -58,7 +58,7 @@ const Collection = () => {
         <h1 className='text-center text-3xl text-gray-700 font-bold uppercase my-5 font-overpass'>
           Shop by <span className='text-cyan-600'>category</span>
         </h1>
-        <div className='mt-3 grid grid-cols-4 w-full items-center justify-center'>
+        <div className='w-[90%] lg:w-full lg:mt-3 grid grid-cols-1 sm:grid-cols-2 lg:space-x-0 space-x-3 lg:grid-cols-4  items-center justify-center'>
           {[rugPic1, rugPic2, rugPic3, rugPic4].map((pic, index) => (
                         <Link
                         scroll={el => {
@@ -74,10 +74,10 @@ const Collection = () => {
             <div
               key={index}
               ref={(el) => rugsRef.current[index] = el}
-              className='h-[450px] border w-full relative hover:shadow-md duration-300 hover:bg-black group cursor-pointer opacity-0 transform translate-y-10'
+              className='h-[300px] md:h-[400px] lg:h-[450px] border w-full relative hover:shadow-md duration-300 bg-black lg:hover:bg-black group cursor-pointer lg:opacity-0 transform translate-y-10'
             >
               <img src={pic} className='absolute w-full h-full object-cover duration-300 group-hover:opacity-30' alt={`Rug ${index + 1}`} />
-              <div className='absolute flex justify-center items-center flex-col inset-0 text-white opacity-0 group-hover:opacity-100'>
+              <div className='absolute bg-black/50 lg:bg-none flex justify-center items-center flex-col inset-0 text-white lg:opacity-0 lg:group-hover:opacity-100'>
                 <h1 className='text-center my-1 font-semibold uppercase text-lg font-overpass'>
                   {categories[index] || `Rug ${index + 1} Example Pic`}
                 </h1>
