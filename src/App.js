@@ -21,7 +21,7 @@ import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-    <div className="App relative z-10 bg-white">
+    <div className=" relative z-10 bg-white">
       <Router>
         <Navbar/>
         <Routes>

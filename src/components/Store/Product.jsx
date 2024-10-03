@@ -79,11 +79,11 @@ const Product = () => {
   return (
     <div className='w-full mt-28 mb-10'>
       <h1 className='text-3xl text-center font-bold my-5 text-gray-600 font-overpass'>{product.itemName}</h1>
-      <div className='w-[70%] grid grid-cols-2 mx-auto'>
+      <div className='w-[95%] md:w-[85%] xl:w-[80%] 3xl:w-[70%] grid grid-cols-1 lg:grid-cols-2 mx-auto'>
         <div className='w-full mt-5'>
           <img 
             src={mainImage || `https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`} 
-            className='w-[90%] mx-auto h-[500px] object-contain' 
+            className='w-[90%] mx-auto md:h-[500px] object-contain' 
             alt={product.itemName} 
           />
           <div className='flex items-center justify-center mt-4 gap-2 flex-wrap'>
@@ -91,7 +91,7 @@ const Product = () => {
               <img 
                 key={img.imageID} 
                 src={`https://kmatadmin.worldpos.biz/Uploads/${img.imageID}.jpg`}  // Use imageID for thumbnail URL
-                className='w-[160px] h-[160px] cursor-pointer object-contain' 
+                className='w-[60px] sm:w-[100px] md:w-[160px]  md:h-[160px] cursor-pointer object-contain' 
                 alt={`Gallery ${idx}`} 
                 onClick={() => setMainImage(`https://kmatadmin.worldpos.biz/Uploads/${img.imageID}.jpg`)} // Update main image on click
               />
@@ -99,8 +99,8 @@ const Product = () => {
           </div>
         </div>
         <div className='w-full flex flex-col justify-center items-center'>
-          <h1 className='text-3xl font-bold text-black/70 my-5 font-karla'>{product.itemName}</h1>
-          <p className='text-lg text-center w-[80%] text-black/60 font-karla'>{product.itemDescription}</p>
+          <h1 className='text-3xl font-bold text-black/70 lg:block hidden lg:mt-0 lg:my-5 font-karla'>{product.itemName}</h1>
+          <p className='text-[15px] md:text-lg text-center w-[90%] lg:w-[80%] text-black/60 font-karla mt-10 lg:mt-0'>{product.itemDescription}</p>
           <p className='text-lg font-semibold my-5 font-karla'>Rs.{product.retailPrice}</p>
           <button onClick={() => handleAddToCart(product)} className='px-4 py-2 rounded-full font-karla bg-cyan-600/70 font-semibold text-white hover:bg-cyan-600/80'>
             Add to Cart

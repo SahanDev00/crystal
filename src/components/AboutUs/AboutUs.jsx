@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Questions from './Questions'
 
 const AboutUs = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+
   return (
     <div className='w-full mt-28'>
         <div className='w-[60%] mx-auto'>

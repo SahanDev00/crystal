@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,6 +7,10 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleReset = async (e) => {
     e.preventDefault();

@@ -137,10 +137,10 @@ const Navbar = () => {
     }, []);
   
   return (
-    <div className={`w-full fixed top-0 duration-300 z-50 ${isActive('/checkout') ? 'bg-cyan-950' : ''} ${isActive('/') ? 'bg-cyan-950/90' : ''} ${isActive('/cart') || isActive('/account') || isActive('/product') || isActive('/contact-us') || isActive('/order-details') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? 'bg-white border-b' : ''} ${isActive('/about-us') ? 'bg-cyan-950' : ''}`}>
+    <div className={`w-full fixed top-0 duration-300 z-50 ${isActive('/checkout') ? 'bg-cyan-950' : ''} ${isActive('/') ? 'bg-cyan-950/90' : ''} ${isActive('/cart') || isActive('/account') || isActive('/product') || isActive('/contact-us') || isActive('/order-details') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? 'bg-white border-b' : ''} ${isActive('/about-us') ? 'bg-cyan-950' : ''} ${isActive('/') || isActive('/about-us') ? 'bg-cyan-950' : 'bg-white'}`}>
       <div className='sm:w-[90%] lg:w-[80%] h-[80px] flex items-center justify-between mx-auto'>
         {/*<h1 className='text-4xl text-cyan-500 hover:text-cyan-600 duration-300 font-bold cursor-pointer font-roboto'><Link to='/'>CG</Link></h1>*/}
-        <Link to='/'><img src={logo} alt="" className='w-48 sm:w-52 lg:w-60'/></Link>
+        <Link to='/'><img src={logo} alt="" className='w-40 sm:w-52 lg:w-60'/></Link>
         <ul className='hidden md:flex gap-7 lg:gap-10'>
           <Link to='/' exact className={` font-overpass text-lg hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') || isActive('/about-us') ? 'text-white' : ''} ${isActive('/product') || isActive('/cart') || isActive('/account') || isActive('/contact-us') || isActive('/store')|| isActive('/my-orders') || isActive('/order-details') || isActive('/edit-profile') || isActive('/login') ? 'text-black/50' : ''} ${isActive('/') ? 'text-cyan-500' : ''}`}>Home</Link>
           <Link to='/store' className={` font-overpass text-lg hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') ? 'text-white' : ''} ${isActive('/cart') || isActive('/account') || isActive('/contact-us') || isActive('/store') || isActive('/my-orders') || isActive('/order-details') || isActive('/edit-profile') || isActive('/login') ? 'text-black/50' : ''}  ${isActive('/store') || isActive('/product') ? 'text-cyan-500' : ''} ${isActive('/') || isActive('/about-us') ? 'text-white' : ''}`}>Store</Link>
@@ -160,7 +160,7 @@ const Navbar = () => {
               </form>
             </div>
           </div>
-          <div  className='relative group'>
+          <div className='relative group'>
             <FaUser onClick={handleProfileClick} className={`hover:text-cyan-500 cursor-pointer duration-300 mr-2 ${isActive('/checkout') || isActive('/') || isActive('/about-us')  ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/contact-us') || isActive('/store') ? "text-black/50" : ''} ${isActive('/account') || isActive('/order-details') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? 'text-cyan-500' : ''}`} size={20} />
             {
               isLoggedIn() && (
@@ -177,7 +177,7 @@ const Navbar = () => {
           </div>
           <Link to='/cart' className='relative'>
           {getTotalItems() > 0 && (
-            <p className='text-white bg-cyan-600/50 rounded-full px-2 absolute -top-4 -right-5'>{getTotalItems()}</p> 
+            <p className='text-white bg-cyan-600/80 md:bg-cyan-600/50 rounded-full px-1 md:px-2 absolute md:-top-4 -top-4 -right-2 md:-right-5'>{getTotalItems()}</p> 
             )}
             <FaCartShopping className={`hover:text-cyan-500 cursor-pointer duration-300 ${isActive('/product') || isActive('/contact-us') || isActive('/order-details') || isActive('/account') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? "text-black/50" : ''} ${isActive('/about-us') || isActive('/') ? 'text-white' : ''} ${isActive('/cart') || isActive('/checkout') ? 'text-cyan-500 ' : '' } `} size={20} />
           </Link>
@@ -188,12 +188,12 @@ const Navbar = () => {
       </div>
 
       { isMenu && (
-          <div className='w-full h-[200px] duration-300'>
+          <div className='w-full h-[200px] duration-300 border-b border-black/60 shadow'>
               <ul className='flex flex-col gap-2 justify-center items-center w-full h-full'>
-                <Link to='/' exact className={` font-overpass text-lg hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') || isActive('/about-us') ? 'text-white' : ''} ${isActive('/product') || isActive('/cart') || isActive('/account') || isActive('/contact-us') || isActive('/store')|| isActive('/my-orders') || isActive('/order-details') || isActive('/edit-profile') || isActive('/login') ? 'text-black/50' : ''} ${isActive('/') ? 'text-cyan-500' : ''}`}>Home</Link>
-                <Link to='/store' className={` font-overpass text-lg hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') ? 'text-white' : ''} ${isActive('/cart') || isActive('/account') || isActive('/contact-us') || isActive('/store') || isActive('/my-orders') || isActive('/order-details') || isActive('/edit-profile') || isActive('/login') ? 'text-black/50' : ''}  ${isActive('/store') || isActive('/product') ? 'text-cyan-500' : ''} ${isActive('/') || isActive('/about-us') ? 'text-white' : ''}`}>Store</Link>
-                <Link to='/about-us' className={` font-overpass text-lg hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/account') || isActive('/contact-us') || isActive('/my-orders') || isActive('/store') || isActive('/edit-profile') || isActive('/order-details') || isActive('/login') ? 'text-black/50' : ''} ${isActive('/about-us') ? 'text-cyan-500' : ''}  ${isActive('/') ? 'text-white' : ''}`}>About Us</Link>
-                <Link to='/contact-us' className={` font-overpass text-lg hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') || isActive('/about-us') ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/account') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/order-details') || isActive('/login') ? 'text-black/50' : ''}  ${isActive('/contact-us') ? 'text-cyan-500' : ''}  ${isActive('/') ? 'text-white' : ''}`}>Contact Us</Link>
+                <Link to='/' exact className={` font-overpass text-lg hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') || isActive('/about-us') ? 'text-white' : ''} ${isActive('/product') || isActive('/cart') || isActive('/account') || isActive('/contact-us') || isActive('/store')|| isActive('/my-orders') || isActive('/order-details') || isActive('/edit-profile') || isActive('/login') ? 'text-black/50' : ''} ${isActive('/') ? 'text-cyan-500' : 'text-black/50'}`}>Home</Link>
+                <Link to='/store' className={` font-overpass text-lg hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') ? 'text-white' : ''} ${isActive('/cart') || isActive('/account') || isActive('/contact-us') || isActive('/store') || isActive('/my-orders') || isActive('/order-details') || isActive('/edit-profile') || isActive('/login') ? 'text-black/50' : ''}  ${isActive('/store') || isActive('/product') ? 'text-cyan-500' : ''} ${isActive('/') || isActive('/about-us') ? 'text-white' : 'text-black/50'}`}>Store</Link>
+                <Link to='/about-us' className={` font-overpass text-lg hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/account') || isActive('/contact-us') || isActive('/my-orders') || isActive('/store') || isActive('/edit-profile') || isActive('/order-details') || isActive('/login') ? 'text-black/50' : ''} ${isActive('/about-us') ? 'text-cyan-500' : ''}  ${isActive('/') ? 'text-white' : 'text-black/50'}`}>About Us</Link>
+                <Link to='/contact-us' className={` font-overpass text-lg hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') || isActive('/about-us') ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/account') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/order-details') || isActive('/login') ? 'text-black/50' : ''}  ${isActive('/contact-us') ? 'text-cyan-500' : ''}  ${isActive('/') ? 'text-white' : 'text-black/50'}`}>Contact Us</Link>
               </ul>
           </div>
         )

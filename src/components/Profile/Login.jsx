@@ -66,6 +66,10 @@ const Login = () => {
     }));
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const api = process.env.REACT_APP_API_URL;

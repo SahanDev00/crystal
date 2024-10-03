@@ -79,7 +79,7 @@ const Collection = () => {
               <img src={pic} className='absolute w-full h-full object-cover duration-300 group-hover:opacity-30' alt={`Rug ${index + 1}`} />
               <div className='absolute bg-black/50 lg:bg-none flex justify-center items-center flex-col inset-0 text-white lg:opacity-0 lg:group-hover:opacity-100'>
                 <h1 className='text-center my-1 font-semibold uppercase text-lg font-overpass'>
-                  {categories[index] || `Rug ${index + 1} Example Pic`}
+                  {categories[index]}
                 </h1>
               </div>
             </div>

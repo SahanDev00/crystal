@@ -33,6 +33,10 @@ const OrderDetails = () => {
     fetchOrderItems();
   }, [orderID]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (orderItems.length === 0) {
     return <div className='text-white'>No order details available</div>;
   }

@@ -8,6 +8,10 @@ const Orders = () => {
   const customerId = Cookies.get('customerId') || sessionStorage.getItem('customerId');
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     // Fetch order data from API
     const fetchOrders = async () => {
       const api = `https://kmatadmin.worldpos.biz/Api/Order?CustomerID=${customerId}`;

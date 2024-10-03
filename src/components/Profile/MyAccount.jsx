@@ -5,6 +5,7 @@ import { IoIosLogOut } from 'react-icons/io'
 import { Link, useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie';
 import { toast } from 'react-toastify';
+import loader from '../../images/loader.gif'
 import 'react-toastify/dist/ReactToastify.css';
 
 const MyAccount = () => {
@@ -13,6 +14,10 @@ const MyAccount = () => {
     const [customerId, setCustomerId] = useState(null);
     const Navigate = useNavigate()
   
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+    
     useEffect(() => {
         // Retrieve customer ID from cookies or session storage
         const customerId = Cookies.get('customerId') || sessionStorage.getItem('customerId');
@@ -52,7 +57,7 @@ const MyAccount = () => {
     }, [customerId]);
   
     if (!profileData) {
-      return <div>Loading...</div>; // or a spinner/loading component
+      return <div className='h-[70vh] w-screen flex items-center justify-center'><img src={loader} className='w-[100px]' alt="" /></div>; // or a spinner/loading component
     }
 
 
@@ -80,7 +85,7 @@ const MyAccount = () => {
       };
 
   return (
-    <div className='w-full min-h-screen mt-32 font-overpass'>
+    <div className='w-full mt-32 font-overpass'>
         <Helmet>
           <title>K-Mats | My Account</title>
         </Helmet>

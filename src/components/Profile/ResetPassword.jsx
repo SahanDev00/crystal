@@ -13,6 +13,10 @@ const ResetPassword = () => {
   const [isValidToken, setIsValidToken] = useState(false);
   const [customerID, setCustomerID] = useState(null);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Function to verify the token and check expiry
   useEffect(() => {
     const verifyToken = async () => {

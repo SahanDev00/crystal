@@ -17,6 +17,10 @@ const EditPassword = () => {
   });
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
+  useEffect(() => {
     // Retrieve customer ID from cookies or session storage
     const customerId = Cookies.get('customerId') || sessionStorage.getItem('customerId');
     if (customerId) {

@@ -1,4 +1,4 @@
-import React, { useState  } from 'react';
+import React, { useEffect, useState  } from 'react';
 import { useCart } from './CartContext'; // Adjust the path as needed
 import Country from './Countries';
 import { Helmet } from 'react-helmet';
@@ -11,6 +11,10 @@ import emailjs from 'emailjs-com';
 const Checkout = () => {
   const { cartItems, calculateTotal, clearCart  } = useCart(); // Get your cart data dynamically from CartContext
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // State for form data
   const [formData, setFormData] = useState({

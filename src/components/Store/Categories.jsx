@@ -58,7 +58,7 @@ const Categories = () => {
 
   return (
 <div id='categories' className='w-full border bg-cyan-800'>
-  <div className='w-[80%] py-2 mx-auto mt-20 flex flex-wrap justify-center gap-10 items-center'>
+  <div className='w-[80%] py-2 mx-auto mt-20 flex flex-wrap justify-center gap-5 sm:gap-7 md:gap-8 lg:gap-10 items-center'>
     {categories.map((category) => (
       <div key={category.categoryMainID} className='relative group'>
         <ScrollLink 
@@ -71,7 +71,7 @@ const Categories = () => {
             {category.categoryMainName}
           </h1>
         </ScrollLink>
-        <div className='w-[300px] z-20 py-5 translate-y-4 group-hover:translate-y-0 duration-500 opacity-0 group-hover:opacity-100 bg-white absolute -left-28 border invisible group-hover:visible'>
+        <div className='w-[300px] hidden lg:block z-20 py-5 translate-y-4 group-hover:translate-y-0 duration-500 opacity-0 group-hover:opacity-100 bg-white absolute -left-28 border invisible group-hover:visible'>
           <ul className='w-full h-full space-y-3 flex flex-col justify-center'>
             {items[category.categoryMainID]?.length > 0 ? (
               items[category.categoryMainID].map((item) => (

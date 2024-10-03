@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useCart } from './CartContext'; // Adjust the path as needed
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
@@ -11,9 +11,9 @@ const Cart = () => {
   const navigate = useNavigate();
   const { cartItems, updateQuantity, calculateTotal, removeFromCart } = useCart();
 
-  // Ensure cartItems is an array and log its structure
-  console.log(cartItems); // Ensure full product data is logged, not just quantity
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const formatPrice = (price) => parseFloat(price).toFixed(2);
 
