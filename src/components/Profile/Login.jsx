@@ -395,7 +395,7 @@ const validateForm = () => {
           </div>
         ) : (
           // Sign Up
-          <div className='w-full h-[800px] md:h-[1000px] xl:h-[850px]  rounded-3xl md:bg-white items-center md:grid grid-cols-2'>
+          <div className='w-full h-[900px] md:h-[1000px] xl:h-[850px]  rounded-3xl md:bg-white items-center md:grid grid-cols-2'>
             <div className='w-full h-full rounded-3xl md:block hidden'>
               <img src={signUpPic} alt="Sign Up" className='w-full h-full object-cover rounded-l-3xl' />
             </div>

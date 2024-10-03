@@ -76,12 +76,12 @@ const Cart = () => {
               <li key={item.itemID} className="flex justify-between mb-4 p-4 border-b">
                 <div className="flex items-center w-full">
                   <img src={`https://kmatadmin.worldpos.biz/Uploads/${item.cacheID}.jpg`} alt={item.itemName} className="w-16 h-16 object-cover mr-4" />
-                  <div className='flex items-center justify-between w-full'>
+                  <div className='md:flex items-center justify-between w-full'>
                     <div>
-                      <h2 className="sm:text-xl text-cyan-700 font-semibold font-overpass">{item.itemName}</h2>
-                      <p className="text-black/70 font-overpass text-sm sm:text-[16px]">Quantity: {item.quantity}</p>
+                      <h2 className="text-sm sm:text-xl text-cyan-700 font-semibold font-overpass">{item.itemName}</h2>
+                      <p className="text-black/70 font-overpass text-xs sm:text-[16px]">Quantity: {item.quantity}</p>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center mt-2 md:mt-0">
                       <button
                         onClick={() => updateQuantity(item.itemID, -1)}
                         className="bg-gray-600 text-white py-1 px-2 rounded font-overpass text-xs sm:text-[16px]"

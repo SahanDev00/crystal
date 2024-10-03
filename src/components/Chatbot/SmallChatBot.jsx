@@ -31,7 +31,7 @@ const SmallChatbot = ({ onClose }) => {
   }, [messages]);
 
   return (
-    <div className="fixed bottom-20 left-4 w-72 h-80 bg-white border border-gray-300 rounded-lg shadow-lg flex flex-col">
+    <div className="fixed bottom-20 left-4 w-52 md:w-72 h-60 md:h-80 bg-white border border-gray-300 rounded-lg shadow-lg flex flex-col">
       <div className="flex justify-between items-center p-2 border-b border-gray-300">
         <span className="font-bold text-lg text-cyan-900">ChatBot</span>
         <button onClick={onClose} className="text-gray-500">
@@ -54,7 +54,7 @@ const SmallChatbot = ({ onClose }) => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="pl-2 flex-1 border rounded-l-lg border-gray-300"
+          className="pl-2 flex-1 border rounded-l-lg border-gray-300 w-[60px]"
           placeholder="Type..."
         />
         <button

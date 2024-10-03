@@ -41,9 +41,9 @@ const Chatbot = ({ onClose }) => {
         <Helmet>
           <title>K-Mats | ChatBot</title>
         </Helmet>
-        <div className="absolute m-4 w-[60%] h-[65%] bg-white border border-gray-300 rounded-lg shadow-lg">
+        <div className="absolute m-4 w-[90%] md:w-[70%] lg:w-[60%] h-[50%] md:h-[65%] bg-white border border-gray-300 rounded-lg shadow-lg">
             <h1 className='font-bold text-3xl p-4'>CHAT BOT</h1>
-            <div className="px-4 h-[500px] overflow-y-scroll">
+            <div className="px-4 h-[69%] sm:h-[35%] md:h-[70%] overflow-y-scroll">
             {messages.map((message, index) => (
                 <div
                 key={index}
