@@ -165,7 +165,7 @@ const Navbar = () => {
             {
               isLoggedIn() && (
             <div className='w-[150px] z-20 py-5 translate-y-4 group-hover:translate-y-0 duration-500 opacity-0 group-hover:opacity-100 bg-white absolute -left-16 border invisible group-hover:visible hidden md:block'>
-                    <ul className='w-full h-full space-y-3 flex flex-col justify-center pl-5'>
+                    <ul className='w-full h-full space-y-3 flex flex-col justify-center pl-5 font-karla'>
                         <Link to='/account' className='text-black/50 font-semibold cursor-pointer hover:text-black/70'>My Account</Link>
                         <Link to='/edit-profile' className='text-black/50 font-semibold cursor-pointer hover:text-black/70'>Edit Profile</Link>
                         <Link to='/my-orders' className='text-black/50 font-semibold cursor-pointer hover:text-black/70'>My Orders</Link>
