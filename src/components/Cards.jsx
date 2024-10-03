@@ -52,7 +52,7 @@ const Cards = () => {
           <div key={slide.slideBannerID} className='relative w-full h-[500px] lg:h-[650px]'>
             <img src={`https://kmatadmin.worldpos.biz/uploads/${slide.slideBannerID}.jpg`} alt={slide.title} className=' lg:w-[50%] xl:w-[500px] h-full lg:h-[80%] object-cover shadow-lg absolute top-0 lg:left-2 lg:z-10 rounded-lg' />
             <div className='w-full lg:w-[650px] xl:w-[770px] h-[600px]  lg:bg-cyan-400/20 absolute lg:right-2 bottom-0 rounded-lg'>
-              <div className='w-full h-full flex bg-black/40'>
+              <div className='w-full h-full flex bg-black/40 lg:bg-cyan-400/20'>
                 <div className='w-5 sm:w-2/12 lg:w-1/2'/>
                 <div className='w-full h-full flex items-center'>
                   <div>
