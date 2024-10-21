@@ -52,10 +52,10 @@ const OrderDetails = () => {
           <thead>
             <tr>
               <th className='px-4 py-2 border-b border-gray-200 text-left font-poppins'>Product</th>
-              <th className='px-4 py-2 border-b border-gray-200 text-left font-poppins'>Quantity</th>
-              <th className='px-4 py-2 border-b border-gray-200 text-left font-poppins'>Price</th>
-              <th className='px-4 py-2 border-b border-gray-200 text-left font-poppins'>Discount</th>
-              <th className='px-4 py-2 border-b border-gray-200 text-left font-poppins'>Total</th>
+              <th className='px-4 py-2 border-b border-gray-200 text-center font-poppins'>Quantity</th>
+              <th className='px-4 py-2 border-b border-gray-200 text-center font-poppins'>Price</th>
+              <th className='px-4 py-2 border-b border-gray-200 text-center font-poppins'>Discount</th>
+              <th className='px-4 py-2 border-b border-gray-200 text-center font-poppins'>Total</th>
             </tr>
           </thead>
           <tbody>
@@ -66,7 +66,7 @@ const OrderDetails = () => {
                   {item.itemName}
                 </td>
                 <td className='px-4 py-2 border-b border-gray-200 text-center font-poppins'>{item.itemQty}</td>
-                <td className='px-4 py-2 border-b border-gray-200 text-center font-poppins'>{item.itemPriceDisplay}</td>
+                <td className='px-4 py-2 border-b border-gray-200 text-center font-poppins'>${item.itemPriceDisplay}</td>
                 <td className='px-4 py-2 border-b border-gray-200 text-center font-poppins'>{item.itemDiscountDisplay}</td>
                 <td className='px-4 py-2 border-b border-gray-200 text-center font-poppins'>{item.lineTotalDisplay}</td>
               </tr>

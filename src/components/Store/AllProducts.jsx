@@ -84,7 +84,7 @@ const AllProducts = () => {
                 <Link to={`/product/${product.itemID}`} className=''>
                   <img src={`https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg` || 'default_image.jpg'} alt={product.itemName} className='w-full md:h-[400px] object-cover' />
                   <p className='absolute text-cyan-300 w-full bg-black/80 bottom-24 text-center font-karla py-2 font-semibold text-lg lg:opacity-0 lg:group-hover:opacity-100 duration-200'>
-                    Rs.{product.retailPrice}
+                    ${product.retailPrice}
                   </p>
                   <div className='w-full h-[100px] flex flex-col items-center justify-center'>
                     <h1 className='text-center text-cyan-600 font-semibold mt-2 font-karla w-[80%]'>{product.itemName}</h1>

@@ -74,7 +74,7 @@ const LatestProducts = () => {
                 <h1 className='text-center my-1 font-semibold uppercase text-lg font-karla w-[97%] mx-auto'>
                   {item.itemName}
                 </h1>
-                <p className='text-center font-semibold'>Rs. {item.retailDisplay}</p>
+                <p className='text-center font-semibold'>${item.retailDisplay}</p>
               </div>
             </Link>
             </div>

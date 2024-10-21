@@ -234,7 +234,7 @@ const Checkout = () => {
                 </div>
                 <div className='flex justify-between border-b border-cyan-500 mt-3'>
                   <h1 className='font-semibold text-lg font-overpass text-black/80'>Total</h1>
-                  <p className='font-overpass text-black/80'>Rs. {total}</p>
+                  <p className='font-overpass text-black/80'>${total}</p>
                 </div>
                 <button 
                   className='w-full bg-cyan-500 py-2 rounded-xl font-overpass mt-7 hover:bg-cyan-400 text-white font-semibold'

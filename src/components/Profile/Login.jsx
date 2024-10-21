@@ -211,7 +211,7 @@ const Login = () => {
   
         // Assuming the password is hashed; you should hash the entered password and compare with stored hash.
         if (storedPassword === enteredPassword) {
-          console.log('Login successful', customerData);
+         
           if (rememberMe) {
             // Set cookies if Remember Me is checked
             Cookies.set('customerId', customerData.customerID, { expires: 30 });

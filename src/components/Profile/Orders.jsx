@@ -69,7 +69,7 @@ const Orders = () => {
                 <td className='px-4 py-2 border-b border-gray-200 font-poppins'>{order.orderID}</td>
                 <td className='px-4 py-2 border-b border-gray-200 font-poppins'>{order.addressDisplay}</td>
                 <td className='px-4 py-2 border-b border-gray-200 font-poppins'>{order.orderDateDisplay}</td>
-                <td className='px-4 py-2 border-b border-gray-200 font-poppins'>{order.itemTotalDisplay}</td>
+                <td className='px-4 py-2 border-b border-gray-200 font-poppins'>${order.itemTotalDisplay}</td>
                 <td className={`px-4 py-2 border-b border-gray-200 font-poppins ${order.orderStatusClass === 'success' ? 'text-green-500' : 'text-red-500'}`}>
                 {order.orderStatusText}
                 </td>

@@ -101,7 +101,7 @@ const Product = () => {
         <div className='w-full flex flex-col justify-center items-center'>
           <h1 className='text-3xl font-bold text-black/70 lg:block hidden lg:mt-0 lg:my-5 font-karla'>{product.itemName}</h1>
           <p className='text-[15px] md:text-lg text-center w-[90%] lg:w-[80%] text-black/60 font-karla mt-10 lg:mt-0'>{product.itemDescription}</p>
-          <p className='text-lg font-semibold my-5 font-karla'>Rs.{product.retailPrice}</p>
+          <p className='text-lg font-semibold my-5 font-karla'>${product.retailPrice}</p>
           <button onClick={() => handleAddToCart(product)} className='px-4 py-2 rounded-full font-karla bg-cyan-600/70 font-semibold text-white hover:bg-cyan-600/80'>
             Add to Cart
           </button>
