@@ -8,10 +8,10 @@ const AboutUs = () => {
       }, []);
 
   return (
-    <div className='w-full mt-28'>
+    <div className='w-full mt-28 2lg:mt-20 3lg:mt-24'>
         <div className='w-[90%] md:w-[70%] lg:w-[60%] mx-auto'>
-            <h1 className='text-gray-700 text-4xl font-bold md:my-10 font-overpass'>About Us</h1>
-            <div className='w-full flex mt-5 md:mt-14'>
+            <h1 className='text-gray-700 text-4xl font-bold md:my-10 2lg:my-0 3lg:my-10 font-overpass'>About Us</h1>
+            <div className='w-full flex mt-5 md:mt-14 2lg:mt-3 3lg:mt-14'>
                 <div className='mx-auto flex flex-col justify-center'>
                     <h1 className='text-3xl font-semibold text-cyan-600/60 my-4 font-overpass'>About K-Mat</h1>
                     <p className='text-black/50 w-[95%] text-wrap text-lg font-karla'>Kmat is an unrivaled company for the production and distribution of coconut fiber mats: based in the 2345678911011 of the Country in which those trees are plenty. Here at Kmat, we embrace the natural abundant resource of coconut fiber to make sustainable and quality mats that pass international standards. In addition, our mats are not only affordable and multi-purpose but also help in building a healthy environment – creating biodegradable products.</p>

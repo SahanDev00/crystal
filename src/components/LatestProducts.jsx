@@ -59,7 +59,7 @@ const LatestProducts = () => {
             <div
               key={item.itemID}
               ref={(el) => rugsRef.current[index] = el}
-              className='h-[400px] sm:h-[350px] md:h-[450px] border w-[90%] sm:w-[40%] md:w-[45%] lg:w-[40%] xl:w-[30%] relative hover:shadow-md duration-300 hover:bg-cyan-950 group cursor-pointer opacity-0 transform translate-y-10'
+              className='h-[400px] sm:h-[350px] md:h-[450px] 2lg:h-[300px] 3lg:h-[450px] border w-[90%] sm:w-[40%] md:w-[45%] 2lg:w-[20%] 3lg:w-[40%] xl:w-[30%] relative hover:shadow-md duration-300 hover:bg-cyan-950 group cursor-pointer opacity-0 transform translate-y-10'
             >
             <Link
             key={index}

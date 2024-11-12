@@ -8,7 +8,7 @@ const CustomProducts = () => {
         <h1 className='text-center text-gray-700 font-bold text-3xl uppercase font-overpass w-[95%] mx-auto sm:w-full'>We offer <span className='text-cyan-600'>custom products</span> for you!</h1>
         <div className='w-[100%] mx-auto mt-14'>
             <div className='grid grid-cols-1 md:grid-cols-2 w-full mb-10 md:mb-0'>
-                <div className='w-full h-[250px] md:h-[600px]'>
+                <div className='w-full h-[250px] md:h-[600px] 2lg:h-[400px] 3lg:h-[600px]'>
                     <img src={pic1} className='h-full w-full object-cover' alt="" />
                 </div>
                 <div className='flex flex-col justify-center items-center bg-cyan-100 p-5 md:p-0'>
@@ -29,7 +29,7 @@ const CustomProducts = () => {
                         <button className='px-4 font-semibold py-2 mt-5 border hover:bg-cyan-400/20 border-cyan-400 shadow text-gray-800 rounded font-karla'>BUY CUSTOM MATS</button>
                     </Link>
                 </div>
-                <div className='w-full h-[250px] md:h-[600px]'>
+                <div className='w-full h-[250px] md:h-[600px] 2lg:h-[400px] 3lg:h-[600px]'>
                     <img src={pic1} className='h-full w-full object-cover' alt="" />
                 </div>
             </div>

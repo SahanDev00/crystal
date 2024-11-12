@@ -58,7 +58,7 @@ const Categories = () => {
 
   return (
 <div id='categories' className='w-full border bg-cyan-800'>
-  <div className='w-[80%] py-2 mx-auto mt-20 flex flex-wrap justify-center gap-5 sm:gap-7 md:gap-8 lg:gap-10 items-center'>
+  <div className='w-[80%] py-2 mx-auto mt-20 2lg:mt-14 3lg:mt-20 flex flex-wrap justify-center gap-5 sm:gap-7 md:gap-8 lg:gap-10 items-center'>
     {categories.map((category) => (
       <div key={category.categoryMainID} className='relative group'>
         <ScrollLink 
@@ -67,7 +67,7 @@ const Categories = () => {
           duration={500} 
           offset={-100}
         >
-          <h1 className='font-semibold uppercase cursor-pointer text-white font-overpass'>
+          <h1 className='font-semibold uppercase cursor-pointer text-white font-overpass text-[16px] 2lg:text-[14px] 3lg:text-[16px]'>
             {category.categoryMainName}
           </h1>
         </ScrollLink>

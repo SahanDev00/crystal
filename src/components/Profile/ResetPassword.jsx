@@ -57,6 +57,11 @@ const ResetPassword = () => {
   const handleResetPassword = async (e) => {
     e.preventDefault();
 
+    if (newPassword.length < 6) {
+      setMessage('Password must be at least 6 characters long.');
+      return;
+    }
+
     if (newPassword !== confirmPassword) {
       setMessage("Passwords don't match!");
       return;
@@ -77,7 +82,7 @@ const ResetPassword = () => {
       const data = await response.json();
 
       if (data.success) {
-        toast.success('Password reset successfully! You can now login with your new password.', {
+        toast.success('Password reset successfully!', {
             position: "top-right",
             autoClose: 2000,
           });

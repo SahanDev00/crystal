@@ -379,6 +379,7 @@ const validateForm = () => {
                             type="checkbox"
                             checked={rememberMe}
                             onChange={() => setRememberMe(!rememberMe)}
+                            className='mr-1'
                             />
                             Remember Me
                         </label>

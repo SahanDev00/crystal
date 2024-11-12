@@ -47,16 +47,16 @@ const Cards = () => {
   return (
     <div className='w-full pt-28 pb-10 relative bg-cyan-50'>
       <h1 className='text-3xl font-bold text-center mb-10 text-gray-700 font-overpass sm:w-full w-[90%] mx-auto'>GLIMPSE OF OUR <span className='text-cyan-600'>PRODUCTS</span></h1>
-      <Slider {...settings} className='lg:w-[90%] xl:w-[80%] 2xl:w-[70%] 3xl:w-[55%] w-[95%] mx-auto'>
+      <Slider {...settings} className='2lg:w-[60%] 3lg:w-[90%] xl:w-[80%] 2xl:w-[70%] 3xl:w-[55%] w-[95%] mx-auto'>
         {slides.map((slide) => (
-          <div key={slide.slideBannerID} className='relative w-full h-[500px] lg:h-[650px]'>
-            <img src={`https://kmatadmin.worldpos.biz/uploads/${slide.slideBannerID}.jpg`} alt={slide.title} className=' lg:w-[50%] xl:w-[500px] h-full lg:h-[80%] object-cover shadow-lg absolute top-0 lg:left-2 lg:z-10 rounded-lg' />
+          <div key={slide.slideBannerID} className='relative w-full h-[500px] 2lg:h-[420px] 3lg:h-[650px]'>
+            <img src={`https://kmatadmin.worldpos.biz/uploads/${slide.slideBannerID}.jpg`} alt={slide.title} className=' 2lg:w-[40%] 3lg:w-[48%] xl:w-[500px] h-full lg:h-[80%] object-cover shadow-lg absolute top-0 lg:left-2 lg:z-10 rounded-lg' />
             <div className='w-full lg:w-[650px] xl:w-[770px] h-[600px]  lg:bg-cyan-400/20 absolute lg:right-2 bottom-0 rounded-lg'>
               <div className='w-full h-full flex bg-black/40 lg:bg-cyan-400/20'>
-                <div className='w-5 sm:w-2/12 lg:w-1/2'/>
+                <div className='w-5 sm:w-2/12 2lg:w-[90%] 3lg:w-1/2'/>
                 <div className='w-full h-full flex items-center'>
                   <div>
-                    <h1 className='font-bold my-5 text-5xl text-white lg:text-black/90 font-overpass'>{slide.title}</h1>
+                    <h1 className='font-bold 2lg:mt-20 3lg:mt-0 my-5 text-5xl text-white lg:text-black/90 font-overpass'>{slide.title}</h1>
                     <p className='font-karla text-gray-200 lg:text-black'>{slide.description}</p>
                     <Link to={slide.buttonLink}>
                       <FaArrowRight className='mt-5 rounded-full w-[50px] h-[50px] p-3 text-white lg:text-black/90 border border-white lg:border-black cursor-pointer hover:bg-yellow-400/20'/>

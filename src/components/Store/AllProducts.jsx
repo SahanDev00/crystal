@@ -77,12 +77,12 @@ const AllProducts = () => {
           <div className='w-full h-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
           {products[category.categoryMainID]?.length > 0 ? (
             products[category.categoryMainID]?.map(product => (
-              <div key={product.itemID} className='w-full  relative cursor-pointer hover:shadow-lg duration-150 shadow group'>
+              <div key={product.itemID} className='w-full relative cursor-pointer hover:shadow-lg duration-150 shadow group'>
                 <button onClick={() => handleAddToCart(product)} className='absolute right-3 top-3 border rounded-full p-3 text-cyan-300 bg-black/70 lg:hidden lg:group-hover:block hover:text-cyan-400'>
                   <FaCartPlus size={20} />
                 </button>
                 <Link to={`/product/${product.itemID}`} className=''>
-                  <img src={`https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg` || 'default_image.jpg'} alt={product.itemName} className='w-full md:h-[400px] object-cover' />
+                  <img src={`https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg` || 'default_image.jpg'} alt={product.itemName} className='w-full md:h-[400px] 2lg:h-[240px] 3lg:h-[400px] object-cover' />
                   <p className='absolute text-cyan-300 w-full bg-black/80 bottom-24 text-center font-karla py-2 font-semibold text-lg lg:opacity-0 lg:group-hover:opacity-100 duration-200'>
                     ${product.retailPrice}
                   </p>
