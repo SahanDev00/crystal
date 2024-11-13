@@ -63,7 +63,7 @@ const EditProfile = () => {
       lastName: formData.lastName,
       companyName: "",
       addressLine1: formData.addressLine1,
-      addressLine2: formData.addressLine2,
+      addressLine2: formData.addressLine2, //billing should not be uploaded
       city: formData.city,
       state: formData.state,
       postalCode: formData.postalCode,
@@ -73,7 +73,7 @@ const EditProfile = () => {
       shipAway: "",
       shipAttTo: formData.addressLine1,
       shipAddressLine1: formData.addressLine1,
-      shipAddressLine2: "",
+      shipAddressLine2: formData.addressLine2,
       shipCity: formData.city,
       shipState: "",
       shipPostalCode: "",

@@ -7,13 +7,16 @@ import Cookies from 'js-cookie';
 import { toast } from 'react-toastify';
 import loader from '../../images/loader.gif'
 import 'react-toastify/dist/ReactToastify.css';
+import { BiSolidEdit } from "react-icons/bi";
 
 const MyAccount = () => {
-
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [profileData, setProfileData] = useState(null);
     const [customerId, setCustomerId] = useState(null);
     const Navigate = useNavigate()
   
+    const handleEditClick = () => setIsModalOpen(true);
+
     useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
@@ -99,17 +102,22 @@ const MyAccount = () => {
                     <p className='text-gray-600 text-lg'><span className='font-semibold'>Telephone:</span> {profileData.telephoneMobile}</p>
                 </div>
                 <div className='w-full p-5 space-y-2 border rounded-xl border-gray-400 bg-cyan-400/20 shadow-lg'>
+                    <h1 className='text-center text-black/60 text-2xl font-bold mt-2 mb-6'>Shipping Address</h1>
+                    <p className='font-semibold text-gray-600 text-lg'>{profileData.customerDisplay}</p>
+                    <p className='text-gray-600 text-wrap '>{profileData.shipAddressLine1}</p>
+                    <p className='text-gray-600 text-wrap '>{profileData.shipAddressLine2}</p>
+                    <p className='text-gray-600 text-wrap '>{profileData.shipCity}</p>
+                    <p className='text-gray-600 text-wrap '>{profileData.shipState}</p>
+                    <p className='text-gray-600 text-wrap '>{profileData.shipPostalCode}</p>
+                </div>
+                <div className='w-full relative p-5 space-y-2 border rounded-xl border-gray-400 bg-cyan-400/20 shadow-lg'>
                     <h1 className='text-center text-black/60 text-2xl font-bold mt-2 mb-6'>Default Billing Address</h1>
                     <p className='font-semibold text-gray-600 text-lg'>{profileData.customerDisplay}</p>
                     <p className='text-gray-600 text-wrap '>{profileData.addressDisplay}</p>
-                </div>
-                <div className='w-full p-5 space-y-2 border rounded-xl border-gray-400 bg-cyan-400/20 shadow-lg'>
-                    <h1 className='text-center text-black/60 text-2xl font-bold mt-2 mb-6'>Shipping Address</h1>
-                    <p className='font-semibold text-gray-600 text-lg'>{profileData.customerDisplay}</p>
-                    <p className='text-gray-600 text-wrap '>{profileData.addressDisplay}</p>
-                    <p className='text-gray-600 text-wrap '>{profileData.city}, {profileData.shipState}, {profileData.postalCode}</p>
+                    <p className='text-gray-600 text-wrap '>{profileData.city}, {profileData.state}, {profileData.postalCode}</p>
                     <p className='text-gray-600 text-wrap '>Phone: {profileData.telephoneMobile}</p>
-                    <p className='text-gray-600 text-wrap '>Country: {profileData.shipCountry}</p>
+                    <p className='text-gray-600 text-wrap '>Country: {profileData.country}</p>
+                    <BiSolidEdit className='absolute top-2 right-4 size-5 cursor-pointer hover:text-cyan-600' onClick={handleEditClick}/>
                 </div>
             </div>
         </div>
@@ -131,7 +139,94 @@ const MyAccount = () => {
                 <h1>Log Out</h1>
             </div>
         </div>
-        {/* <ToastContainer /> */}
+              {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-[90%] max-w-md mx-auto">
+            <h2 className="text-2xl font-bold mb-4 text-center">Edit Billing Address</h2>
+            <form>
+              <div className="mb-4">
+                <label className="block text-gray-700">Name</label>
+                <input
+                  type="text"
+                  name="customerDisplay"
+                  value={profileData.customerDisplay}
+                  className="w-full p-2 border border-gray-300 rounded mt-1"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Street Address</label>
+                <input
+                  type="text"
+                  name="addressDisplay"
+                  value={profileData.addressDisplay}
+                  className="w-full p-2 border border-gray-300 rounded mt-1"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">City</label>
+                <input
+                  type="text"
+                  name="city"
+                  value={profileData.city}
+                  className="w-full p-2 border border-gray-300 rounded mt-1"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">State</label>
+                <input
+                  type="text"
+                  name="state"
+                  value={profileData.state}
+                  className="w-full p-2 border border-gray-300 rounded mt-1"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Postal Code</label>
+                <input
+                  type="text"
+                  name="postalCode"
+                  value={profileData.postalCode}
+                  className="w-full p-2 border border-gray-300 rounded mt-1"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Phone</label>
+                <input
+                  type="text"
+                  name="telephoneMobile"
+                  value={profileData.telephoneMobile}
+                  className="w-full p-2 border border-gray-300 rounded mt-1"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Country</label>
+                <input
+                  type="text"
+                  name="country"
+                  value={profileData.country}
+                  className="w-full p-2 border border-gray-300 rounded mt-1"
+                />
+              </div>
+            </form>
+            <div className="flex justify-end mt-4">
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="mr-2 px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+              >
+                Cancel
+              </button>
+              <button
+               
+                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+              >
+                Save Changes
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   )
 }

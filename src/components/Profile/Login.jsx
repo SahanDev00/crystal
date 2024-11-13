@@ -95,13 +95,13 @@ const Login = () => {
         city: formData.city,
         state: formData.state || "", // Optional state
         postalCode: formData.postalCode || "", // Optional postal code
-        country: formData.country || "Sri Lanka", // Default country if not provided
+        country: formData.country, // Default country if not provided
         telephoneMobile: formData.mobile,
         telephoneOther: formData.telephoneOther || "", // Optional telephone number
-        shipAway: formData.shipAway ? "Y" : "N", // Handling shipping address, default "N"
+        shipAway: "Y", // Handling shipping address, default "N"
         shipAttTo: `${formData.firstName} ${formData.lastName}`, // Default shipping attention to full name
-        shipAddressLine1: formData.shipAddressLine1 || formData.addressLine1, // Default to same as billing if not provided
-        shipAddressLine2: formData.shipAddressLine2 || formData.addressLine2, // Optional shipping address line 2
+        shipAddressLine1: formData.addressLine1, // Default to same as billing if not provided
+        shipAddressLine2: formData.addressLine2, // Optional shipping address line 2
         shipCity: formData.shipCity || formData.city, // Default to same city as billing
         shipState: formData.shipState || formData.state, // Default to same state as billing
         shipPostalCode: formData.shipPostalCode || formData.postalCode, // Default to same postal code as billing

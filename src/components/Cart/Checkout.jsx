@@ -11,6 +11,53 @@ import emailjs from 'emailjs-com';
 const Checkout = () => {
   const { cartItems, calculateTotal, clearCart  } = useCart(); // Get your cart data dynamically from CartContext
   const navigate = useNavigate();
+  const [profileData, setProfileData] = useState(null);
+  const customerId = Cookies.get('customerId') || sessionStorage.getItem('customerId');
+
+  useEffect(() => {
+    if (customerId) {
+      // Fetch profile data from API
+      const fetchProfileData = async () => {
+        const api = process.env.REACT_APP_API_URL;
+        const apiURL = `${api}/api/Customer`; // Adjust with dynamic ID as necessary
+
+        try {
+          const apiKey = process.env.REACT_APP_API_KEY;
+          const response = await fetch(`${apiURL}/${customerId}`, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              'APIKey': apiKey,
+            },
+          });
+          const result = await response.json();
+
+          if (response.ok) {
+            setProfileData(result.data);
+          }
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      };
+
+      fetchProfileData();
+    }
+  }, [customerId]);
+
+  // Use profileData to populate formData when profileData is available
+  useEffect(() => {
+    if (profileData) {
+      setFormData({
+        firstName: profileData.firstName || '',
+        lastName: profileData.lastName || '',
+        streetAddress: profileData.addressDisplay || '',
+        city: profileData.city || '',
+        state: profileData.state || '',
+        postalCode: profileData.postalCode || '',
+        country: profileData.country || ''
+      });
+    }
+  }, [profileData]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -42,7 +89,7 @@ const Checkout = () => {
     });
   };
 
-  const customerId = Cookies.get('customerId') || sessionStorage.getItem('customerId');
+  
   const handlePlaceOrder = async () => {
     const orderData = {
       orderID: "",  // Populate this with the order ID after placing the order
@@ -150,6 +197,7 @@ const Checkout = () => {
       // Handle network errors, e.g., show an error message
     }
   };
+
 
   return (
     <div className='w-full mx-auto mt-28'>
