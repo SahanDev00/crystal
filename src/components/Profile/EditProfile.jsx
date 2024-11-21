@@ -63,21 +63,14 @@ const EditProfile = () => {
       lastName: formData.lastName,
       companyName: "",
       addressLine1: formData.addressLine1,
-      addressLine2: formData.addressLine2, //billing should not be uploaded
+      addressLine2: formData.addressLine2,
       city: formData.city,
       state: formData.state,
       postalCode: formData.postalCode,
       country: formData.country,
       telephoneMobile: formData.mobile,
       telephoneOther: "",
-      shipAway: "",
-      shipAttTo: formData.addressLine1,
-      shipAddressLine1: formData.addressLine1,
-      shipAddressLine2: formData.addressLine2,
-      shipCity: formData.city,
-      shipState: "",
-      shipPostalCode: "",
-      shipCountry: formData.country,
+      shipAway: "N",
       remarks: "",
       createdDate: new Date().toISOString(),
       activeStatus: "string",
@@ -87,7 +80,7 @@ const EditProfile = () => {
       customerGroupName: "string",
       checkTermsandCondition: true,
       useAuthentication: true,
-      shipAwayBool: true,
+      shipAwayBool: false,
       activeStatusBool: true,
       confirmPassword: formData.password,
       oldPassword: formData.password,
@@ -232,7 +225,7 @@ const EditProfile = () => {
                 <input name='postalCode' value={formData.postalCode} onChange={handleChange} className='block w-full mx-auto rounded-lg pl-4 py-1 border-cyan-400/40 border-2 mb-2 mt-1' type="text" required />
               </div>
               <div className='w-full'>
-                <Countries value={formData.country} onChange={handleChange} />
+                <Countries value={formData.country} onChange={handleChange}  name="country" />
               </div>
             </div>
             <div className='flex gap-4 w-[80%] mx-auto'>

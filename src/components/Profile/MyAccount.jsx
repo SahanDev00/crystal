@@ -13,6 +13,7 @@ const MyAccount = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [profileData, setProfileData] = useState(null);
     const [customerId, setCustomerId] = useState(null);
+    const customerId2 = Cookies.get('customerId') || sessionStorage.getItem('customerId');
     const Navigate = useNavigate()
   
     const handleEditClick = () => setIsModalOpen(true);
@@ -87,6 +88,43 @@ const MyAccount = () => {
         // Redirect to login or home
       };
 
+
+      const handleSaveChanges = async () => {
+        const url = "https://kmatadmin.worldpos.biz/api/Customer/CustomerShipping";
+      
+        const payload = {
+          customerID: customerId2,
+          shipAttTo: profileData.customerDisplay,
+          shipAddressLine1: profileData.shipAddressLine1,
+          shipAddressLine2: profileData.shipAddressLine2,
+          shipCity: profileData.shipCity,
+          shipState: profileData.shipState,
+          shipPostalCode: profileData.shipPostalCode,
+          shipCountry: profileData.shipCountry,
+        };
+      
+        try {
+          const response = await fetch(url, {
+            method: "PUT",
+            headers: {
+              'APIKey': process.env.REACT_APP_API_KEY,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+      
+          if (response.ok) {
+            console.log("Shipping address updated successfully!");
+            setIsModalOpen(false); // Close the modal on success
+          } else {
+            console.error("Failed to update shipping address", response.status);
+          }
+        } catch (error) {
+          console.error("An error occurred:", error);
+        }
+      };
+      
+      
   return (
     <div className='w-full mt-32 font-overpass'>
         <Helmet>
@@ -101,23 +139,24 @@ const MyAccount = () => {
                     <p className='text-gray-600 text-lg'><span className='font-semibold'>Email:</span> {profileData.loginEmail}</p>
                     <p className='text-gray-600 text-lg'><span className='font-semibold'>Telephone:</span> {profileData.telephoneMobile}</p>
                 </div>
-                <div className='w-full p-5 space-y-2 border rounded-xl border-gray-400 bg-cyan-400/20 shadow-lg'>
+                <div className='w-full p-5 relative space-y-2 border rounded-xl border-gray-400 bg-cyan-400/20 shadow-lg'>
                     <h1 className='text-center text-black/60 text-2xl font-bold mt-2 mb-6'>Shipping Address</h1>
                     <p className='font-semibold text-gray-600 text-lg'>{profileData.customerDisplay}</p>
-                    <p className='text-gray-600 text-wrap '>{profileData.shipAddressLine1}</p>
-                    <p className='text-gray-600 text-wrap '>{profileData.shipAddressLine2}</p>
-                    <p className='text-gray-600 text-wrap '>{profileData.shipCity}</p>
-                    <p className='text-gray-600 text-wrap '>{profileData.shipState}</p>
-                    <p className='text-gray-600 text-wrap '>{profileData.shipPostalCode}</p>
+                    <p className='text-gray-600 text-wrap '><span className='font-semibold'>Address Line 1: </span>{profileData.shipAddressLine1}</p>
+                    <p className='text-gray-600 text-wrap '><span className='font-semibold'>Address Line 2: </span>{profileData.shipAddressLine2}</p>
+                    <p className='text-gray-600 text-wrap '><span className='font-semibold'>City: </span>{profileData.shipCity}</p>
+                    <p className='text-gray-600 text-wrap '><span className='font-semibold'>State: </span>{profileData.shipState}</p>
+                    <p className='text-gray-600 text-wrap '><span className='font-semibold'>Postal Code: </span>{profileData.shipPostalCode}</p>
+                    <p className='text-gray-600 text-wrap '><span className='font-semibold'>Country: </span>{profileData.shipCountry}</p>
+                    <BiSolidEdit className='absolute top-2 right-4 size-5 cursor-pointer hover:text-cyan-600' onClick={handleEditClick}/>
                 </div>
-                <div className='w-full relative p-5 space-y-2 border rounded-xl border-gray-400 bg-cyan-400/20 shadow-lg'>
+                <div className='w-full p-5 space-y-2 border rounded-xl border-gray-400 bg-cyan-400/20 shadow-lg'>
                     <h1 className='text-center text-black/60 text-2xl font-bold mt-2 mb-6'>Default Billing Address</h1>
                     <p className='font-semibold text-gray-600 text-lg'>{profileData.customerDisplay}</p>
-                    <p className='text-gray-600 text-wrap '>{profileData.addressDisplay}</p>
-                    <p className='text-gray-600 text-wrap '>{profileData.city}, {profileData.state}, {profileData.postalCode}</p>
-                    <p className='text-gray-600 text-wrap '>Phone: {profileData.telephoneMobile}</p>
-                    <p className='text-gray-600 text-wrap '>Country: {profileData.country}</p>
-                    <BiSolidEdit className='absolute top-2 right-4 size-5 cursor-pointer hover:text-cyan-600' onClick={handleEditClick}/>
+                    <p className='text-gray-600 text-wrap '><span className='font-semibold'>Address:</span> {profileData.addressDisplay}</p>
+                    <p className='text-gray-600 text-wrap '><span className='font-semibold'>City/State/Postal: </span> {profileData.city}, {profileData.state}, {profileData.postalCode}</p>
+                    <p className='text-gray-600 text-wrap '><span className='font-semibold'>Phone:</span> {profileData.telephoneMobile}</p>
+                    <p className='text-gray-600 text-wrap '><span className='font-semibold'>Country:</span> {profileData.country}</p>
                 </div>
             </div>
         </div>
@@ -140,92 +179,105 @@ const MyAccount = () => {
             </div>
         </div>
               {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 w-[90%] max-w-md mx-auto">
-            <h2 className="text-2xl font-bold mb-4 text-center">Edit Billing Address</h2>
-            <form>
-              <div className="mb-4">
-                <label className="block text-gray-700">Name</label>
-                <input
-                  type="text"
-                  name="customerDisplay"
-                  value={profileData.customerDisplay}
-                  className="w-full p-2 border border-gray-300 rounded mt-1"
-                />
+              {
+          isModalOpen && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+              <div className="bg-white rounded-lg shadow-lg p-6 w-[90%] max-w-md mx-auto">
+                <h2 className="text-2xl font-bold mb-4 text-center">Edit Shipping Address</h2>
+                <form>
+              
+                  <div className="mb-4">
+                    <label className="block text-gray-700">Address Line 1</label>
+                    <input
+                      type="text"
+                      name="addressDisplay"
+                      value={profileData.shipAddressLine1}
+                      onChange={(e) =>
+                        setProfileData({ ...profileData, shipAddressLine1: e.target.value })
+                      }
+                      className="w-full p-2 border border-gray-300 rounded mt-1"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-gray-700">Address Line 2</label>
+                    <input
+                      type="text"
+                      name="addressDisplay"
+                      value={profileData.shipAddressLine2}
+                      onChange={(e) =>
+                        setProfileData({ ...profileData, shipAddressLine2: e.target.value })
+                      }
+                      className="w-full p-2 border border-gray-300 rounded mt-1"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-gray-700">City</label>
+                    <input
+                      type="text"
+                      name="city"
+                      value={profileData.shipCity}
+                      onChange={(e) =>
+                        setProfileData({ ...profileData, shipCity: e.target.value })
+                      }
+                      className="w-full p-2 border border-gray-300 rounded mt-1"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-gray-700">State</label>
+                    <input
+                      type="text"
+                      name="state"
+                      value={profileData.shipState}
+                      onChange={(e) =>
+                        setProfileData({ ...profileData, shipState: e.target.value })
+                      }
+                      className="w-full p-2 border border-gray-300 rounded mt-1"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-gray-700">Postal Code</label>
+                    <input
+                      type="text"
+                      name="postalCode"
+                      value={profileData.shipPostalCode}
+                      onChange={(e) =>
+                        setProfileData({ ...profileData, shipPostalCode: e.target.value })
+                      }
+                      className="w-full p-2 border border-gray-300 rounded mt-1"
+                    />
+                  </div>
+                  
+                  <div className="mb-4">
+                    <label className="block text-gray-700">Country</label>
+                    <input
+                      type="text"
+                      name="country"
+                      value={profileData.shipCountry}
+                      onChange={(e) =>
+                        setProfileData({ ...profileData, shipCountry: e.target.value })
+                      }
+                      className="w-full p-2 border border-gray-300 rounded mt-1"
+                    />
+                  </div>
+                </form>
+                <div className="flex justify-end mt-4">
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="mr-2 px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleSaveChanges}
+                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                  >
+                    Save Changes
+                  </button>
+                </div>
               </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">Street Address</label>
-                <input
-                  type="text"
-                  name="addressDisplay"
-                  value={profileData.addressDisplay}
-                  className="w-full p-2 border border-gray-300 rounded mt-1"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">City</label>
-                <input
-                  type="text"
-                  name="city"
-                  value={profileData.city}
-                  className="w-full p-2 border border-gray-300 rounded mt-1"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">State</label>
-                <input
-                  type="text"
-                  name="state"
-                  value={profileData.state}
-                  className="w-full p-2 border border-gray-300 rounded mt-1"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">Postal Code</label>
-                <input
-                  type="text"
-                  name="postalCode"
-                  value={profileData.postalCode}
-                  className="w-full p-2 border border-gray-300 rounded mt-1"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">Phone</label>
-                <input
-                  type="text"
-                  name="telephoneMobile"
-                  value={profileData.telephoneMobile}
-                  className="w-full p-2 border border-gray-300 rounded mt-1"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700">Country</label>
-                <input
-                  type="text"
-                  name="country"
-                  value={profileData.country}
-                  className="w-full p-2 border border-gray-300 rounded mt-1"
-                />
-              </div>
-            </form>
-            <div className="flex justify-end mt-4">
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="mr-2 px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
-              >
-                Cancel
-              </button>
-              <button
-               
-                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-              >
-                Save Changes
-              </button>
             </div>
-          </div>
-        </div>
-      )}
+          )
+        }
 
     </div>
   )

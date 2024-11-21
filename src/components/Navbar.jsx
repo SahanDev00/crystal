@@ -4,7 +4,7 @@ import { FaCartShopping } from 'react-icons/fa6';
 import { RiRobot2Fill } from "react-icons/ri";
 import Chatbot from './Chatbot/Chatbot';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import SmallChatbot from './Chatbot/SmallChatBot';
+//import SmallChatbot from './Chatbot/SmallChatBot';
 import Cookies from 'js-cookie';
 import { useCart } from './Cart/CartContext';
 import axios from 'axios';  // Import axios for API calls
@@ -17,7 +17,7 @@ const Navbar = () => {
   const Navigate = useNavigate()
   const location = useLocation();
   const [isChatbotVisible, setChatbotVisible] = useState(false);
-  const [isSmallChatbotVisible, setSmallChatbotVisible] = useState(true); // State for small chatbot visibility
+  //const [isSmallChatbotVisible, setSmallChatbotVisible] = useState(true); // State for small chatbot visibility
   const { getTotalItems } = useCart();
   const [searchQuery, setSearchQuery] = useState(''); // Search query state
   const [searchResults, setSearchResults] = useState([]); // Search results state
@@ -51,9 +51,9 @@ const Navbar = () => {
     };
   }, [isChatbotVisible]);
 
-  const handleClose = () => {
+ /* const handleClose = () => {
     setSmallChatbotVisible(false);
-  };
+  }; */
 
   const handleLogout = () => {
     // Clear session data
@@ -212,11 +212,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-      {isSmallChatbotVisible && (
-              <SmallChatbot
-                onClose={handleClose} // Pass handleClose to SmallChatbot
-              />
-      )}
+
       {searchResults.length > 0 && (
         <div ref={searchContainerRef} className="absolute top-[80px] left-[50%] translate-x-[-50%] bg-white w-[80%] border rounded-md shadow-lg z-50">
           <ul>
