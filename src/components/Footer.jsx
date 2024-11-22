@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {Link} from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -19,12 +20,21 @@ const Footer = () => {
         <div className='mb-8 md:mb-0'>
           <h2 className='text-xl font-bold text-gray-700 mb-4 font-roboto'>Useful Links</h2>
           <ul className='space-y-1'>
-            <li><a href='/' className='text-gray-600 hover:text-gray-800'>Contact Us</a></li>
-            <li><a href='/' className='text-gray-600 hover:text-gray-800'>Return Policies</a></li>
-            <li><a href='/' className='text-gray-600 hover:text-gray-800'>Shipping Info</a></li>
-            <li><a href='/' className='text-gray-600 hover:text-gray-800'>FAQs</a></li>
-            <li><a href='/' className='text-gray-600 hover:text-gray-800'>Terms of Service</a></li>
-            <li><a href='/' className='text-gray-600 hover:text-gray-800'>Privacy Policy</a></li>
+            <Link to='/contact-us'>
+              <li className='text-gray-600 hover:text-gray-800'>Contact Us</li>
+            </Link>
+            <Link to='return-policy'>
+              <li className='text-gray-600 mt-1 hover:text-gray-800'>Return Policies</li>
+            </Link>
+            <Link to='shipping-info'>
+              <li className='text-gray-600 mt-1 hover:text-gray-800'>Shipping Info</li>
+            </Link>
+            <Link to='FAQ'>
+              <li className='text-gray-600 mt-1 hover:text-gray-800'>FAQs</li>
+            </Link>
+            <Link to='terms-of-service'>
+              <li className='text-gray-600 mt-1 hover:text-gray-800'>Terms of Service</li>
+            </Link>
           </ul>
         </div>
         

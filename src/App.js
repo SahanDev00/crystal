@@ -18,6 +18,10 @@ import EditPassword from './components/Profile/EditPassword';
 import ForgotPassword from './components/Profile/ForgotPassword';
 import ResetPassword from './components/Profile/ResetPassword';
 import { ToastContainer } from 'react-toastify';
+import ReturnPolicies from './components/FooterPages/ReturnPolicies';
+import ShippingInfo from './components/FooterPages/ShippingInfo';
+import FAQ from './components/FooterPages/FAQ';
+import TermsOfService from './components/FooterPages/TermsOfService';
 
 function App() {
   return (
@@ -41,6 +45,10 @@ function App() {
           <Route path='/no-products' element={<NoProducts/>} />
           <Route path='/forgot-password' element={<ForgotPassword/>} />
           <Route path="/reset-password/:tokenID" element={<ResetPassword />} />
+          <Route path="/return-policy" element={<ReturnPolicies />} />
+          <Route path="/shipping-info" element={<ShippingInfo />} />
+          <Route path="/FAQ" element={<FAQ />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
         <Footer/>
       </Router>
