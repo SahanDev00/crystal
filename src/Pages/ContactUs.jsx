@@ -65,14 +65,13 @@ const ContactUs = () => {
             <div className='w-full'>
               <div>
                 <h1 className='text-cyan-200 text-2xl font-semibold'>Address</h1>
-                <p className='text-white mt-2 text-lg font-semibold font-karla'>Lorem, ipsum dolor.<br/>Lorem, ipsum.<br/>lorem</p>
+                <p className='text-white mt-2 text-lg font-semibold font-karla'>Brisbane</p>
               </div>
               <div className='text-white mt-8 md:mt-4'>
                 <h1 className='text-cyan-200 text-2xl font-semibold mb-2'>Customer Hotlines</h1>
-                <p className='text-lg font-semibold font-karla'>HotLine: 0712-345-678</p>
-                <p className='text-lg font-semibold font-karla'>Showroom: 071-234-5678</p> 
-                <p className='text-lg font-semibold font-karla'>Workshop: 071-234-5678 / 071-234-5678</p>
-                <p className='text-lg font-semibold font-karla'>Email: email@gmail.com</p>
+                <p className='text-lg font-semibold font-karla'>Contact Name: Kaye</p>
+                <p className='text-lg font-semibold font-karla'>HotLine: 0061403370767</p>
+                {/*<p className='text-lg font-semibold font-karla'>Email: email@gmail.com</p>*/}
               </div>
             </div>
           </div>
