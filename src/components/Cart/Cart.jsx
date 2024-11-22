@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useCart } from './CartContext'; // Adjust the path as needed
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
-import logo from "../../images/logo.PNG";
+import logo from "../../images/logo2.png";
 import { Helmet } from 'react-helmet';
 import { useNavigate} from 'react-router-dom'
 import Cookies from 'js-cookie';
