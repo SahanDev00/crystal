@@ -71,7 +71,8 @@ const ContactUs = () => {
                 <h1 className='text-cyan-200 text-2xl font-semibold mb-2'>Customer Hotlines</h1>
                 <p className='text-lg font-semibold font-karla'>Contact Name: Kaye</p>
                 <p className='text-lg font-semibold font-karla'>HotLine: 0061403370767</p>
-                {/*<p className='text-lg font-semibold font-karla'>Email: email@gmail.com</p>*/}
+                <p className='text-lg font-semibold font-karla'>Sri Lanka: 0716616471</p>
+                <p className='text-lg font-semibold font-karla'>Email: irantha.sandaruwan@gmai.com</p>
               </div>
             </div>
           </div>
