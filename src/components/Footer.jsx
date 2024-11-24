@@ -17,7 +17,7 @@ const Footer = () => {
         </div>
         
         {/* Useful Links */}
-        <div className='mb-8 md:mb-0'>
+        <div className='mb-8 md:mb-0 pr-4'>
           <h2 className='text-xl font-bold text-gray-700 mb-4 font-roboto'>Useful Links</h2>
           <ul className='space-y-1'>
             <Link to='/contact-us'>
@@ -44,15 +44,19 @@ const Footer = () => {
           <p className='text-gray-600 mb-1'>
             Email: irantha.sandaruwan@gmail.com
           </p>
-          <p className='text-gray-600 mb-1'>
-            Phone: 0061403370767
-          </p>
-          <p className='text-gray-600 mb-1'>
-            Phone: 0716616471
-          </p>
           <p className='text-gray-600'>
-            Sales Office Address: Brisbane
+            Address: Brisbane
           </p>
+          <p className='text-gray-600 mb-1'>
+            Australia: 0061403370767
+          </p>
+          <p className='text-gray-600 mt-3'>
+            Address: Sri Lanka
+          </p>
+          <p className='text-gray-600 mb-1'>
+            Sri Lanka: 0716616471
+          </p>
+          
         </div>
         
         {/* Social Media Links */}
