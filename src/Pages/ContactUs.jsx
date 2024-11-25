@@ -38,7 +38,7 @@ const ContactUs = () => {
         {/* Form */}
         <div className='mt-10'>
           <div className='mx-auto w-[80%]'>
-            <h1 className='text-4xl font-bold mb-3 text-black/80 underline '>Send Us a Message</h1>
+            <h1 className='text-4xl font-bold mb-3 text-black/80 '>Contact Us</h1>
             <form ref={form} onSubmit={sendEmail} className='space-y-5 mt-10'>
               <div>
                 <input id="name" name="from_name" className='block w-full mt-1 p-2 border border-gray-300 rounded-md' type="text" placeholder='Name' required />
@@ -61,17 +61,21 @@ const ContactUs = () => {
         <div className='mt-16 md:mt-0 relative bg-black'>
           <img src={pic} alt="" className='w-full h-[550px] object-cover bg-black opacity-60'/>
           <div className='mx-auto w-[80%] absolute top-0 left-5 mt-10'>
-            <h1 className='text-4xl font-bold mb-5 text-cyan-200 underline'>Our Company</h1>
+            <h1 className='text-4xl font-bold mb-5 text-cyan-500'>Our Company</h1>
             <div className='w-full'>
               <div>
                 <h1 className='text-cyan-200 text-2xl font-semibold'>Address</h1>
-                <p className='text-white mt-2 text-lg font-semibold font-karla'>Brisbane</p>
+                <p className='text-white text-lg font-semibold font-karla'>Brisbane</p>
               </div>
-              <div className='text-white mt-8 md:mt-4'>
-                <h1 className='text-cyan-200 text-2xl font-semibold mb-2'>Customer Hotlines</h1>
+              <div className='text-white mt-8 md:mt-5'>
+                <h1 className='text-cyan-200 text-2xl font-semibold'>Customer Hotlines (Australia)</h1>
                 <p className='text-lg font-semibold font-karla'>Contact Name: Kaye</p>
                 <p className='text-lg font-semibold font-karla'>HotLine: 0061403370767</p>
-                <p className='text-lg font-semibold font-karla'>Sri Lanka: 0716616471</p>
+              </div>
+              <div className='text-white mt-8 md:mt-5'>
+                <h1 className='text-cyan-200 text-2xl font-semibold'>Customer Hotlines (Sri Lanka)</h1>
+                <p className='text-lg font-semibold font-karla'>Contact Name: Kaye</p>
+                <p className='text-lg font-semibold font-karla'>Hotline: 0716616471</p>
                 <p className='text-lg font-semibold font-karla'>Email: irantha.sandaruwan@gmai.com</p>
               </div>
             </div>

@@ -5,19 +5,20 @@ import {Link} from 'react-router-dom'
 const Footer = () => {
   return (
     <div className='w-full bg-cyan-200 relative py-10 font-overpass'>
-      <div className='w-[90%] mx-auto flex flex-col md:flex-row justify-between px-6'>
+      <div className='w-[90%] 2lg:w-[95%] 3lg:w-[90%] mx-auto flex flex-col md:flex-row justify-between px-6'>
         {/* About Us Section */}
         <div className='mb-8 md:mb-0 w-full md:w-[50%]'>
           <h2 className='text-xl font-bold text-gray-700 mb-4 font-roboto'>About Us</h2>
           <p className='text-gray-600 md:w-[70%]'>
-            We are a company committed to providing the best quality products to our customers. 
-            Our journey began with a vision to deliver exceptional value and service. 
-            We believe in customer satisfaction and aim to exceed expectations with every purchase.
+          Kmat is an unrivaled company for the production and distribution of coconut fiber mats: based in the 2345678911011 of the Country in which those trees are plenty. Here at Kmat, we embrace the natural abundant resource of coconut fiber to make sustainable and quality mats that pass international standards. In addition, our mats are not only affordable and multi-purpose but also help in building a healthy environment – creating biodegradable products.
+          <Link to='/about-us'>
+            <span className='font-medium hover:font-semibold cursor-pointer text-cyan-700'> ...See more</span>
+          </Link>
           </p>
         </div>
         
         {/* Useful Links */}
-        <div className='mb-8 md:mb-0 pr-4'>
+        <div className='mb-8 md:mb-0 pr-7'>
           <h2 className='text-xl font-bold text-gray-700 mb-4 font-roboto'>Useful Links</h2>
           <ul className='space-y-1'>
             <Link to='/contact-us'>
@@ -64,9 +65,9 @@ const Footer = () => {
           <h2 className='text-xl font-bold text-gray-700 mb-4 font-roboto'>Follow Us</h2>
           <div className='flex space-x-4'>
             <a href='/' className='text-gray-600 hover:text-gray-800'><FaFacebookF /></a>
-            <a href='/' className='text-gray-600 hover:text-gray-800'><FaTwitter /></a>
+            {/*<a href='/' className='text-gray-600 hover:text-gray-800'><FaTwitter /></a>
             <a href='/' className='text-gray-600 hover:text-gray-800'><FaInstagram /></a>
-            <a href='/' className='text-gray-600 hover:text-gray-800'><FaLinkedinIn /></a>
+            <a href='/' className='text-gray-600 hover:text-gray-800'><FaLinkedinIn /></a>*/}
           </div>
         </div>
       </div>

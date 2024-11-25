@@ -27,10 +27,7 @@ const AboutUs = () => {
                     <ul className='mt-2'>
                         <li className='text-2xl mt-5 font-semibold font-overpass text-cyan-700 ml-5'>• Doormats</li>
                         <p className='text-lg font-karla w-[90%] text-black/70'>Leave a lasting impression wherever you go. We offer a variety of doormats with different styles, designs and materials such as coir, rubber, jute, polypropylene etc. which are woven, moulded, tufted, printed or hand crafted to suit as the ideal first step in every home.</p>
-                        <li className='text-2xl mt-5 font-semibold font-overpass text-cyan-700 ml-5'>• Rugs</li>
-                        <p className='text-lg font-karla w-[90%] text-black/70'>Every space deserves some special swag and that is why we have a collection of handmade rugs. Crafted in jute, coir, sisal, wool, seagrass, blends and more designs can incorporate natural elements while remaining stylish. Find out all decoration types including natural or hand-woven, hand-knotted, machine-woven or even custom made, simple or braids, dyed, printed or bordered.</p>
-                        <li className='text-2xl mt-5 font-semibold font-overpass text-cyan-700 ml-5'>• Broadloom</li>
-                        <p className='text-lg font-karla w-[90%] text-black/70'>Integrate areas using any of our broadlooms as well as wall-to-wall carpets. Materials such as jute, coir, sisal, wool, and seagrass can be used as well as other sustainable blends for elegance that is here to last. Go for a spectrum of heals like natural, handcrafted, machine-made and color to ensure consistency with your interior/decor plans.</p>
+                        
                         <li className='text-2xl mt-5 font-semibold font-overpass text-cyan-700 ml-5'>• Eco-Friendly Products</li>
                         <p className='text-lg font-karla w-[90%] text-black/70'>Our range of biodegradable coir and rubber products will help you adopt a more eco-friendly approach to life. We offer a wide range of products like plant pots, grow sticks, garden paths, geo textile and others.</p>
                     </ul>
