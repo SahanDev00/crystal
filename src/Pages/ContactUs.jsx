@@ -60,10 +60,10 @@ const ContactUs = () => {
         {/* Details */}
         <div className='mt-16 md:mt-0 relative'>
           <div className='bg-black'>
-            <img src={pic} alt="" className='w-full h-[550px] 2xl:h-full object-cover bg-black opacity-60'/>
+            <img src={pic} alt="" className='w-full h-[550px] 2xl:h-full object-cover bg-black opacity-40'/>
           </div>
           <div className='mx-auto w-[80%] absolute top-0 left-5 mt-10'>
-            <h1 className='text-4xl font-bold mb-5 text-cyan-500'>Our Company</h1>
+            <h1 className='text-4xl font-bold mb-5 text-white'>Our Company</h1>
             <div className='w-full'>
               <div>
                 <h1 className='text-cyan-200 text-2xl font-semibold'>Address</h1>
