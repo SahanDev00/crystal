@@ -96,9 +96,9 @@ const Product = () => {
       <h1 className='text-3xl text-center font-bold my-4 text-gray-600 font-overpass'>{product.itemName}</h1>
       <div className='w-[95%] md:w-[85%] xl:w-[80%] 3xl:w-[70%] grid grid-cols-1 lg:grid-cols-2 mx-auto'>
         <div className='w-full mt-5'>
-          <a rel="noreferrer" target='_blank' href={`https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`}>
+          <a rel="noreferrer" target='_blank' href={mainImage}>
             <img 
-              src={mainImage || `https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`} 
+              src={mainImage || `https://kmat.worldpos.biz/Uploads/${product.itemID}.jpg`} 
               className='w-[90%] mx-auto md:h-[500px] object-contain' 
               alt={product.itemName} 
             />
