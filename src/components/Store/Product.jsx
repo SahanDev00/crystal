@@ -96,20 +96,22 @@ const Product = () => {
       <h1 className='text-3xl text-center font-bold my-4 text-gray-600 font-overpass'>{product.itemName}</h1>
       <div className='w-[95%] md:w-[85%] xl:w-[80%] 3xl:w-[70%] grid grid-cols-1 lg:grid-cols-2 mx-auto'>
         <div className='w-full mt-5'>
-          <img 
-            src={mainImage || `https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`} 
-            className='w-[90%] mx-auto md:h-[500px] object-contain' 
-            alt={product.itemName} 
-          />
+          <a rel="noreferrer" target='_blank' href={`https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`}>
+            <img 
+              src={mainImage || `https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg`} 
+              className='w-[90%] mx-auto md:h-[500px] object-contain' 
+              alt={product.itemName} 
+            />
+           </a>
           <div className='flex items-center justify-center mt-4 gap-2 flex-wrap'>
             {images.map((img, idx) => (
-              <img 
-                key={img.imageID} 
-                src={`https://kmatadmin.worldpos.biz/Uploads/${img.imageID}.jpg`}  // Use imageID for thumbnail URL
-                className='w-[60px] sm:w-[100px] md:w-[160px]  md:h-[160px] cursor-pointer object-contain' 
-                alt={`Gallery ${idx}`} 
-                onClick={() => setMainImage(`https://kmatadmin.worldpos.biz/Uploads/${img.imageID}.jpg`)} // Update main image on click
-              />
+                <img
+                  key={img.imageID} 
+                  src={`https://kmatadmin.worldpos.biz/Uploads/${img.imageID}.jpg`}  // Use imageID for thumbnail URL
+                  className='w-[60px] sm:w-[100px] md:w-[160px]  md:h-[160px] cursor-pointer object-contain' 
+                  alt={`Gallery ${idx}`} 
+                  onClick={() => setMainImage(`https://kmatadmin.worldpos.biz/Uploads/${img.imageID}.jpg`)} // Update main image on click
+                />
             ))}
           </div>
         </div>
