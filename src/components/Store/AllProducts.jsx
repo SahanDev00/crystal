@@ -97,7 +97,7 @@ const AllProducts = () => {
 
           {/* Products */}
           {subcategories[category.categoryMainID]?.map(sub => (
-            <div key={sub.categorySubID}>
+            <div key={sub.categorySubID} id={sub.categorySubID}>
               <h3 className='text-xl font-semibold mb-4 text-cyan-500'>{sub.categorySubName}</h3>
               <div className='w-full h-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
                 {products[sub.categorySubID]?.length > 0 ? (

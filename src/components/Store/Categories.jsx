@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 
 const Categories = () => {
@@ -34,7 +33,7 @@ const Categories = () => {
       try {
         await Promise.all(
           categories.map(async (category) => {
-            const response = await fetch(`https://kmatadmin.worldpos.biz/Api/Item?CategoryMainID=${category.categoryMainID}`, {
+            const response = await fetch(`https://kmatadmin.worldpos.biz/Api/CategorySub?CategoryMainID=${category.categoryMainID}`, {
               headers: {
                 'APIKey': apiKey,
               },
@@ -75,13 +74,15 @@ const Categories = () => {
           <ul className='w-full h-full space-y-3 flex flex-col justify-center'>
             {items[category.categoryMainID]?.length > 0 ? (
               items[category.categoryMainID].map((item) => (
-                <Link 
-                  key={item.itemID} 
-                  to={`/product/${item.itemID}`} 
+                <ScrollLink 
+                  to={item.categorySubID} 
+                  smooth={true} 
+                  duration={500} 
+                  offset={-100}
                   className='text-cyan-700 cursor-pointer text-sm font-karla hover:text-cyan-600/80 w-[80%] mx-auto'
                 >
-                  {item.itemName}
-                </Link>
+                  {item.categorySubName}
+                </ScrollLink>
               ))
             ) : (
               <li className='text-red-600 text-center'>No items available</li>

@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import loader from '../../images/loader.gif';
 import { useCart } from '../Cart/CartContext';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { HashLink } from 'react-router-hash-link';
 
 const Product = () => {
   const { itemID } = useParams(); // Capture itemID from the URL
   const [product, setProduct] = useState(null);
   const [images, setImages] = useState([]);
   const [mainImage, setMainImage] = useState(''); // State for main image
+  const [showOptions, setShowOptions] = useState(false);
+
+  const handleButtonClick = () => {
+    handleAddToCart(product); // Add the product to the cart
+    setShowOptions(true); // Show the Checkout and Continue Shopping buttons
+  };
 
   useEffect(() => {
     const apiKey = process.env.REACT_APP_API_KEY;
@@ -72,13 +79,21 @@ const Product = () => {
   });
  };
 
+ const customScroll = (el) => {
+  const yOffset = -90; // Adjust the offset
+  const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+  window.scrollTo({ top: y, behavior: 'smooth' }); // Smooth scrolling
+};
+
   if (!product) {
     return <div className='h-screen w-screen flex items-center justify-center'><img src={loader} className='w-[100px]' alt="" /></div>;
   }
 
   return (
     <div className='w-full mt-28 mb-10'>
-      <h1 className='text-3xl text-center font-bold my-5 text-gray-600 font-overpass'>{product.itemName}</h1>
+      <h1 className='text-sm text-center font-bold text-gray-600 font-overpass'>{product.itemID}</h1>
+      <h1 className='text-3xl text-center font-bold my-4 text-gray-600 font-overpass'>{product.itemName}</h1>
       <div className='w-[95%] md:w-[85%] xl:w-[80%] 3xl:w-[70%] grid grid-cols-1 lg:grid-cols-2 mx-auto'>
         <div className='w-full mt-5'>
           <img 
@@ -102,12 +117,25 @@ const Product = () => {
           <h1 className='text-3xl font-bold text-black/70 lg:block hidden lg:mt-0 lg:my-5 font-karla'>{product.itemName}</h1>
           <p className='text-[15px] md:text-lg text-center w-[90%] lg:w-[80%] text-black/60 font-karla mt-10 lg:mt-0'>{product.itemDescription}</p>
           <p className='text-lg font-semibold my-5 font-karla'>${product.retailPrice}</p>
-          <button onClick={() => handleAddToCart(product)} className='px-4 py-2 rounded-full font-karla bg-cyan-600/70 font-semibold text-white hover:bg-cyan-600/80'>
+          <button onClick={handleButtonClick} className='px-4 py-2 rounded-full font-karla bg-cyan-600/70 font-semibold text-white hover:bg-cyan-600/80'>
             Add to Cart
           </button>
+          {showOptions && (
+              <div className="mt-4 flex space-x-4">
+                <Link to='/checkout'>
+                  <button className="px-4 py-2 rounded-full font-karla bg-green-600/70 font-semibold text-white hover:bg-green-600/80">
+                    Checkout
+                  </button>
+                </Link>
+                <HashLink scroll={customScroll} to={`/store#${product.categorySubID}`}>
+                  <button className="px-4 py-2 rounded-full font-karla bg-gray-600/70 font-semibold text-white hover:bg-gray-600/80">
+                    Continue Shopping
+                  </button>
+                </HashLink>
+              </div>
+            )}
         </div>
       </div>
-      {/* <ToastContainer /> */}
     </div>
   );
 };
