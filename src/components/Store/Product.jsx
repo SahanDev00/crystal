@@ -91,7 +91,8 @@ const Product = () => {
   }
 
   return (
-    <div className='w-full mt-28 mb-10'>
+    <div className='w-full mt-24 sm:mt-28 mb-10'>
+      <h1 className='text-sm font-bold text-center text-black/50 lg:hidden font-karla'>Brand: <span className='text-cyan-600'>{product.brandName}</span></h1>
       <h1 className='text-sm text-center font-bold text-gray-400 font-overpass'>{product.itemID}</h1>
       <h1 className='text-3xl text-center font-bold my-4 text-gray-600 font-overpass'>{product.itemName}</h1>
       <div className='w-[95%] md:w-[85%] xl:w-[80%] 3xl:w-[70%] grid grid-cols-1 lg:grid-cols-2 mx-auto'>
