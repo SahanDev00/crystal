@@ -92,7 +92,7 @@ const Product = () => {
 
   return (
     <div className='w-full mt-28 mb-10'>
-      <h1 className='text-sm text-center font-bold text-gray-600 font-overpass'>{product.itemID}</h1>
+      <h1 className='text-sm text-center font-bold text-gray-400 font-overpass'>{product.itemID}</h1>
       <h1 className='text-3xl text-center font-bold my-4 text-gray-600 font-overpass'>{product.itemName}</h1>
       <div className='w-[95%] md:w-[85%] xl:w-[80%] 3xl:w-[70%] grid grid-cols-1 lg:grid-cols-2 mx-auto'>
         <div className='w-full mt-5'>
@@ -116,6 +116,7 @@ const Product = () => {
           </div>
         </div>
         <div className='w-full flex flex-col justify-center items-center'>
+          <h1 className='text-lg font-bold text-black/50 lg:block hidden font-karla'>Brand: <span className='text-cyan-600'>{product.brandName}</span></h1>
           <h1 className='text-3xl font-bold text-black/70 lg:block hidden lg:mt-0 lg:my-5 font-karla'>{product.itemName}</h1>
           <p className='text-[15px] md:text-lg text-center w-[90%] lg:w-[80%] text-black/60 font-karla mt-10 lg:mt-0'>{product.itemDescription}</p>
           <p className='text-lg font-semibold my-5 font-karla'>${product.retailPrice}</p>

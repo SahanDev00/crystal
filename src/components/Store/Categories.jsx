@@ -56,7 +56,7 @@ const Categories = () => {
   }, []);
 
   return (
-<div id='categories' className='w-full border bg-cyan-950'>
+<div id='categories' className='w-full bg-cyan-950'>
   <div className='w-[90%] py-2 mx-auto mt-20 2lg:mt-14 3lg:mt-20 flex flex-wrap justify-center gap-5 sm:gap-7 md:gap-8 lg:gap-10 items-center'>
     {categories.map((category) => (
       <div key={category.categoryMainID} className='relative group'>

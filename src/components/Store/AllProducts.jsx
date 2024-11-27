@@ -106,13 +106,15 @@ const AllProducts = () => {
                       <button onClick={() => handleAddToCart(product)} className='absolute right-3 top-3 border rounded-full p-3 text-cyan-300 bg-black/70 lg:hidden lg:group-hover:block hover:text-cyan-400'>
                         <FaCartPlus size={20} />
                       </button>
+                      
                       <Link to={`/product/${product.itemID}`}>
                         <img src={`https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg` || 'default_image.jpg'} alt={product.itemName} className='w-full md:h-[400px] 2lg:h-[240px] 3lg:h-[400px] object-cover' />
                         <p className='absolute text-cyan-300 w-full bg-black/80 bottom-24 text-center font-karla py-2 font-semibold text-lg lg:opacity-0 lg:group-hover:opacity-100 duration-200'>
                           ${product.retailPrice}
                         </p>
                         <div className='w-full h-[100px] flex flex-col items-center justify-center'>
-                          <h1 className='text-center text-cyan-600 font-semibold mt-2 font-karla w-[80%]'>{product.itemName}</h1>
+                          <h1 className='text-center text-cyan-600 font-semibold mt-1 font-karla w-[80%]'>{product.itemName}</h1>
+                          <p className='text-sm text-black/60 font-medium'>Brand: <span className='text-cyan-800'>{product.brandName}</span></p>
                         </div>
                       </Link>
                     </div>
