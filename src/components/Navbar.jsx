@@ -138,7 +138,7 @@ const Navbar = () => {
   
   return (
     <div className={`w-full fixed top-0 duration-300 z-50 ${isActive('/checkout') ? 'bg-cyan-950' : ''} ${isActive('/') ? 'bg-cyan-950/90' : ''} ${isActive('/cart') || isActive('/account') || isActive('/product') || isActive('/contact-us') || isActive('/order-details') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? 'bg-cyan-900' : ''} ${isActive('/about-us') ? 'bg-cyan-950' : ''} ${isActive('/') || isActive('/about-us') || isActive('/checkout') || isActive('/terms-of-service') || isActive('/shipping-info') || isActive('/return-policy') || isActive('/FAQ') ? 'bg-cyan-950' : 'bg-cyan-800 text-white'}`}>
-      <div className='sm:w-[90%] lg:w-[80%] h-[90px] 2lg:h-[50px] 3lg:h-[80px] lg:h-[80px] flex items-center justify-between mx-auto'>
+      <div className='sm:w-[90%] lg:w-[80%] h-[80px] 2lg:h-[50px] 3lg:h-[80px] lg:h-[80px] flex items-center justify-between mx-auto'>
         {/*<h1 className='text-4xl text-cyan-500 hover:text-cyan-600 duration-300 font-bold cursor-pointer font-roboto'><Link to='/'>CG</Link></h1>*/}
         <Link to='/'><img src={logo} alt="" className='w-40 sm:w-52 2lg:w-40 3lg:w-60'/></Link>
         <ul className='hidden md:flex gap-7 lg:gap-10'>

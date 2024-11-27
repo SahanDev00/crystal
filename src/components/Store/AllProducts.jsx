@@ -92,7 +92,7 @@ const AllProducts = () => {
       <h1 className='font-bold text-center my-10 text-3xl text-black/80 font-overpass'>Explore Our Products</h1>
 
       {categories.map(category => (
-        <div key={category.categoryMainID} id={category.categoryMainName} className='w-[80%] mx-auto md:mt-20'>
+        <div key={category.categoryMainID} id={category.categoryMainName} className='w-[80%] mx-auto mt-20'>
           <h2 className='text-3xl font-semibold uppercase mb-1 text-cyan-900 font-overpass'>{category.categoryMainName}</h2>
 
           {/* Products */}
@@ -108,7 +108,7 @@ const AllProducts = () => {
                       </button>
                       
                       <Link to={`/product/${product.itemID}`}>
-                        <img src={`https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg` || 'default_image.jpg'} alt={product.itemName} className='w-full md:h-[400px] 2lg:h-[240px] 3lg:h-[400px] object-cover' />
+                        <img src={`https://kmatadmin.worldpos.biz/Uploads/${product.cacheID}.jpg` || 'default_image.jpg'} alt={product.itemName} className='w-full md:h-[350px] lg:h-[300px] 2lg:h-[240px] 3lg:h-[300px] 2xl:h-[400px] object-cover' />
                         <p className='absolute text-cyan-300 w-full bg-black/80 bottom-24 text-center font-karla py-2 font-semibold text-lg lg:opacity-0 lg:group-hover:opacity-100 duration-200'>
                           ${product.retailPrice}
                         </p>

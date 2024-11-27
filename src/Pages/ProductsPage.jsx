@@ -3,6 +3,7 @@ import Product from '../components/Store/Product'
 import Questions from '../components/Store/Questions'
 import Collection from '../components/Collection'
 import { Helmet } from 'react-helmet'
+import RelatedProducts from '../components/Store/RelatedProducts'
 
 const ProductsPage = () => {
 
@@ -17,6 +18,7 @@ const ProductsPage = () => {
         </Helmet>
         <Product/>
         <Questions/>
+        <RelatedProducts/>
         <Collection/>
     </div>
   )
