@@ -152,7 +152,7 @@ const Navbar = () => {
             <FaSearch className={`group-hover:text-cyan-500 size-6 2lg:size-5 3lg:size-6 cursor-pointer duration-300 ${isActive('/') || isActive('/terms-of-service') || isActive('/shipping-info') || isActive('/return-policy') || isActive('/FAQ') ? 'text-white/90' : ''} ${isActive('/checkout') || isActive('/about-us') ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/contact-us') || isActive('/account') || isActive('/order-details') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') || isActive('/store') ? "text-white" : ''}`}  />
             <div className={`ml-3 w-[0px] duration-300 group-hover:w-[200px] rounded invisible group-hover:visible h-[30px] 2lg:h-[25px] 3lg:h-[30px] bg-white ${isActive('/about-us') || isActive('/product') || isActive('/checkout') || isActive('/cart') || isActive('/order-details') || isActive('/account') || isActive('/contact-us') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? "border" : ''}`}>
               <form className='flex justify-center items-center h-full w-full' onSubmit={handleSearch}>
-                <input type="text" className='h-full pl-2 w-full rounded' placeholder='Search an item...'
+                <input type="text" className='h-full pl-2 w-full rounded text-black' placeholder='Search an item...'
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                  />
@@ -214,7 +214,7 @@ const Navbar = () => {
       )}
 
       {searchResults.length > 0 && (
-        <div ref={searchContainerRef} className="absolute top-[80px] left-[50%] translate-x-[-50%] bg-white w-[80%] border rounded-md shadow-lg z-50">
+        <div ref={searchContainerRef} className="absolute top-[80px] left-[50%] translate-x-[-50%] text-cyan-600 font-medium font-overpass bg-white w-[80%] border rounded-md shadow-lg z-50">
           <ul>
             {searchResults.map((product) => (
               <Link to={`/product/${product.itemID}`} className='flex p-1'>

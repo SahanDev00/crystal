@@ -22,7 +22,7 @@ const Store = () => {
         <AllProducts/>
         <Questions/>
         <Collection/>
-        <Link to='categories' smooth={true} duration={600}>
+        <Link to='categories' className='z-50 relative' smooth={true} duration={600} offset={-100} >
           <button className='bg-cyan-950 text-white p-3 fixed bottom-4 right-4'><FaArrowUp size={25}/></button>
         </Link>
     </div>

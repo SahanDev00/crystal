@@ -2,8 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import { HashLink as Link } from 'react-router-hash-link'; // Import HashLink
 import rugPic1 from '../images/rug1.jpeg';
 import rugPic2 from '../images/rug2.jpeg';
-import rugPic3 from '../images/rug3.jpeg';
-import rugPic4 from '../images/RugBig.jpeg';
 
 const Collection = () => {
   const rugsRef = useRef([]);
@@ -22,7 +20,7 @@ const Collection = () => {
         });
         const data = await response.json();
         // Extract the first 4 categories
-        const categoryNames = data.data.slice(0, 4).map(category => category.categoryMainName);
+        const categoryNames = data.data.slice(0, 2).map(category => category.categoryMainName);
         setCategories(categoryNames);
       } catch (error) {
         console.error('Error fetching categories:', error);
@@ -58,8 +56,8 @@ const Collection = () => {
         <h1 className='text-center text-3xl text-gray-700 font-bold uppercase my-5 font-overpass'>
           Shop by <span className='text-cyan-600'>category</span>
         </h1>
-        <div className='w-[90%] lg:w-full lg:mt-3 grid grid-cols-1 sm:grid-cols-2 lg:space-x-0 space-x-3 lg:grid-cols-4  items-center justify-center'>
-          {[rugPic1, rugPic2, rugPic3, rugPic4].map((pic, index) => (
+        <div className='w-[90%] lg:w-[60%] lg:mt-3 grid grid-cols-1 sm:grid-cols-2 lg:space-x-0 space-x-3  items-center justify-center'>
+          {[rugPic1, rugPic2].map((pic, index) => (
                         <Link
                         scroll={el => {
                           const yOffset = -100; // Adjust this value for the offset
