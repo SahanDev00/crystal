@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { HashLink as Link } from 'react-router-hash-link'; // Import HashLink
-import rugPic1 from '../images/rug1.jpeg';
-import rugPic2 from '../images/rug2.jpeg';
+import rugPic2 from '../images/product11.jpeg';
+import rugPic1 from '../images/rug4.jpeg';
 
 const Collection = () => {
   const rugsRef = useRef([]);
@@ -56,7 +56,7 @@ const Collection = () => {
         <h1 className='text-center text-3xl text-gray-700 font-bold uppercase my-5 font-overpass'>
           Shop by <span className='text-cyan-600'>category</span>
         </h1>
-        <div className='w-[90%] lg:w-[60%] lg:mt-3 grid grid-cols-1 sm:grid-cols-2 lg:space-x-0 space-x-3  items-center justify-center'>
+        <div className='w-[90%] lg:w-[60%] lg:mt-3 grid grid-cols-1 sm:grid-cols-2 lg:space-x-0 space-x-3 gap-4 items-center justify-center'>
           {[rugPic1, rugPic2].map((pic, index) => (
                         <Link
                         scroll={el => {

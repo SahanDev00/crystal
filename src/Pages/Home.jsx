@@ -9,8 +9,9 @@ import CustomProducts from '../components/CustomProducts'
 import GetStarted from '../components/GetStarted'
 import Gallery from '../components/Gallery'
 import { Helmet } from 'react-helmet'
-import mat from '../images/mat.jpg'
-import cow from '../images/cows.jpg'
+import mat from '../images/Hero1.jpg'
+import mat2 from '../images/Hero2.jpg'
+import cow from '../images/cow.jpg'
 import Slider from 'react-slick'
 
 const Home = () => {
@@ -18,6 +19,9 @@ const Home = () => {
   const slides = [
     {
       image: mat,
+    },
+    {
+      image: mat2,
     },
     {
       image: cow,
@@ -50,7 +54,7 @@ const Home = () => {
       <div className="w-full h-screen fixed top-0 left-0 opacity-45">
         <Slider {...settings} className="w-full h-screen">
           {slides.map((slide, index) => (
-            <img key={index} src={slide.image} alt="" className='w-full h-screen xl:h-full object-cover' />
+            <img key={index} src={slide.image} alt="" className='w-full h-screen xl:h-full' />
           ))}
         </Slider>
       </div>
