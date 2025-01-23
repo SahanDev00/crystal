@@ -24,18 +24,6 @@ const Footer = () => {
             <Link to='/contact-us'>
               <li className='text-gray-600 hover:text-gray-800'>Contact Us</li>
             </Link>
-            <Link to='return-policy'>
-              <li className='text-gray-600 mt-1 hover:text-gray-800'>Return Policies</li>
-            </Link>
-            <Link to='shipping-info'>
-              <li className='text-gray-600 mt-1 hover:text-gray-800'>Shipping Info</li>
-            </Link>
-            <Link to='FAQ'>
-              <li className='text-gray-600 mt-1 hover:text-gray-800'>FAQs</li>
-            </Link>
-            <Link to='terms-of-service'>
-              <li className='text-gray-600 mt-1 hover:text-gray-800'>Terms of Service</li>
-            </Link>
           </ul>
         </div>
         

@@ -54,7 +54,7 @@ const Home = () => {
       <div className="w-full h-screen fixed top-0 left-0 opacity-45">
         <Slider {...settings} className="w-full h-screen">
           {slides.map((slide, index) => (
-            <img key={index} src={slide.image} alt="" className='w-full h-screen xl:h-full' />
+            <img key={index} src={slide.image} alt="" className='w-full h-screen xl:h-full object-cover' />
           ))}
         </Slider>
       </div>

@@ -57,7 +57,7 @@ const Cards = () => {
                 <div className='w-full h-full flex items-center'>
                   <div>
                     <h1 className='font-bold 2lg:mt-20 3lg:mt-0 my-5 text-5xl text-white lg:text-black/90 font-overpass'>{slide.title}</h1>
-                    <p className='font-karla text-gray-200 lg:text-black'>{slide.description}</p>
+                    <p className='font-karla text-gray-200 lg:text-black pr-20'>{slide.description}</p>
                     <Link to={slide.buttonLink}>
                       <FaArrowRight className='mt-5 rounded-full w-[50px] h-[50px] p-3 text-white lg:text-black/90 border border-white lg:border-black cursor-pointer hover:bg-yellow-400/20'/>
                     </Link>
