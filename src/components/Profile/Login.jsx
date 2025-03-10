@@ -362,7 +362,8 @@ const validateForm = () => {
               <p className='text-gray-500 md:text-gray-800 font-semibold text-center mt-2'>Please enter your details...</p>
               <form className='mt-3 md:mt-5'>
                 <label className='font-semibold md:ml-16'>Email</label>
-                <input className='block w-[95%] md:w-[80%] mx-auto rounded-lg pl-4 py-2 border-cyan-500 border-2 mb-2 mt-1' name="email"
+                <input className='block w-[95%] md:w-[80%] mx-auto rounded-lg pl-4 py-2 border-cyan-500 border-2 mb-2 mt-1' 
+                name="email"
                 value={formData.email}
                 onChange={handleChange} 
                 type="email" placeholder='example@gmail.com' required />

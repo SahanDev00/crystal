@@ -31,7 +31,7 @@ const Footer = () => {
         <div className='mb-8 md:mb-0'>
           <h2 className='text-xl font-bold text-gray-700 mb-4 font-roboto'>Contact Us</h2>
           <p className='text-gray-600 mb-1'>
-            Email: irantha.sandaruwan@gmail.com
+            Email: sales@kmat-au.com
           </p>
           <p className='text-gray-600'>
             Address: Brisbane

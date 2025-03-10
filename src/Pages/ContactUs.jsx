@@ -73,13 +73,13 @@ const ContactUs = () => {
                 <h1 className='text-cyan-200 text-2xl font-semibold'>Customer Hotlines (Australia)</h1>
                 <p className='text-lg font-semibold font-karla'>Contact Name: Kaye</p>
                 <p className='text-lg font-semibold font-karla'>HotLine: 0061403370767</p>
-                <p className='text-lg font-semibold font-karla'>Email: sales@kmat.au.com</p>
+                <p className='text-lg font-semibold font-karla'>Email: sales@kmat-au.com</p>
               </div>
               <div className='text-white mt-8 md:mt-5'>
                 <h1 className='text-cyan-200 text-2xl font-semibold'>Customer Hotlines (Sri Lanka)</h1>
                 <p className='text-lg font-semibold font-karla'>Contact Name: Sandaruwan</p>
                 <p className='text-lg font-semibold font-karla'>Hotline: 0716616471</p>
-                <p className='text-lg font-semibold font-karla'>Email: sales@kmat.au.com</p>
+                <p className='text-lg font-semibold font-karla'>Email: sales@kmat-au.com</p>
               </div>
             </div>
           </div>
