@@ -96,12 +96,13 @@ const RelatedProducts = () => {
             key={subProduct.itemID}
             className="w-full mb-10 relative cursor-pointer hover:shadow-lg duration-150 shadow group"
             >
+              {/* 
             <button
               onClick={() => handleAddToCart(subProduct)}
               className="absolute right-3 top-3 border rounded-full p-3 text-cyan-300 bg-black/70 lg:hidden lg:group-hover:block hover:text-cyan-400"
             >
               <FaCartPlus size={20} />
-            </button>
+            </button>*/}
 
             <Link to={`/product/${subProduct.itemID}`} onClick={scrollUp}>
               <img
@@ -113,9 +114,9 @@ const RelatedProducts = () => {
                 alt={subProduct.itemName}
                 className="w-full md:h-[400px] 2lg:h-[240px] 3lg:h-[400px] object-cover"
               />
-              <p className="absolute text-cyan-300 w-full bg-black/80 bottom-24 text-center font-karla py-2 font-semibold text-lg lg:opacity-0 lg:group-hover:opacity-100 duration-200">
+              {/*<p className="absolute text-cyan-300 w-full bg-black/80 bottom-24 text-center font-karla py-2 font-semibold text-lg lg:opacity-0 lg:group-hover:opacity-100 duration-200">
                 ${subProduct.retailPrice}
-              </p>
+              </p>*/}
               <div className="w-full h-[100px] flex flex-col items-center justify-center">
                 <h1 className="text-center text-cyan-600 font-semibold mt-1 font-karla w-[80%]">
                   {subProduct.itemName}

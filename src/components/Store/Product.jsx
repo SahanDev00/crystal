@@ -120,8 +120,14 @@ const Product = () => {
           <h1 className='text-lg font-bold text-black/50 lg:block hidden font-karla'>Brand: <span className='text-cyan-600'>{product.brandName}</span></h1>
           <h1 className='text-3xl font-bold text-black/70 lg:block hidden lg:mt-0 lg:my-5 font-karla'>{product.itemName}</h1>
           <p className='text-[15px] md:text-lg text-center w-[90%] lg:w-[80%] text-black/60 font-karla mt-10 lg:mt-0'>{product.itemDescription}</p>
-          <p className='text-lg font-semibold my-5 font-karla'>${product.retailPrice}</p>
-          <button onClick={handleButtonClick} className='px-4 py-2 rounded-full font-karla bg-cyan-600/70 font-semibold text-white hover:bg-cyan-600/80'>
+          <Link to='/contact-us'>
+            <button className='px-4 py-2 mt-3 rounded-full font-karla bg-cyan-600/70 font-semibold text-white hover:bg-cyan-600/80'>
+              Contact Us
+            </button>
+          </Link>
+          {/* <p className='text-lg font-semibold my-5 font-karla'>${product.retailPrice}</p>*/}
+          {/*
+          <button onClick={handleButtonClick} className='px-4 py-2 mt-3 rounded-full font-karla bg-cyan-600/70 font-semibold text-white hover:bg-cyan-600/80'>
             Add to Cart
           </button>
           {showOptions && (
@@ -137,7 +143,7 @@ const Product = () => {
                   </button>
                 </HashLink>
               </div>
-            )}
+            )} */}
         </div>
       </div>
     </div>

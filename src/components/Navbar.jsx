@@ -175,12 +175,13 @@ const Navbar = () => {
               )
             }
           </div>
+          {/*
           <Link to='/cart' className='relative'>
           {getTotalItems() > 0 && (
             <p className='text-white bg-cyan-600/80 md:bg-cyan-600/50 rounded-full px-1 md:px-2 2lg:px-1 3lg:px-2 absolute md:-top-4 -top-4 -right-2 md:-right-5 2lg:-right-3 3lg:-right-5'>{getTotalItems()}</p> 
             )}
             <FaCartShopping className={`hover:text-cyan-500 size-5 2lg:size-4 3lg:size-5 cursor-pointer duration-300 ${isActive('/product') || isActive('/contact-us') || isActive('/order-details') || isActive('/account') || isActive('/store') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? "text-white" : ''} ${isActive('/about-us') || isActive('/') || isActive('/terms-of-service') || isActive('/shipping-info') || isActive('/return-policy') || isActive('/FAQ') ? 'text-white' : ''} ${isActive('/cart') || isActive('/checkout') ? 'text-cyan-500 ' : '' } `} />
-          </Link>
+          </Link>*/}
           <div onClick={toggleMenu} className='md:hidden'>
             { !isMenu ? <IoMdMenu className={`hover:text-cyan-500 cursor-pointer duration-300 mr-2 ${isActive('/checkout') || isActive('/') || isActive('/about-us') || isActive('/terms-of-service') || isActive('/shipping-info') || isActive('/return-policy') || isActive('/FAQ')  ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/contact-us') || isActive('/store') ? "text-white" : ''} ${isActive('/account') || isActive('/order-details') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? 'text-white' : ''}  `} size={30} /> : <IoMdClose className={`hover:text-cyan-500 cursor-pointer duration-300 mr-2 ${isActive('/checkout') || isActive('/') || isActive('/about-us') || isActive('/terms-of-service') || isActive('/shipping-info') || isActive('/return-policy') || isActive('/FAQ')  ? 'text-white' : ''} ${isActive('/cart') || isActive('/product') || isActive('/contact-us') || isActive('/store') ? "text-white" : ''} ${isActive('/account') || isActive('/order-details') || isActive('/my-orders') || isActive('/edit-profile') || isActive('/login') ? 'text-black/50' : ''} `} size={30} /> }
           </div>

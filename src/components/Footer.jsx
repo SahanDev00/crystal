@@ -10,7 +10,7 @@ const Footer = () => {
         <div className='mb-8 md:mb-0 w-full md:w-[50%]'>
           <h2 className='text-xl font-bold text-gray-700 mb-4 font-roboto'>About Us</h2>
           <p className='text-gray-600 md:w-[70%]'>
-          Kmat is an unrivaled company for the production and distribution of coconut fiber mats: based in the 2345678911011 of the Country in which those trees are plenty. Here at Kmat, we embrace the natural abundant resource of coconut fiber to make sustainable and quality mats that pass international standards. In addition, our mats are not only affordable and multi-purpose but also help in building a healthy environment – creating biodegradable products.
+          At K-Mats, we are a leading exporter of premium rubber mats, supplying high-quality, ISO-certified products to over 70 countries worldwide. Headquartered in Brisbane, Australia, our manufacturing operations in Sri Lanka and India ensure superior craftsmanship and durability
           <Link to='/about-us'>
             <span className='font-medium hover:font-semibold cursor-pointer text-cyan-700'> ...See more</span>
           </Link>
