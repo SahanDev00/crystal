@@ -10,9 +10,9 @@ const Footer = () => {
         <div className='mb-8 md:mb-0 w-full md:w-[50%]'>
           <h2 className='text-xl font-bold text-gray-700 mb-4 font-roboto'>About Us</h2>
           <p className='text-gray-600 md:w-[70%]'>
-          At K-Mats, we are a leading exporter of premium rubber mats, supplying high-quality, ISO-certified products to over 70 countries worldwide. Headquartered in Brisbane, Australia, our manufacturing operations in Sri Lanka and India ensure superior craftsmanship and durability
+          At KMat, we are a leading exporter of premium rubber mats, supplying high-quality, ISO-certified products to over 70 countries worldwide. Headquartered in Brisbane, Australia, our manufacturing operations in Sri Lanka and India ensure superior craftsmanship and durability.
           <Link to='/about-us'>
-            <span className='font-medium hover:font-semibold cursor-pointer text-cyan-700'> ...See more</span>
+            <span className='font-medium hover:font-semibold cursor-pointer text-cyan-700'> See more</span>
           </Link>
           </p>
         </div>

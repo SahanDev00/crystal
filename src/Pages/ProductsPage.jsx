@@ -14,7 +14,7 @@ const ProductsPage = () => {
   return (
     <div>
         <Helmet>
-          <title>K-Mats | Products</title>
+          <title>KMat | Products</title>
         </Helmet>
         <Product/>
         <Questions/>

@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import pic from '../images/heroPic.jpeg'
 import { Helmet } from 'react-helmet';
 import emailjs from 'emailjs-com';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactUs = () => {
 
@@ -17,9 +19,15 @@ const ContactUs = () => {
       'iJLT9e20sQ1qsdX29' // Your EmailJS user ID
     )
     .then((result) => {
-      alert('Message sent successfully!');
+      toast.success('Message Sent Successfully!', {
+        position: "top-right",
+        autoClose: 2000,
+      });
     }, (error) => {
-      alert('Failed to send message, please try again.');
+      toast.error('Message Failed to Send!', {
+        position: "top-right",
+        autoClose: 2000,
+      });
     });
     
     e.target.reset(); // Reset the form after submission
@@ -32,7 +40,7 @@ const ContactUs = () => {
   return (
     <div className='w-full mt-20 font-overpass'>
         <Helmet>
-          <title>K-Mats | Contact Us</title>
+          <title>KMat | Contact Us</title>
         </Helmet>
       <div className=' h-full w-full relative  grid justify-center grid-cols-1 md:grid-cols-2 mt-10 sm:mt-10 md:mt-16'>
         {/* Form */}

@@ -11,7 +11,7 @@ const AboutUsPage = () => {
   return (
     <div>
         <Helmet>
-          <title>K-Mats | About Us</title>
+          <title>KMat | About Us</title>
         </Helmet>
       <AboutUs/>
     </div>

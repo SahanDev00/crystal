@@ -13,8 +13,8 @@ const AboutUs = () => {
             <h1 className='text-gray-700 text-4xl font-bold md:my-10 2lg:my-0 3lg:my-10 pt-5 font-overpass'>About Us</h1>
             <div className='w-full flex mt-5 md:mt-14 2lg:mt-3 3lg:mt-10'>
                 <div className='mx-auto flex flex-col justify-center'>
-                    <h1 className='text-3xl font-semibold text-cyan-600/60 my-4 font-overpass'>About K-Mat</h1>
-                    <p className='text-black/50 w-[95%] text-wrap text-lg font-karla'>At K-Mats, we are a leading exporter of premium rubber mats, supplying high-quality, ISO-certified products to over 70 countries worldwide. Headquartered in Brisbane, Australia, our manufacturing operations in Sri Lanka and India ensure superior craftsmanship and durability.</p>
+                    <h1 className='text-3xl font-semibold text-cyan-600/60 my-4 font-overpass'>About KMat</h1>
+                    <p className='text-black/50 w-[95%] text-wrap text-lg font-karla'>At KMats, we are a leading exporter of premium rubber mats, supplying high-quality, ISO-certified products to over 70 countries worldwide. Headquartered in Brisbane, Australia, our manufacturing operations in Sri Lanka and India ensure superior craftsmanship and durability.</p>
                     <p className='text-black/50 w-[95%] mt-5 text-wrap text-lg font-karla'>We specialize in a diverse range of mats, including livestock mats, horse mats, cow mats, commercial mats, industrial mats, and entrance mats, designed to meet the highest industry standards. With a commitment to innovation, reliability, and global reach, K-Mats is your trusted partner for durable, high-performance rubber mat solutions.</p>
                 </div>
             </div>
@@ -41,7 +41,7 @@ const AboutUs = () => {
 
                         <li className='text-2xl mt-5 font-semibold font-overpass text-cyan-700 ml-5'>• Commercial Mats</li>
                         <p className='text-lg font-karla w-[90%] text-black/50'>Enhance the functionality and safety of your business spaces with <strong>K-MATS Commercial Mats.</strong> Perfect for <strong>commercial entrance mats, rubber floor mats for businesses,</strong> and <strong>high-traffic areas</strong> like retail stores, offices, restaurants, schools, and public buildings, our mats help manage dirt, moisture, and slips. Designed to provide superior <strong>anti-slip protection,</strong> these mats improve overall <strong>foot comfort</strong> and reduce accidents in busy environments.</p>
-                        <p className='text-lg font-karla w-[90%] text-black/50 pt-3'>K-MATS Commercial Mats are built to withstand the rigors of <strong>high-traffic entryways</strong> and interior spaces. Their <strong>durable, low-maintenance design</strong> ensures long-lasting performance, making them ideal for businesses looking for <strong>xreliable public area mats.</strong> Whether you are willing to outfit a storefront or upgrade office floors, our <strong>office floor mats</strong> are a practical and efficient solution trusted by numerous businesses across <strong>Australia and the USA.</strong></p>
+                        <p className='text-lg font-karla w-[90%] text-black/50 pt-3'>K-MATS Commercial Mats are built to withstand the rigors of <strong>high-traffic entryways</strong> and interior spaces. Their <strong>durable, low-maintenance design</strong> ensures long-lasting performance, making them ideal for businesses looking for <strong>reliable public area mats.</strong> Whether you are willing to outfit a storefront or upgrade office floors, our <strong>office floor mats</strong> are a practical and efficient solution trusted by numerous businesses across <strong>Australia and the USA.</strong></p>
 
                         <li className='text-2xl mt-5 font-semibold font-overpass text-cyan-700 ml-5'>• Entrance Mats</li>
                         <p className='text-lg font-karla w-[90%] text-black/50'>​Level up your property's entrance with <strong>K-MATS Entrance Mats</strong>, expertly designed to provide superior dirt and moisture control while elevating aesthetic appeal. </p>
@@ -63,7 +63,7 @@ const AboutUs = () => {
                             <p className='text-black/50 text-wrap text-lg w-[95%] font-karla'>Our mats are manufactured from sustainable materials, offering durable and safe solutions while reducing environmental impact and carbon footprint.</p>
                         </div>
                     </div>
-                    <p className='text-black/50 text-wrap text-lg font-karla mt-5'>By incorporating <strong>K-MATS Entrance Mats</strong> into your entryways, you not only enhance the visual appeal but also promote cleanliness and safety. Our mats are designed to withstand heavy foot traffic, making them a reliable choice for both residential and commercial settings especially in <strong>Australia and the USA.</strong></p>
+                    <p className='text-black/50 text-wrap text-lg font-karla mt-5'>By incorporating <strong>K-MATS Entrance Mats</strong> into your entryways, you not only enhance the visual appeal but also promote cleanliness and safety. Our mats are designed to withstand heavy foot traffic, making them a reliable choice for both residential and commercial settings especially in Australia and the USA.</p>
                 </div>
             </div>
             {/* 

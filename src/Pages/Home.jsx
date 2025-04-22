@@ -47,7 +47,7 @@ const Home = () => {
   return (
     <div className='w-full'>
       <Helmet>
-        <title>K-Mats | Home</title>
+        <title>KMat | Home</title>
       </Helmet>
 
       {/* Slider acting as a background */}
