@@ -13,10 +13,10 @@ const ContactUs = () => {
     e.preventDefault();
     
     emailjs.sendForm(
-      'service_2nmvxuu', // Your EmailJS service ID
-      'template_7ccdwzy', // Your EmailJS template ID
+      'service_zzjcf8a', // Your EmailJS service ID
+      'template_i4srvbn', // Your EmailJS template ID
       form.current,
-      'iJLT9e20sQ1qsdX29' // Your EmailJS user ID
+      '0abRGxg_FVNO1FGE_' // Your EmailJS user ID
     )
     .then((result) => {
       toast.success('Message Sent Successfully!', {
@@ -40,7 +40,7 @@ const ContactUs = () => {
   return (
     <div className='w-full mt-20 font-overpass'>
         <Helmet>
-          <title>KMat | Contact Us</title>
+          <title>KMat | Contact Us | Livestock mats for sale</title>
         </Helmet>
       <div className=' h-full w-full relative  grid justify-center grid-cols-1 md:grid-cols-2 mt-10 sm:mt-10 md:mt-16'>
         {/* Form */}

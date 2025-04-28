@@ -8,7 +8,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { useCart } from './Cart/CartContext';
 import axios from 'axios';  // Import axios for API calls
-import logo from '../images/logo2.png'
+import logo from '../images/mini-logo.png'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
@@ -141,8 +141,9 @@ const Navbar = () => {
       <div className='sm:w-[90%] lg:w-[80%] h-[80px] 2lg:h-[50px] 3lg:h-[80px] lg:h-[80px] flex items-center justify-between mx-auto'>
         {/*<h1 className='text-4xl text-cyan-500 hover:text-cyan-600 duration-300 font-bold cursor-pointer font-roboto'><Link to='/'>CG</Link></h1>*/}
         {/*<Link to='/'><img src={logo} alt="" className='w-40 sm:w-52 2lg:w-40 3lg:w-60'/></Link>*/}
-        <Link to='/'>
-          <p className='text-2xl font-overpass font-semibold text-amber-200 pl-5 sm:pl-0'>KMAT - AU</p>
+        <Link to='/' className='flex gap-2 items-center'>
+          <img src={logo} className='size-8 mb-1 ml-5 sm:ml-0' alt="" />
+          <p className='text-2xl font-overpass font-semibold text-amber-200'>KMAT - AU</p>
         </Link>
         <ul className='hidden md:flex gap-7 lg:gap-10'>
           <Link to='/' exact className={` font-overpass text-lg 2lg:text-sm 3lg:text-lg hover:text-cyan-500 duration-300 cursor-pointer ${isActive('/checkout') || isActive('/about-us') || isActive('/terms-of-service') || isActive('/shipping-info') || isActive('/return-policy') || isActive('/FAQ') ? 'text-white' : ''} ${isActive('/product') || isActive('/cart') || isActive('/account') || isActive('/contact-us') || isActive('/store')|| isActive('/my-orders') || isActive('/order-details') || isActive('/edit-profile') || isActive('/login') ? 'text-white' : ''} ${isActive('/') ? 'text-cyan-500' : ''}`}>Home</Link>

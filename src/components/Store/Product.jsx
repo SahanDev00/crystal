@@ -5,6 +5,7 @@ import { useCart } from '../Cart/CartContext';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { HashLink } from 'react-router-hash-link';
+import { Helmet } from 'react-helmet';
 
 const Product = () => {
   const { itemID } = useParams(); // Capture itemID from the URL
@@ -90,8 +91,12 @@ const Product = () => {
     return <div className='h-screen w-screen flex items-center justify-center'><img src={loader} className='w-[100px]' alt="" /></div>;
   }
 
+  
   return (
     <div className='w-full mt-24 sm:mt-28 mb-10'>
+      <Helmet>
+        <title>KMat | {product.itemName}</title>
+      </Helmet>
       <h1 className='text-sm font-bold text-center text-black/50 lg:hidden font-karla'>Brand: <span className='text-cyan-600'>{product.brandName}</span></h1>
       <h1 className='text-sm text-center font-bold text-gray-400 font-overpass'>{product.itemID}</h1>
       <h1 className='text-3xl text-center font-bold my-4 text-gray-600 font-overpass'>{product.itemName}</h1>

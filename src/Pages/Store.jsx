@@ -16,7 +16,7 @@ const Store = () => {
   return (
     <div>
         <Helmet>
-          <title>KMat | Store</title>
+          <title>KMat | Best place to buy high quality rubber mats, cow mats, and horse mats.</title>
         </Helmet>
         <Categories/>
         <AllProducts/>

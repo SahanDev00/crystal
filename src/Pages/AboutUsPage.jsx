@@ -11,7 +11,7 @@ const AboutUsPage = () => {
   return (
     <div>
         <Helmet>
-          <title>KMat | About Us</title>
+          <title>KMat | Best Rubber, Cow and Horse Mats Solutions in Australia, Brisbane, Sri Lanka.</title>
         </Helmet>
       <AboutUs/>
     </div>

@@ -47,7 +47,7 @@ const Home = () => {
   return (
     <div className='w-full'>
       <Helmet>
-        <title>KMat | Home</title>
+        <title>KMat | Best Livestock, Cow Mats, Rubber Mats, Horse Mats and Rubber Gym Mats in Australia, Brisbane.</title>
       </Helmet>
 
       {/* Slider acting as a background */}

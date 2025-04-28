@@ -14,7 +14,7 @@ const ProductsPage = () => {
   return (
     <div>
         <Helmet>
-          <title>KMat | Products</title>
+          <title>KMat | High Quality Rubber Mats in Australia.</title>
         </Helmet>
         <Product/>
         <Questions/>
